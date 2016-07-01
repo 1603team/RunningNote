@@ -7,7 +7,8 @@
 //
 
 #import "RSetTableVC.h"
-
+#import "UIViewController+RVCForStoryBoard.h"
+#import "RUserInfoTableVC.h"
 @interface RSetTableVC ()
 
 @end
@@ -35,6 +36,8 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         //编辑个人资料
         NSLog(@"编辑个人资料");
+        RUserInfoTableVC *userInfoVC = [UIViewController controllerForStoryBoardName:@"RHBStoryboard" ControllerName:@"RUserInfoTableVC"];
+        [self.navigationController pushViewController:userInfoVC animated:YES];
     }
     if (indexPath.section == 1 && indexPath.row ==0) {
         //绑定账号

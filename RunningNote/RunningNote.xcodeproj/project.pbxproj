@@ -20,6 +20,20 @@
 		CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FAF1D2526F7000AC88C /* RRuningVC.m */; };
 		CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FB51D253053000AC88C /* RCircleTableVC.m */; };
 		CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FBF1D254238000AC88C /* RSetTableVC.m */; };
+		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
+		CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */; };
+		CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196C1D26933B0033FCB2 /* ROutSideVC.m */; };
+		CCC719701D2693420033FCB2 /* RXiaoDong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC7196F1D2693420033FCB2 /* RXiaoDong.storyboard */; };
+		CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */; };
+		CCC719811D269BE30033FCB2 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC7197D1D269BE30033FCB2 /* Back.png */; };
+		CCC719821D269BE30033FCB2 /* begin.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC7197E1D269BE30033FCB2 /* begin.png */; };
+		CCC719831D269BE30033FCB2 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC7197F1D269BE30033FCB2 /* stop.png */; };
+		CCC719841D269BE30033FCB2 /* timeOut.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC719801D269BE30033FCB2 /* timeOut.png */; };
+		CCC719861D26A5480033FCB2 /* RHBStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */; };
+		CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */; };
+		CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7199D1D26A81D0033FCB2 /* RUserModel.m */; };
+		CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */; };
+		CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */; };
 		CCEBDD961D23A6CC000E535D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDD951D23A6CC000E535D /* main.m */; };
 		CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDD981D23A6CC000E535D /* AppDelegate.m */; };
 		CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDA01D23A6CC000E535D /* Assets.xcassets */; };
@@ -80,6 +94,29 @@
 		CC123FB51D253053000AC88C /* RCircleTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCircleTableVC.m; sourceTree = "<group>"; };
 		CC123FBE1D254238000AC88C /* RSetTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSetTableVC.h; sourceTree = "<group>"; };
 		CC123FBF1D254238000AC88C /* RSetTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSetTableVC.m; sourceTree = "<group>"; };
+		CCC719661D26932A0033FCB2 /* ChooseModeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseModeTableVC.h; sourceTree = "<group>"; };
+		CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseModeTableVC.m; sourceTree = "<group>"; };
+		CCC719691D26933B0033FCB2 /* RHomeSportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHomeSportVC.h; sourceTree = "<group>"; };
+		CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHomeSportVC.m; sourceTree = "<group>"; };
+		CCC7196B1D26933B0033FCB2 /* ROutSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROutSideVC.h; sourceTree = "<group>"; };
+		CCC7196C1D26933B0033FCB2 /* ROutSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROutSideVC.m; sourceTree = "<group>"; };
+		CCC7196F1D2693420033FCB2 /* RXiaoDong.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RXiaoDong.storyboard; sourceTree = "<group>"; };
+		CCC719741D2696440033FCB2 /* UIViewController+RVCForStoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RVCForStoryBoard.h"; path = "RunningNote/UIViewController+RVCForStoryBoard.h"; sourceTree = SOURCE_ROOT; };
+		CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RVCForStoryBoard.m"; path = "RunningNote/UIViewController+RVCForStoryBoard.m"; sourceTree = SOURCE_ROOT; };
+		CCC7197D1D269BE30033FCB2 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = run_image/Back.png; sourceTree = "<group>"; };
+		CCC7197E1D269BE30033FCB2 /* begin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = begin.png; path = run_image/begin.png; sourceTree = "<group>"; };
+		CCC7197F1D269BE30033FCB2 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = run_image/stop.png; sourceTree = "<group>"; };
+		CCC719801D269BE30033FCB2 /* timeOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeOut.png; path = run_image/timeOut.png; sourceTree = "<group>"; };
+		CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RHBStoryboard.storyboard; sourceTree = "<group>"; };
+		CCC7198C1D26A7180033FCB2 /* RCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCommon.h; path = RunningNote/RCommon.h; sourceTree = SOURCE_ROOT; };
+		CCC7199A1D26A81D0033FCB2 /* RRuningModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRuningModel.h; sourceTree = "<group>"; };
+		CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRuningModel.m; sourceTree = "<group>"; };
+		CCC7199C1D26A81D0033FCB2 /* RUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserModel.h; sourceTree = "<group>"; };
+		CCC7199D1D26A81D0033FCB2 /* RUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserModel.m; sourceTree = "<group>"; };
+		CCC719A01D26A8600033FCB2 /* RChangePassWorldVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RChangePassWorldVC.h; sourceTree = "<group>"; };
+		CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RChangePassWorldVC.m; sourceTree = "<group>"; };
+		CCC719A21D26A8600033FCB2 /* RUserInfoTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserInfoTableVC.h; sourceTree = "<group>"; };
+		CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserInfoTableVC.m; sourceTree = "<group>"; };
 		CCEBDD911D23A6CC000E535D /* RunningNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEBDD951D23A6CC000E535D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEBDD971D23A6CC000E535D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +195,10 @@
 		CC123FBA1D253E26000AC88C /* RSetTableVC */ = {
 			isa = PBXGroup;
 			children = (
+				CCC719A01D26A8600033FCB2 /* RChangePassWorldVC.h */,
+				CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */,
+				CCC719A21D26A8600033FCB2 /* RUserInfoTableVC.h */,
+				CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */,
 				CC123FBE1D254238000AC88C /* RSetTableVC.h */,
 				CC123FBF1D254238000AC88C /* RSetTableVC.m */,
 			);
@@ -178,6 +219,12 @@
 			children = (
 				CC123FAE1D2526F7000AC88C /* RRuningVC.h */,
 				CC123FAF1D2526F7000AC88C /* RRuningVC.m */,
+				CCC719661D26932A0033FCB2 /* ChooseModeTableVC.h */,
+				CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */,
+				CCC719691D26933B0033FCB2 /* RHomeSportVC.h */,
+				CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */,
+				CCC7196B1D26933B0033FCB2 /* ROutSideVC.h */,
+				CCC7196C1D26933B0033FCB2 /* ROutSideVC.m */,
 			);
 			name = RRuningVC;
 			sourceTree = "<group>";
@@ -189,6 +236,17 @@
 				CCEBDDCC1D23AF66000E535D /* RMyRecordTableVC.m */,
 			);
 			name = RMyRecirdTableVC;
+			sourceTree = "<group>";
+		};
+		CCC719991D26A81D0033FCB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCC7199A1D26A81D0033FCB2 /* RRuningModel.h */,
+				CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */,
+				CCC7199C1D26A81D0033FCB2 /* RUserModel.h */,
+				CCC7199D1D26A81D0033FCB2 /* RUserModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CCEBDD881D23A6CC000E535D = {
@@ -217,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				CCEBDDC91D23AC22000E535D /* Others */,
-				CCEBDDC81D23AC22000E535D /* Models */,
+				CCC719991D26A81D0033FCB2 /* Models */,
 				CCEBDDCA1D23AC2E000E535D /* Views */,
 				CCEBDDC71D23AC22000E535D /* Controllers */,
 				CCEBDD941D23A6CC000E535D /* Supporting Files */,
@@ -228,6 +286,10 @@
 		CCEBDD941D23A6CC000E535D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCC7197D1D269BE30033FCB2 /* Back.png */,
+				CCC7197E1D269BE30033FCB2 /* begin.png */,
+				CCC7197F1D269BE30033FCB2 /* stop.png */,
+				CCC719801D269BE30033FCB2 /* timeOut.png */,
 				CCEBDDF01D23C8F6000E535D /* other_image */,
 				CCEBDDE11D23C102000E535D /* tabbar_image */,
 				CCEBDD971D23A6CC000E535D /* AppDelegate.h */,
@@ -269,16 +331,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CCEBDDC81D23AC22000E535D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		CCEBDDC91D23AC22000E535D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				CCC719741D2696440033FCB2 /* UIViewController+RVCForStoryBoard.h */,
+				CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */,
+				CCC7198C1D26A7180033FCB2 /* RCommon.h */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -287,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				CC123F9A1D24F785000AC88C /* RJianYe.storyboard */,
+				CCC7196F1D2693420033FCB2 /* RXiaoDong.storyboard */,
+				CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +508,7 @@
 			files = (
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
+				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
 				CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */,
 				CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */,
 				CC123FAD1D251E19000AC88C /* pydt_image.png in Resources */,
@@ -460,10 +521,15 @@
 				CCEBDDF41D23C8F6000E535D /* xunzhang_btn.png in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
+				CCC719701D2693420033FCB2 /* RXiaoDong.storyboard in Resources */,
 				CC123FA31D250E61000AC88C /* outsideSport.png in Resources */,
 				CCEBDDEA1D23C102000E535D /* icon_35_n.png in Resources */,
+				CCC719821D269BE30033FCB2 /* begin.png in Resources */,
+				CCC719811D269BE30033FCB2 /* Back.png in Resources */,
 				CCEBDDE91D23C102000E535D /* circle_35_s.png in Resources */,
+				CCC719841D269BE30033FCB2 /* timeOut.png in Resources */,
 				CC123FAB1D2519F1000AC88C /* chat_32.png in Resources */,
+				CCC719861D26A5480033FCB2 /* RHBStoryboard.storyboard in Resources */,
 				CCEBDDE81D23C102000E535D /* ciecle_35_n.png in Resources */,
 				CCEBDDEC1D23C102000E535D /* set_35_n.png in Resources */,
 				CCEBDE031D23E7D1000E535D /* ssyg_image.png in Resources */,
@@ -616,10 +682,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */,
+				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
 				CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */,
+				CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */,
+				CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */,
+				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
+				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
+				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
+				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
 				CCEBDDCD1D23AF66000E535D /* RMyRecordTableVC.m in Sources */,
 			);
