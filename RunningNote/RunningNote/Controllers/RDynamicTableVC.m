@@ -1,27 +1,25 @@
 //
-//  RCircleTableVC.m
+//  RDynamicTableVC.m
 //  RunningNote
 //
-//  Created by qingyun on 16/6/30.
+//  Created by qingyun on 16/7/1.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "RCircleTableVC.h"
 #import "RDynamicTableVC.h"
 
-@interface RCircleTableVC ()
+@interface RDynamicTableVC ()
 
 @end
 
-@implementation RCircleTableVC
+@implementation RDynamicTableVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
-    self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
-    
+
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -34,59 +32,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)myFriends:(UIBarButtonItem *)sender {
-    NSLog(@"我的好友");
-}
-
-- (IBAction)MyMessage:(UIBarButtonItem *)sender {
-    NSLog(@"我的消息");
-}
-#pragma mark - Table view delegate
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case 0:{
-            if (indexPath.row == 0) {
-                //跑友动态
-                RDynamicTableVC *rynamicTVC = [RDynamicTableVC new];
-                [self.navigationController pushViewController:rynamicTVC animated:YES];
-             
-            }else if (indexPath.row == 1){
-                //我的跑团
-                NSLog(@"我的跑团");
-            }
-        }break;
-        case 1:{
-            if (indexPath.row == 0) {
-                //发现跑友
-                NSLog(@"发现跑友");
-            }else if (indexPath.row == 1){
-                //发现跑团
-                NSLog(@"发现跑团");
-            }
-        }break;
-        case 2:{
-            if (indexPath.row == 0) {
-                //赛事预告
-                NSLog(@"赛事预告");
-            }else if (indexPath.row == 1){
-                //2016全球马拉松指南
-                NSLog(@"2016全球马拉松指南");
-            }
-        }break;
-        case 3:{
-            if (indexPath.row == 0) {
-                //排行榜
-                NSLog(@"排行榜");
-            }
-        }break;
-        default:
-            break;
-    }
-}
-
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
