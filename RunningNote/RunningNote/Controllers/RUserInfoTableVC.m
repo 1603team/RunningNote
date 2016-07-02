@@ -8,7 +8,7 @@
 
 #import "RUserInfoTableVC.h"
 #import "RUserModel.h"
-#import "Masonry.h"
+#import <Masonry.h>
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>

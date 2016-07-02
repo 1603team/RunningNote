@@ -7,7 +7,7 @@
 //
 
 #import "RUserModel.h"
-#import "RCommen.h"
+#import "RCommon.h"
 
 @implementation RUserModel
 
