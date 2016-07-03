@@ -20,6 +20,7 @@
 		CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FAF1D2526F7000AC88C /* RRuningVC.m */; };
 		CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FB51D253053000AC88C /* RCircleTableVC.m */; };
 		CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FBF1D254238000AC88C /* RSetTableVC.m */; };
+		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
 		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
 		CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */; };
 		CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196C1D26933B0033FCB2 /* ROutSideVC.m */; };
@@ -94,6 +95,8 @@
 		CC123FB51D253053000AC88C /* RCircleTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCircleTableVC.m; sourceTree = "<group>"; };
 		CC123FBE1D254238000AC88C /* RSetTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSetTableVC.h; sourceTree = "<group>"; };
 		CC123FBF1D254238000AC88C /* RSetTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSetTableVC.m; sourceTree = "<group>"; };
+		CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicTableVC.h; sourceTree = "<group>"; };
+		CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicTableVC.m; sourceTree = "<group>"; };
 		CCC719661D26932A0033FCB2 /* ChooseModeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseModeTableVC.h; sourceTree = "<group>"; };
 		CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseModeTableVC.m; sourceTree = "<group>"; };
 		CCC719691D26933B0033FCB2 /* RHomeSportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHomeSportVC.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 			children = (
 				CC123FB41D253053000AC88C /* RCircleTableVC.h */,
 				CC123FB51D253053000AC88C /* RCircleTableVC.m */,
+				CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */,
+				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
 			);
 			name = RCircleTableVC;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
+				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
 				CCEBDDCD1D23AF66000E535D /* RMyRecordTableVC.m in Sources */,
