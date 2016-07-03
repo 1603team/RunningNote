@@ -1,0 +1,1 @@
+../../../HIPImageCropper/Dependencies/HIPImageCropperView/HIPImageCropperView.h

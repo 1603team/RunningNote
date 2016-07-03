@@ -17,21 +17,24 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - HIPImageCropper (2.0.0)
   - Masonry (1.0.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - FMDB (~> 2.6.2)
+  - HIPImageCropper (~> 2.0.0)
   - Masonry (~> 1.0.1)
   - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 7a5bc6ef490964c3b01aeea1bdc971eae8e2173b
+PODFILE CHECKSUM: ad8eeb497aea0749339a287c01333694ce68ac5b
 
 COCOAPODS: 1.0.1
