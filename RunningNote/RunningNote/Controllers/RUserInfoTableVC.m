@@ -8,10 +8,11 @@
 
 #import "RUserInfoTableVC.h"
 #import "RUserModel.h"
-#import <Masonry.h>
+#import "HIPImageCropperView.h"
+#import "Masonry.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
-@interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
 
 {
     NSIndexPath *_indexPath;
@@ -19,6 +20,7 @@
     UIImage *_image;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+@property (nonatomic, strong) HIPImageCropperView *imageCroperView;
 
 @end
 
@@ -126,7 +128,8 @@
     [self.view addSubview:view];
     
     [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(@0);
+        make.centerX.equalTo(@0);
+        make.centerY.mas_equalTo(-100);
         make.width.mas_equalTo(SCREEN.size.width);
         make.height.mas_equalTo(300);
     }];
@@ -163,36 +166,29 @@
         cell.detailTextLabel.text = [dateFormatter stringFromDate:_datePicker.date];
         [self.tableView reloadData];
     }else if (sender.tag == 200) {
-        self.iconImage.image = _image;
+        self.iconImage.image = [_imageCroperView processedImage];
+        self.iconImage.layer.cornerRadius = 20;
+        self.iconImage.layer.masksToBounds = YES;
     }
     [sender.superview removeFromSuperview];
+    [_imageCroperView removeFromSuperview];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [picker dismissViewControllerAnimated:YES completion:^{}];
     
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    UIView *view = [[UIView alloc] initWithFrame:SCREEN];
-    view.backgroundColor = [UIColor lightGrayColor];
-    view.alpha = 0.9f;
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    HIPImageCropperView *imageCropper = [[HIPImageCropperView alloc] initWithFrame:CGRectMake(0, 100, SCREEN.size.width, SCREEN.size.height - 200) cropAreaSize:CGSizeMake(150, 150) position:HIPImageCropperViewPositionCenter];
+    [imageCropper setOriginalImage:image];
+    [self.view addSubview:imageCropper];
+    imageCropper.delegate = self;
+    imageCropper.borderVisible = YES;
+    _imageCroperView = imageCropper;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.size.width, 100)];
+    view.backgroundColor = [UIColor blackColor];
+    view.alpha = 0.7f;
     [self.view addSubview:view];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [view addSubview:imageView];
-    CGSize size = CGSizeMake(SCREEN.size.width, 300);
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(@0);
-        make.size.mas_equalTo(size);
-    }];
-    imageView.image = image;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.clipsToBounds = YES;
-    imageView.userInteractionEnabled = YES;
-    //imageView上添加平移手势
-    UIPanGestureRecognizer *panGesture=[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    [imageView addGestureRecognizer:panGesture];
-    //imageView上添加捏合手势
-    UIPinchGestureRecognizer *pinch = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
     //确定UIButton
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectZero];
     [view addSubview:button];
@@ -200,52 +196,24 @@
     [button setTitle:@"确定" forState:(UIControlStateNormal)];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(80));
-        make.top.mas_equalTo(imageView.mas_bottom).with.offset(50);
+        make.centerY.mas_equalTo(0);
     }];
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
-    //取消UIButton
+//    取消UIButton
     UIButton *cancleButton = [[UIButton alloc] initWithFrame:CGRectZero];
     [view addSubview:cancleButton];
     cancleButton.tag = 201;
     [cancleButton setTitle:@"取消" forState:(UIControlStateNormal)];
     [cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(-80));
-        make.top.mas_equalTo(imageView.mas_bottom).with.offset(50);
+        make.centerY.mas_equalTo(0);
     }];
     [cancleButton addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
-//    CGRect rect = CGRectMake(self.view.center.x, self.view.center.y, 100, 100);
-//    self.iconImage.image = [self imageFromImage:image inRect:rect];
-//    self.iconImage.image = image;
-//    self.iconImage.layer.cornerRadius = 20;
-//    self.iconImage.layer.masksToBounds = YES;
-//    NSData *imageData = UIImageJPEGRepresentation(image, COMPRESSED_RATE);
-//    UIImage *compressedImage = [UIImage imageWithData:imageData];
 }
 
-//捏合手势
-- (void)pinchGesture:(UIPinchGestureRecognizer *)pinch {
-    //1.获取当前放大的比例
-    float scale=pinch.scale;
-    NSLog(@"========%f",scale);
-    //仿射变换 scale 比例
-    pinch.view.transform=CGAffineTransformScale(pinch.view.transform, scale, scale);
-    //scale 置1,因为它本身是个绝对值,我们所需要的是个增量值
-    pinch.scale=1;
-}
-//平移手势
-- (void)panGesture:(UIPanGestureRecognizer *)pan {
-    //1.获取一个点绝对值,但是需要的是一个增量值
-    CGPoint point=[pan translationInView:pan.view.superview];
-    //2重置point坐标 x,y 设置初始化 从零开始
-    [pan setTranslation:CGPointZero inView:pan.view.superview];
-    pan.view.center=CGPointMake(pan.view.center.x+point.x, pan.view.center.y+point.y);
-}
-
-- (UIImage *)imageFromImage:(UIImage *)image inRect:(CGRect)rect {
-    CGImageRef sourceImageRef = [image CGImage];
-    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
-    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
-    return newImage;
+#pragma mark - HIPImageCropperViewDelegate
+- (void)imageCropperViewDidFinishLoadingImage:(HIPImageCropperView *)cropperView {
+    
 }
 
 @end

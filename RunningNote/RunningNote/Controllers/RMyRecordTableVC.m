@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     CGRect frame = _weatherImage.frame;
     _frame = frame;
     
@@ -88,7 +88,7 @@
     if (offsetY > 0) {
         CGRect oldFrame = _frame;
         oldFrame.size.height += offsetY;
-        oldFrame.origin.y    -= offsetY - 20;
+        oldFrame.origin.y    -= offsetY;
         _weatherImage.frame = oldFrame;
     }
 }
