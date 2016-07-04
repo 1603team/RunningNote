@@ -41,7 +41,7 @@
     if (indexPath.row == 4) {
         [self pickerView];
 //        _indexPath = indexPath;
-    }else if (indexPath.section == 1) {
+    }else if (indexPath.section == 1 && indexPath.row != 1) {
         [self alertView:cell.textLabel.text indexPath:indexPath];
     }else if (indexPath.section == 0 && indexPath.row == 0) {
         [self loadCameraOrPhotoLibrary];
