@@ -38,7 +38,7 @@
         <scene sceneID="emg-tj-30M">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Cau-yo-cEg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的记录" image="icon_35_n.png" id="wWg-3s-ojd"/>
+                    <tabBarItem key="tabBarItem" title="我的记录" image="icon_35_n.png" selectedImage="icon_35_s.png" id="wWg-3s-ojd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="53E-xv-WXe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -967,7 +967,7 @@
         <scene sceneID="hYp-cu-Ugd">
             <objects>
                 <navigationController id="wG0-o5-WTC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="跑友圈" image="circle_35_s.png" id="uvq-cM-iPw"/>
+                    <tabBarItem key="tabBarItem" title="跑友圈" image="ciecle_35_n.png" selectedImage="circle_35_s.png" id="uvq-cM-iPw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dRC-3c-2fE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1174,7 +1174,7 @@
         <scene sceneID="DEz-xA-Kou">
             <objects>
                 <navigationController id="Acf-y7-JZH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="set_35_n.png" id="VGI-8h-DDf"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="set_35_n.png" selectedImage="set_35_s.png" id="VGI-8h-DDf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pgA-Yg-Jzx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1192,17 +1192,20 @@
         <image name="address_32.png" width="33" height="32"/>
         <image name="calendar_image.png" width="200" height="200"/>
         <image name="chat_32.png" width="35" height="32"/>
+        <image name="ciecle_35_n.png" width="35" height="35"/>
         <image name="circle_35_s.png" width="35" height="35"/>
         <image name="duoyun.png" width="576" height="360"/>
         <image name="fxpt_image.png" width="200" height="200"/>
         <image name="fxpy_image.png" width="200" height="200"/>
         <image name="homeSport.png" width="2060" height="1238"/>
         <image name="icon_35_n.png" width="35" height="35"/>
+        <image name="icon_35_s.png" width="35" height="35"/>
         <image name="icon_btn.png" width="200" height="200"/>
         <image name="outsideSport.png" width="2036" height="1226"/>
         <image name="pydt_image.png" width="160" height="160"/>
         <image name="run_32.png" width="32" height="32"/>
         <image name="set_35_n.png" width="35" height="35"/>
+        <image name="set_35_s.png" width="35" height="35"/>
         <image name="ssyg_image.png" width="200" height="200"/>
         <image name="wdpt_image.png" width="200" height="200"/>
         <image name="xunzhang_btn.png" width="200" height="200"/>
