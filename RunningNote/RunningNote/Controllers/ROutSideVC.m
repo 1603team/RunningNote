@@ -7,8 +7,12 @@
 //
 
 #import "ROutSideVC.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreMotion/CoreMotion.h>
 
-@interface ROutSideVC ()
+@interface ROutSideVC ()<CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *chooseModeBtn;//模式选择
 //涉及“文本”的注释内容不需更改只是为隐藏而做
 @property (weak, nonatomic) IBOutlet UILabel *kmNumber;//距离
@@ -23,17 +27,63 @@
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;//心率
 @property (weak, nonatomic) IBOutlet UILabel *heartRateText;//心率文本
 
+@property (nonatomic, strong) CLLocationManager *manager;//位置管理器
+
 @end
 
 @implementation ROutSideVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.manager = [[CLLocationManager alloc] init];
+    //设置位置管理器的代理
+    self.manager.delegate = self;
+    //向用户申请权限
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [self.manager requestWhenInUseAuthorization];
+    }
+    //手机定位服务是否开启
+    if ([CLLocationManager locationServicesEnabled]) {
+        NSLog(@"在设置中打开GPS");
+    }
+    //配置location的属性
+    //精确度
+    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+    //距离的频率
+    self.manager.distanceFilter = 20.f;
+    //开启定位
+    [self.manager startUpdatingLocation];
+    
     //隐藏各种Label
     [self hiddenAllLabel];
 #warning 之后将隐藏设为YES
     self.navigationController.navigationBarHidden = NO;
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+//授权状态改变的响应方法
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    
+}
+
+//更新位置
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *location = [locations lastObject];
+    //经纬度
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    //水平精度
+    CLLocationAccuracy accuracy = location.horizontalAccuracy;
+    //垂直的精度
+    CLLocationAccuracy acc = location.verticalAccuracy;
+    //海拔高度
+    CLLocationDistance distance = location.altitude;
+}
+
+//失败，或者出错
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
 }
 
 #pragma mark - 隐藏所有的Label
@@ -95,7 +145,7 @@
 #pragma mark - 返回按钮
 
 - (IBAction)backBtn:(UIButton *)sender {
-
+    
 }
 
 
