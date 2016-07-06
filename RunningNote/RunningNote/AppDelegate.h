@@ -14,5 +14,8 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) AVIMClient *clientDelegate;
 
+- (void)showHomeVC;
+- (void)showLoginVC;
+
 @end
 

@@ -22,30 +22,36 @@
     UIViewController *rootVC;
     if ([AVUser currentUser] != nil) {
         //现实首页
-        rootVC = [self getVCFromStoryBoardWithIdentifier:@""];
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
     }else {
         //注册登录
-        rootVC = [self getVCFromStoryBoardWithIdentifier:@""];
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"RLloginVC"];
     }
+    self.window.rootViewController = rootVC;
     return YES;
 }
 
 //根据id从storyBoard中获取控制器
 -(UIViewController *)getVCFromStoryBoardWithIdentifier:(NSString *)identifier{
-    
-    if ([identifier isEqualToString:@""]) {
+    UIStoryboard *sb;
+    if ([identifier isEqualToString:@"MainTabBarController"]) {
         _clientDelegate = [[AVIMClient alloc] initWithClientId:[AVUser currentUser].username];
+        sb = [UIStoryboard storyboardWithName:@"RJianYe" bundle:nil];
     }
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"" bundle:nil];
+    if ([identifier isEqualToString:@"RLloginVC"]) {
+       sb = [UIStoryboard storyboardWithName:@"RHBStoryboard" bundle:nil];
+    }
     return [sb instantiateViewControllerWithIdentifier:identifier];
 }
 
 
 -(void)showHomeVC{
-    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@""];
+    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
 }
 
+- (void)showLoginVC {
+    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@"RLloginVC"];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

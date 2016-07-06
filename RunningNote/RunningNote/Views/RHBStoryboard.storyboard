@@ -11,7 +11,7 @@
         <!--RegisterVC-->
         <scene sceneID="9tG-SU-jIv">
             <objects>
-                <viewController id="ZYw-cA-iRh" customClass="RRegisterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RRegisterVC" id="ZYw-cA-iRh" customClass="RRegisterVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="60O-1a-kpH"/>
                         <viewControllerLayoutGuide type="bottom" id="SGu-wl-oGv"/>
@@ -53,18 +53,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-wb-LFL">
-                                <rect key="frame" x="34" y="333" width="120" height="30"/>
-                                <state key="normal" title="已有账号直接登录">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vj6-4z-n8G" kind="show" id="Ksf-2f-FFz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hx-Hr-Dci">
-                                <rect key="frame" x="266" y="333" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="348" width="30" height="30"/>
                                 <state key="normal" title="注册">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -76,25 +66,23 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8hx-Hr-Dci" firstAttribute="centerX" secondItem="f3L-Ah-gza" secondAttribute="centerX" multiplier="1.5" id="1KF-ba-LLf"/>
+                            <constraint firstItem="8hx-Hr-Dci" firstAttribute="centerX" secondItem="f3L-Ah-gza" secondAttribute="centerX" id="1KF-ba-LLf"/>
                             <constraint firstItem="euv-55-q3K" firstAttribute="top" secondItem="60O-1a-kpH" secondAttribute="bottom" constant="100" id="26o-28-sfj"/>
                             <constraint firstItem="diz-rB-4kU" firstAttribute="leading" secondItem="euv-55-q3K" secondAttribute="trailing" constant="15" id="5Hw-vL-ZDB"/>
+                            <constraint firstItem="8hx-Hr-Dci" firstAttribute="top" secondItem="7ji-v6-Ids" secondAttribute="bottom" constant="60" id="A7j-Xq-1cv"/>
                             <constraint firstItem="04h-Ju-qmc" firstAttribute="top" secondItem="AkE-aR-lmd" secondAttribute="bottom" constant="50" id="FXb-Cv-YRe"/>
                             <constraint firstItem="KFY-ji-crc" firstAttribute="trailing" secondItem="diz-rB-4kU" secondAttribute="trailing" id="Ozk-yH-aDd"/>
                             <constraint firstItem="KFY-ji-crc" firstAttribute="leading" secondItem="diz-rB-4kU" secondAttribute="leading" id="QaP-m1-xWm"/>
                             <constraint firstItem="7ji-v6-Ids" firstAttribute="leading" secondItem="KFY-ji-crc" secondAttribute="leading" id="Tge-hF-CAL"/>
                             <constraint firstItem="04h-Ju-qmc" firstAttribute="leading" secondItem="AkE-aR-lmd" secondAttribute="leading" id="Xqe-1i-tvd"/>
-                            <constraint firstItem="FMu-wb-LFL" firstAttribute="centerX" secondItem="f3L-Ah-gza" secondAttribute="centerX" multiplier="0.5" id="cXT-6e-F7p"/>
                             <constraint firstAttribute="trailing" secondItem="diz-rB-4kU" secondAttribute="trailing" constant="60" id="hyk-8a-tdi"/>
                             <constraint firstItem="7ji-v6-Ids" firstAttribute="trailing" secondItem="diz-rB-4kU" secondAttribute="trailing" id="k6P-fb-N5R"/>
-                            <constraint firstItem="FMu-wb-LFL" firstAttribute="top" secondItem="04h-Ju-qmc" secondAttribute="bottom" constant="50" id="lVd-CD-jkm"/>
                             <constraint firstItem="AkE-aR-lmd" firstAttribute="top" secondItem="euv-55-q3K" secondAttribute="bottom" constant="50" id="leF-A7-4wI"/>
                             <constraint firstItem="KFY-ji-crc" firstAttribute="centerY" secondItem="AkE-aR-lmd" secondAttribute="centerY" id="muB-kr-Hnj"/>
                             <constraint firstItem="7ji-v6-Ids" firstAttribute="centerY" secondItem="04h-Ju-qmc" secondAttribute="centerY" id="opn-U7-B9D"/>
                             <constraint firstItem="AkE-aR-lmd" firstAttribute="leading" secondItem="euv-55-q3K" secondAttribute="leading" id="vlh-UE-6M9"/>
                             <constraint firstItem="euv-55-q3K" firstAttribute="leading" secondItem="f3L-Ah-gza" secondAttribute="leading" constant="60" id="wOd-T6-WU9"/>
                             <constraint firstItem="diz-rB-4kU" firstAttribute="centerY" secondItem="euv-55-q3K" secondAttribute="centerY" id="x2B-ZK-nyT"/>
-                            <constraint firstItem="8hx-Hr-Dci" firstAttribute="centerY" secondItem="FMu-wb-LFL" secondAttribute="centerY" id="ykt-Xk-s4J"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -106,12 +94,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dv3-3F-cem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138.5" y="-528.5"/>
+            <point key="canvasLocation" x="1704.5" y="-485.5"/>
         </scene>
         <!--LloginVC-->
         <scene sceneID="cwm-Bb-BNv">
             <objects>
-                <viewController id="vj6-4z-n8G" customClass="RLloginVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RLloginVC" id="vj6-4z-n8G" customClass="RLloginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKc-8p-Iwt"/>
                         <viewControllerLayoutGuide type="bottom" id="Lcu-tZ-7Ss"/>
@@ -142,11 +130,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEy-zV-03y">
-                                <rect key="frame" x="164" y="319" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEy-zV-03y">
+                                <rect key="frame" x="172" y="317" width="30" height="30"/>
                                 <state key="normal" title="登录"/>
                                 <connections>
                                     <action selector="loginAction:" destination="vj6-4z-n8G" eventType="touchUpInside" id="N4T-Dq-HNH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdK-hC-P6U">
+                                <rect key="frame" x="266.5" y="257" width="30" height="30"/>
+                                <state key="normal" title="注册"/>
+                                <connections>
+                                    <segue destination="ZYw-cA-iRh" kind="show" id="1m7-is-6qs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,7 +156,9 @@
                             <constraint firstItem="oWL-E3-nM7" firstAttribute="centerY" secondItem="Nzq-cF-lB5" secondAttribute="centerY" id="NbH-RT-zAd"/>
                             <constraint firstItem="EEy-zV-03y" firstAttribute="top" secondItem="oWL-E3-nM7" secondAttribute="bottom" constant="100" id="UGk-c4-Tgh"/>
                             <constraint firstItem="yYJ-YD-tGo" firstAttribute="centerY" secondItem="OzX-9T-jAE" secondAttribute="centerY" id="ZCZ-wx-CJ6"/>
+                            <constraint firstItem="jdK-hC-P6U" firstAttribute="centerX" secondItem="lpL-Cu-Cui" secondAttribute="centerX" multiplier="1.5" id="knG-yq-HmY"/>
                             <constraint firstItem="OzX-9T-jAE" firstAttribute="top" secondItem="eKc-8p-Iwt" secondAttribute="bottom" constant="100" id="ldb-lm-ZB5"/>
+                            <constraint firstItem="jdK-hC-P6U" firstAttribute="top" secondItem="oWL-E3-nM7" secondAttribute="bottom" constant="40" id="mgt-CU-5Kb"/>
                             <constraint firstItem="EEy-zV-03y" firstAttribute="centerX" secondItem="lpL-Cu-Cui" secondAttribute="centerX" id="uVb-uI-tZW"/>
                             <constraint firstItem="Nzq-cF-lB5" firstAttribute="top" secondItem="OzX-9T-jAE" secondAttribute="bottom" constant="50" id="utF-ex-CWq"/>
                             <constraint firstItem="OzX-9T-jAE" firstAttribute="leading" secondItem="lpL-Cu-Cui" secondAttribute="leading" constant="60" id="vWF-eN-TuW"/>
@@ -175,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlB-De-YDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.5" y="-528.5"/>
+            <point key="canvasLocation" x="1244.5" y="-485.5"/>
         </scene>
         <!--User Info TableVC-->
         <scene sceneID="2pZ-AC-DSM">

@@ -9,6 +9,9 @@
 #import "RSetTableVC.h"
 #import "UIViewController+RVCForStoryBoard.h"
 #import "RUserInfoTableVC.h"
+#import "AppDelegate.h"
+#import <AVUser.h>
+
 @interface RSetTableVC ()
 
 @end
@@ -63,6 +66,11 @@
     if (indexPath.section == 4 ) {
         //退出登录
         NSLog(@"退出登录");
+        [AVUser logOut];
+        [AVUser currentUser].username = nil;
+        [AVUser currentUser].password = nil;
+        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        [delegate showLoginVC];
     }
     
     
