@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <AVUser.h>
 
 @interface AppDelegate ()
 
@@ -14,11 +16,36 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [AVOSCloud setApplicationId:@"ffEtbcq1pwP43pIvnzUtKvg8-gzGzoHsz" clientKey:@"ADrWXda5eEhDEYTuhoCPfkEk"];
+    
+    UIViewController *rootVC;
+    if ([AVUser currentUser] != nil) {
+        //现实首页
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@""];
+    }else {
+        //注册登录
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@""];
+    }
     return YES;
 }
+
+//根据id从storyBoard中获取控制器
+-(UIViewController *)getVCFromStoryBoardWithIdentifier:(NSString *)identifier{
+    
+    if ([identifier isEqualToString:@""]) {
+        _clientDelegate = [[AVIMClient alloc] initWithClientId:[AVUser currentUser].username];
+    }
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"" bundle:nil];
+    return [sb instantiateViewControllerWithIdentifier:identifier];
+}
+
+
+-(void)showHomeVC{
+    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@""];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

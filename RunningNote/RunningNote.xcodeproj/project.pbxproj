@@ -59,6 +59,8 @@
 		CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */; };
 		CCEBDE031D23E7D1000E535D /* ssyg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFE1D23E7D1000E535D /* ssyg_image.png */; };
 		CCEBDE041D23E7D1000E535D /* wdpt_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFF1D23E7D1000E535D /* wdpt_image.png */; };
+		CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */; };
+		CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEDF9211D2C9AD800DED18E /* RLloginVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,10 @@
 		CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fxpy_image.png; sourceTree = "<group>"; };
 		CCEBDDFE1D23E7D1000E535D /* ssyg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssyg_image.png; sourceTree = "<group>"; };
 		CCEBDDFF1D23E7D1000E535D /* wdpt_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wdpt_image.png; sourceTree = "<group>"; };
+		CCEDF91D1D2C8F8F00DED18E /* RRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRegisterVC.h; sourceTree = "<group>"; };
+		CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRegisterVC.m; sourceTree = "<group>"; };
+		CCEDF9201D2C9AD800DED18E /* RLloginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLloginVC.h; sourceTree = "<group>"; };
+		CCEDF9211D2C9AD800DED18E /* RLloginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLloginVC.m; sourceTree = "<group>"; };
 		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF2956FFFDC8C66D4515F0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F98E99630AB719A6DFEA7235 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +218,10 @@
 				CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */,
 				CC123FBE1D254238000AC88C /* RSetTableVC.h */,
 				CC123FBF1D254238000AC88C /* RSetTableVC.m */,
+				CCEDF91D1D2C8F8F00DED18E /* RRegisterVC.h */,
+				CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */,
+				CCEDF9201D2C9AD800DED18E /* RLloginVC.h */,
+				CCEDF9211D2C9AD800DED18E /* RLloginVC.m */,
 			);
 			name = RSetTableVC;
 			sourceTree = "<group>";
@@ -709,6 +719,7 @@
 				CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */,
 				CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */,
 				CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */,
+				CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
 				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
@@ -717,6 +728,7 @@
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
+				CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */,
 				CCEBDDCD1D23AF66000E535D /* RMyRecordTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
