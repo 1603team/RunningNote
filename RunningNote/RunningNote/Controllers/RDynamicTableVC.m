@@ -7,21 +7,37 @@
 //
 
 #import "RDynamicTableVC.h"
+#import "RMyTableViewCell.h"
 
 @interface RDynamicTableVC ()
+
+@property (nonatomic , strong)NSMutableArray *dataArray;//数据源
 
 @end
 
 @implementation RDynamicTableVC
+static NSString *identifire = @"mycell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self addTableHeardView];
+    self.tableView.estimatedRowHeight = 200;
+    NSString *nibNama = NSStringFromClass([RMyTableViewCell class]);
+    UINib *nib = [UINib nibWithNibName:nibNama bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:identifire];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)addTableHeardView{//添加tableView的头部视图
+
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"duoyun.png"]];
+    self.tableView.tableHeaderView = imageView;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -39,22 +55,20 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 10;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    RMyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifire forIndexPath:indexPath];
     
-    // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

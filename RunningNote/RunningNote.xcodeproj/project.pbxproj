@@ -20,6 +20,9 @@
 		CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FAF1D2526F7000AC88C /* RRuningVC.m */; };
 		CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FB51D253053000AC88C /* RCircleTableVC.m */; };
 		CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FBF1D254238000AC88C /* RSetTableVC.m */; };
+		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
+		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
+		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
 		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
 		CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */; };
@@ -95,6 +98,11 @@
 		CC123FB51D253053000AC88C /* RCircleTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCircleTableVC.m; sourceTree = "<group>"; };
 		CC123FBE1D254238000AC88C /* RSetTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSetTableVC.h; sourceTree = "<group>"; };
 		CC123FBF1D254238000AC88C /* RSetTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSetTableVC.m; sourceTree = "<group>"; };
+		CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyFriendsTableVC.h; sourceTree = "<group>"; };
+		CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFriendsTableVC.m; sourceTree = "<group>"; };
+		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
+		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
+		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
 		CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicTableVC.h; sourceTree = "<group>"; };
 		CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicTableVC.m; sourceTree = "<group>"; };
 		CCC719661D26932A0033FCB2 /* ChooseModeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseModeTableVC.h; sourceTree = "<group>"; };
@@ -215,6 +223,8 @@
 				CC123FB51D253053000AC88C /* RCircleTableVC.m */,
 				CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */,
 				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
+				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
+				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
 			);
 			name = RCircleTableVC;
 			sourceTree = "<group>";
@@ -352,6 +362,9 @@
 				CC123F9A1D24F785000AC88C /* RJianYe.storyboard */,
 				CCC7196F1D2693420033FCB2 /* RXiaoDong.storyboard */,
 				CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */,
+				CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */,
+				CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */,
+				CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -535,6 +548,7 @@
 				CCC719841D269BE30033FCB2 /* timeOut.png in Resources */,
 				CC123FAB1D2519F1000AC88C /* chat_32.png in Resources */,
 				CCC719861D26A5480033FCB2 /* RHBStoryboard.storyboard in Resources */,
+				CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */,
 				CCEBDDE81D23C102000E535D /* ciecle_35_n.png in Resources */,
 				CCEBDDEC1D23C102000E535D /* set_35_n.png in Resources */,
 				CCEBDE031D23E7D1000E535D /* ssyg_image.png in Resources */,
@@ -689,8 +703,10 @@
 			files = (
 				CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */,
 				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
+				CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
 				CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */,
+				CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */,
 				CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */,
 				CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
