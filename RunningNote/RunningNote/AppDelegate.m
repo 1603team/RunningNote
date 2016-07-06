@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <AVUser.h>
 
 @interface AppDelegate ()
 
@@ -14,10 +16,41 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [AVOSCloud setApplicationId:@"ffEtbcq1pwP43pIvnzUtKvg8-gzGzoHsz" clientKey:@"ADrWXda5eEhDEYTuhoCPfkEk"];
+    
+    UIViewController *rootVC;
+    if ([AVUser currentUser] != nil) {
+        //现实首页
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+    }else {
+        //注册登录
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"RLloginVC"];
+    }
+    self.window.rootViewController = rootVC;
     return YES;
+}
+
+//根据id从storyBoard中获取控制器
+-(UIViewController *)getVCFromStoryBoardWithIdentifier:(NSString *)identifier{
+    UIStoryboard *sb;
+    if ([identifier isEqualToString:@"MainTabBarController"]) {
+        _clientDelegate = [[AVIMClient alloc] initWithClientId:[AVUser currentUser].username];
+        sb = [UIStoryboard storyboardWithName:@"RJianYe" bundle:nil];
+    }
+    if ([identifier isEqualToString:@"RLloginVC"]) {
+       sb = [UIStoryboard storyboardWithName:@"RHBStoryboard" bundle:nil];
+    }
+    return [sb instantiateViewControllerWithIdentifier:identifier];
+}
+
+
+-(void)showHomeVC{
+    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+}
+
+- (void)showLoginVC {
+    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@"RLloginVC"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

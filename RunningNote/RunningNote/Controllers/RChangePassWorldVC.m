@@ -10,6 +10,10 @@
 
 @interface RChangePassWorldVC ()
 
+@property (weak, nonatomic) IBOutlet UITextField *oldPsaaWord;
+@property (weak, nonatomic) IBOutlet UITextField *passWordOne;
+@property (weak, nonatomic) IBOutlet UITextField *passWordTwo;
+
 @end
 
 @implementation RChangePassWorldVC
@@ -24,6 +28,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+//点击View收回键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)changePassWord:(UIButton *)sender {
+    NSLog(@"确定修改密码");
+#warning changePassWord
+}
 
 #pragma mark - Navigation
 
