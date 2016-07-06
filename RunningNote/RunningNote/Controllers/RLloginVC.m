@@ -1,28 +1,27 @@
 //
-//  RRegisterVC.m
+//  RLloginVC.m
 //  RunningNote
 //
 //  Created by qingyun on 16/7/6.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "RRegisterVC.h"
+#import "RLloginVC.h"
 
-@interface RRegisterVC ()
+@interface RLloginVC ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
-@property (weak, nonatomic) IBOutlet UITextField *passWordTwo;
 
 @end
 
-@implementation RRegisterVC
+@implementation RLloginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-- (IBAction)registerAction:(UIButton *)sender {
+- (IBAction)loginAction:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {
