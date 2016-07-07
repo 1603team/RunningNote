@@ -59,6 +59,12 @@
 		CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */; };
 		CCEBDE031D23E7D1000E535D /* ssyg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFE1D23E7D1000E535D /* ssyg_image.png */; };
 		CCEBDE041D23E7D1000E535D /* wdpt_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFF1D23E7D1000E535D /* wdpt_image.png */; };
+		CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */; };
+		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
+		CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF31971D2D304800A6F3BE /* commente_btn.png */; };
+		CCEF319C1D2D310700A6F3BE /* share_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF319B1D2D310700A6F3BE /* share_btn.png */; };
+		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
+		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +163,14 @@
 		CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fxpy_image.png; sourceTree = "<group>"; };
 		CCEBDDFE1D23E7D1000E535D /* ssyg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssyg_image.png; sourceTree = "<group>"; };
 		CCEBDDFF1D23E7D1000E535D /* wdpt_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wdpt_image.png; sourceTree = "<group>"; };
+		CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCommentesTableVC.h; sourceTree = "<group>"; };
+		CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCommentesTableVC.m; sourceTree = "<group>"; };
+		CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyFootView.h; sourceTree = "<group>"; };
+		CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFootView.m; sourceTree = "<group>"; };
+		CCEF31971D2D304800A6F3BE /* commente_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn.png; sourceTree = "<group>"; };
+		CCEF319B1D2D310700A6F3BE /* share_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn.png; sourceTree = "<group>"; };
+		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
+		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
 		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF2956FFFDC8C66D4515F0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F98E99630AB719A6DFEA7235 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +237,8 @@
 				CC123FB51D253053000AC88C /* RCircleTableVC.m */,
 				CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */,
 				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
+				CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */,
+				CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */,
 				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
 				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
 			);
@@ -365,6 +381,8 @@
 				CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */,
 				CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */,
 				CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */,
+				CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */,
+				CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +409,10 @@
 		CCEBDDF01D23C8F6000E535D /* other_image */ = {
 			isa = PBXGroup;
 			children = (
+				CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */,
+				CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */,
+				CCEF319B1D2D310700A6F3BE /* share_btn.png */,
+				CCEF31971D2D304800A6F3BE /* commente_btn.png */,
 				CC123FA81D2519F1000AC88C /* address_32.png */,
 				CC123FA91D2519F1000AC88C /* chat_32.png */,
 				CC123FA01D250E61000AC88C /* homeSport.png */,
@@ -525,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
+				CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
 				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
 				CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */,
@@ -543,8 +566,11 @@
 				CC123FA31D250E61000AC88C /* outsideSport.png in Resources */,
 				CCEBDDEA1D23C102000E535D /* icon_35_n.png in Resources */,
 				CCC719821D269BE30033FCB2 /* begin.png in Resources */,
+				CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */,
 				CCC719811D269BE30033FCB2 /* Back.png in Resources */,
+				CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */,
 				CCEBDDE91D23C102000E535D /* circle_35_s.png in Resources */,
+				CCEF319C1D2D310700A6F3BE /* share_btn.png in Resources */,
 				CCC719841D269BE30033FCB2 /* timeOut.png in Resources */,
 				CC123FAB1D2519F1000AC88C /* chat_32.png in Resources */,
 				CCC719861D26A5480033FCB2 /* RHBStoryboard.storyboard in Resources */,
@@ -705,6 +731,7 @@
 				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
 				CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
+				CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */,
 				CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */,
 				CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */,
 				CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */,
@@ -713,6 +740,7 @@
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
 				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
+				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
