@@ -9,6 +9,11 @@
 #import "RHomeSportVC.h"
 
 @interface RHomeSportVC ()
+{
+    NSTimer * _runTimer;            //定时器
+    NSInteger _milliSeconds;        //秒数
+    CAShapeLayer *arcLayer;     //
+}
 @property (weak, nonatomic) IBOutlet UIButton *chooseModeBtn;//选择模式的Btn
 
 @property (weak, nonatomic) IBOutlet UILabel *tishiInfo;//提示信息
@@ -25,10 +30,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;//心率
 @property (weak, nonatomic) IBOutlet UILabel *heartRateText;//心率文本
 
+@property (nonatomic, copy) NSString *currentTime;      //当前显示的时间
+@property (nonatomic, strong) UILabel *countdownLabel;  //倒计时的label
 
 @end
 
 @implementation RHomeSportVC
+
+#pragma mark - 懒加载倒计时Label
+
+-(UILabel *)countdownLabel{
+    if (_countdownLabel == nil) {
+        _countdownLabel = [[UILabel alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _countdownLabel.font = [UIFont systemFontOfSize:200.0];
+        _countdownLabel.textAlignment = NSTextAlignmentCenter;
+        _countdownLabel.backgroundColor = [UIColor blackColor];
+    }
+    return _countdownLabel;
+}
 
 #pragma mark - 隐藏所有Label
 
