@@ -10,21 +10,29 @@
 #import "RUserModel.h"
 #import "HIPImageCropperView.h"
 #import "Masonry.h"
+#import "RUserModel.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
 
 {
-    NSIndexPath *_indexPath;
     UIDatePicker *_datePicker;
     UIImage *_image;
 }
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sexSegment;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 @property (nonatomic, strong) HIPImageCropperView *imageCroperView;
+@property (nonatomic, strong) RUserModel *model;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UILabel *height;
+@property (weak, nonatomic) IBOutlet UILabel *weight;
+@property (weak, nonatomic) IBOutlet UILabel *birthday;
+@property (weak, nonatomic) IBOutlet UILabel *address;
 
 @end
 
 @implementation RUserInfoTableVC
+static NSString *identifier = @"userInfoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +48,6 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (indexPath.row == 4) {
         [self pickerView];
-//        _indexPath = indexPath;
     }else if (indexPath.section == 1 && indexPath.row != 1) {
         [self alertView:cell.textLabel.text indexPath:indexPath];
     }else if (indexPath.section == 0 && indexPath.row == 0) {
