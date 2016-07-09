@@ -294,6 +294,7 @@
                                     <constraint firstAttribute="width" constant="80" id="e9v-l9-Xpo"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="begin.png"/>
+                                <state key="selected" image="timeOut.png"/>
                                 <connections>
                                     <action selector="startBtn:" destination="0KT-Mt-Luo" eventType="touchUpInside" id="U1M-6a-fea"/>
                                 </connections>
@@ -406,7 +407,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3t6-TY-1VU" firstAttribute="centerX" secondItem="Crh-bp-CMl" secondAttribute="centerX" multiplier="4:3" id="0dN-46-xjq"/>
-                            <constraint firstItem="hCS-bT-7cX" firstAttribute="leading" secondItem="Crh-bp-CMl" secondAttribute="leading" constant="30" id="2fu-kf-qQ8"/>
                             <constraint firstItem="enT-5z-Fta" firstAttribute="top" secondItem="EdO-zn-7VJ" secondAttribute="bottom" constant="15" id="AQD-w6-QiL"/>
                             <constraint firstItem="5eN-kq-m4g" firstAttribute="leading" secondItem="Crh-bp-CMl" secondAttribute="leading" constant="20" id="EWy-Ij-5Y7"/>
                             <constraint firstItem="uCR-lq-fhu" firstAttribute="leading" secondItem="hCS-bT-7cX" secondAttribute="leading" id="FER-xc-8jN"/>
@@ -440,13 +440,9 @@
                             <constraint firstItem="6yY-hu-d8Q" firstAttribute="top" secondItem="enT-5z-Fta" secondAttribute="bottom" id="ypJ-ZH-NaJ"/>
                             <constraint firstItem="EdO-zn-7VJ" firstAttribute="top" secondItem="3t6-TY-1VU" secondAttribute="bottom" id="zSV-sz-L4H"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="2fu-kf-qQ8"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="iUg-ag-ytw" id="peQ-Ch-ez5"/>
                         <outlet property="calorieNumber" destination="uCR-lq-fhu" id="CVB-cp-sf8"/>
                         <outlet property="calorieText" destination="LQs-S9-Dhs" id="ipC-yf-LoG"/>
                         <outlet property="chooseModeBtn" destination="pI7-bU-QYU" id="zgY-b4-n0M"/>
@@ -456,8 +452,10 @@
                         <outlet property="kmText" destination="a6Q-jF-3hp" id="T8t-60-UGx"/>
                         <outlet property="paceNumber" destination="3t6-TY-1VU" id="7pK-dJ-e5x"/>
                         <outlet property="paceText" destination="EdO-zn-7VJ" id="dYT-AX-7Lr"/>
+                        <outlet property="runButton" destination="blw-tE-VFJ" id="zip-hg-lRA"/>
                         <outlet property="speedNumber" destination="hCS-bT-7cX" id="75z-rb-tcP"/>
                         <outlet property="speedText" destination="LCy-n8-h7x" id="369-5Y-mSl"/>
+                        <outlet property="stopButton" destination="InB-Kb-5Oj" id="gfl-Ri-ae6"/>
                         <outlet property="timeNow" destination="zQt-Bo-3V2" id="VMM-Ym-ktJ"/>
                         <outlet property="tishiInfo" destination="5eN-kq-m4g" id="3W1-HP-qDn"/>
                     </connections>
@@ -474,6 +472,6 @@
         <image name="timeOut.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ar4-rR-lgr"/>
+        <segue reference="4We-eO-jya"/>
     </inferredMetricsTieBreakers>
 </document>
