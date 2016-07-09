@@ -11,6 +11,9 @@ target 'RunningNote' do
     pod 'Masonry', '~> 1.0.1'
     pod 'SVProgressHUD', '~> 2.0.3'
     pod 'HIPImageCropper', '~> 2.0.0'
+    pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
+    pod 'AVOSCloudIM'             # 实时通信模块
+    pod 'AVOSCloudCrashReporting' # 错误报告模块
   target 'RunningNoteTests' do
     inherit! :search_paths
     # Pods for testing
