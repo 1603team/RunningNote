@@ -136,7 +136,7 @@
 #pragma mark - 返回按钮
 
 - (IBAction)backBtn:(UIButton *)sender {
-
+    
 }
 
 #pragma mark - 停止按钮
@@ -162,7 +162,7 @@
     _milliSeconds=0;
     runButton.selected = NO;
     _stopButton.enabled = NO;
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 #pragma mark - 倒计时相关
