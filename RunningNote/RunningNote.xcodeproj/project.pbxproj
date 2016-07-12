@@ -64,11 +64,11 @@
 		CCEBDE041D23E7D1000E535D /* wdpt_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFF1D23E7D1000E535D /* wdpt_image.png */; };
 		CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */; };
 		CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEDF9211D2C9AD800DED18E /* RLloginVC.m */; };
-		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
 		CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */; };
 		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
 		CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF31971D2D304800A6F3BE /* commente_btn.png */; };
 		CCEF319C1D2D310700A6F3BE /* share_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF319B1D2D310700A6F3BE /* share_btn.png */; };
+		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
 		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
 		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
 /* End PBXBuildFile section */
@@ -178,14 +178,14 @@
 		CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRegisterVC.m; sourceTree = "<group>"; };
 		CCEDF9201D2C9AD800DED18E /* RLloginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLloginVC.h; sourceTree = "<group>"; };
 		CCEDF9211D2C9AD800DED18E /* RLloginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLloginVC.m; sourceTree = "<group>"; };
-		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
-		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
 		CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCommentesTableVC.h; sourceTree = "<group>"; };
 		CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCommentesTableVC.m; sourceTree = "<group>"; };
 		CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyFootView.h; sourceTree = "<group>"; };
 		CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFootView.m; sourceTree = "<group>"; };
 		CCEF31971D2D304800A6F3BE /* commente_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn.png; sourceTree = "<group>"; };
 		CCEF319B1D2D310700A6F3BE /* share_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn.png; sourceTree = "<group>"; };
+		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
+		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
 		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
 		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
 		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,6 +540,7 @@
 				TargetAttributes = {
 					CCEBDD901D23A6CC000E535D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = DSW48G58Q5;
 					};
 					CCEBDDA91D23A6CC000E535D = {
 						CreatedOnToolsVersion = 7.3;
@@ -915,10 +916,13 @@
 			baseConfigurationReference = 524BC78B9F3A32D655FAA7D3 /* Pods-RunningNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -927,10 +931,13 @@
 			baseConfigurationReference = 097557E3A779BE0CD50A8B23 /* Pods-RunningNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

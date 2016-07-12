@@ -11,10 +11,6 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 #import "RAnnotation.h"
 #import "Masonry.h"
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
-#import <Foundation/Foundation.h>
-#import <CoreMotion/CoreMotion.h>
 
 @interface ROutSideVC ()<BMKLocationServiceDelegate,BMKMapViewDelegate>
 
@@ -72,10 +68,10 @@
         make.top.mas_equalTo(64);
         make.bottom.mas_equalTo(_kmNumber).with.offset(10);
     }];
-
+    
     self.manager = [[CLLocationManager alloc] init];
     //设置位置管理器的代理
-    self.manager.delegate = self;
+//    self.manager.delegate = self;
     //向用户申请权限
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         [self.manager requestWhenInUseAuthorization];
@@ -86,11 +82,11 @@
     }
     //配置location的属性
     //精确度
-    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+//    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
     //距离的频率
-    self.manager.distanceFilter = 20.f;
+//    self.manager.distanceFilter = 20.f;
     //开启定位
-    [self.manager startUpdatingLocation];
+//    [self.manager startUpdatingLocation];
     //隐藏各种Label
     [self hiddenAllLabel];
 #warning 之后将隐藏设为YES
@@ -101,9 +97,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_locationService startUserLocationService];
-
+    
 #pragma mark - CLLocationManagerDelegate
-
+}
 //授权状态改变的响应方法
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     
@@ -162,7 +158,7 @@
 #pragma mark - 模式选择
 
 - (IBAction)chooseOneMode:(UIButton *)sender {
-
+    
 }
 
 #pragma mark - 开始暂停按钮
@@ -317,13 +313,13 @@
     return nil;
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 @end
+
