@@ -11,4 +11,6 @@
 @interface RMyTableViewCell : UITableViewCell
 
 @property (nonatomic ,strong) NSArray *contentArray;//存放每个cell的内容
+@property (nonatomic ,strong) UIViewController *tempTVC;
+
 @end

@@ -1,21 +1,34 @@
 //
-//  RMyFriendsTableVC.m
+//  RCommentesTableVC.m
 //  RunningNote
 //
-//  Created by qingyun on 16/7/5.
+//  Created by qingyun on 16/7/6.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "RMyFriendsTableVC.h"
+#import "RCommentesTableVC.h"
 
-@interface RMyFriendsTableVC ()
+@interface RCommentesTableVC ()
 
 @end
 
-@implementation RMyFriendsTableVC
+@implementation RCommentesTableVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource =self;
+    self.tableView.rowHeight = 20.0;
+    self.tableView.scrollEnabled = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -23,6 +36,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -32,22 +46,23 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return self.commentesArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = self.commentesArray[indexPath.section];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

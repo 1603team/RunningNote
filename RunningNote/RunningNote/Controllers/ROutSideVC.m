@@ -11,6 +11,10 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 #import "RAnnotation.h"
 #import "Masonry.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface ROutSideVC ()<BMKLocationServiceDelegate,BMKMapViewDelegate>
 
@@ -32,6 +36,8 @@
 @property (nonatomic, strong) NSMutableArray *allLocations;
 @property (nonatomic, strong) RAnnotation *nowAnnotation;
 @property (nonatomic) BOOL isStart;
+
+@property (nonatomic, strong) CLLocationManager *manager;//位置管理器
 
 @end
 
@@ -66,6 +72,25 @@
         make.top.mas_equalTo(64);
         make.bottom.mas_equalTo(_kmNumber).with.offset(10);
     }];
+
+    self.manager = [[CLLocationManager alloc] init];
+    //设置位置管理器的代理
+    self.manager.delegate = self;
+    //向用户申请权限
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [self.manager requestWhenInUseAuthorization];
+    }
+    //手机定位服务是否开启
+    if ([CLLocationManager locationServicesEnabled]) {
+        NSLog(@"在设置中打开GPS");
+    }
+    //配置location的属性
+    //精确度
+    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+    //距离的频率
+    self.manager.distanceFilter = 20.f;
+    //开启定位
+    [self.manager startUpdatingLocation];
     //隐藏各种Label
     [self hiddenAllLabel];
 #warning 之后将隐藏设为YES
@@ -76,6 +101,30 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_locationService startUserLocationService];
+
+#pragma mark - CLLocationManagerDelegate
+
+//授权状态改变的响应方法
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    
+}
+
+//更新位置
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *location = [locations lastObject];
+    //经纬度
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    //水平精度
+    CLLocationAccuracy accuracy = location.horizontalAccuracy;
+    //垂直的精度
+    CLLocationAccuracy acc = location.verticalAccuracy;
+    //海拔高度
+    CLLocationDistance distance = location.altitude;
+}
+
+//失败，或者出错
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
 }
 
 #pragma mark - 隐藏所有的Label
@@ -154,7 +203,7 @@
 #pragma mark - 返回按钮
 
 - (IBAction)backBtn:(UIButton *)sender {
-
+    
 }
 
 

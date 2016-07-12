@@ -63,7 +63,7 @@
         case 0:{
             if (indexPath.row == 0) {
                 //跑友动态
-                RDynamicTableVC *dynamicTVC = [RDynamicTableVC new];
+                RDynamicTableVC *dynamicTVC = [[RDynamicTableVC alloc] initWithStyle:UITableViewStyleGrouped];
                 [self.navigationController pushViewController:dynamicTVC animated:YES];
                 
             }else if (indexPath.row == 1){
