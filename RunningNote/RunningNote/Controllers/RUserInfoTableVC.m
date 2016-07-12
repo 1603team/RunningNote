@@ -11,6 +11,7 @@
 #import "HIPImageCropperView.h"
 #import "Masonry.h"
 #import "RUserModel.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
@@ -218,9 +219,13 @@ static NSString *identifier = @"userInfoCell";
     [cancleButton addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
-#pragma mark - HIPImageCropperViewDelegate
-- (void)imageCropperViewDidFinishLoadingImage:(HIPImageCropperView *)cropperView {
+#pragma mark - 保存个人信息到模型 数据库
+- (void)saveUserInfo {
     
+}
+
+#pragma mark - HIPImageCropperViewDelegate
+- (void)imageCropperViewDidFinishLoadingImagex:(HIPImageCropperView *)cropperView {
 }
 
 @end
