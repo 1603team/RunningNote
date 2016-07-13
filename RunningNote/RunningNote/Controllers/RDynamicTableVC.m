@@ -10,7 +10,10 @@
 #import "RMyTableViewCell.h"
 #import "RCommentesTableVC.h"
 #import "RMyFootView.h"
-
+#import "RPublishedVC.h"
+#import <SVProgressHUD.h>
+#import <AVQuery.h>
+#import "RDynamicModel.h"
 #define RScreenW [UIScreen mainScreen].bounds.size.width
 @interface RDynamicTableVC ()<UITextViewDelegate>
 
@@ -30,13 +33,16 @@ static NSString *footerIdentifier = @"myFootView";
     
     [self addTableHeardView];
     self.tableView.estimatedRowHeight = 200;
+    self.tableView.showsVerticalScrollIndicator = NO;
+
     //注册cell
     NSString *nibNama = NSStringFromClass([RMyTableViewCell class]);
     UINib *nib = [UINib nibWithNibName:nibNama bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:identifire];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newMessage)];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
     //注册sectionFooterView
     [self.tableView registerClass:[RMyFootView class] forHeaderFooterViewReuseIdentifier:footerIdentifier];
     //添加一个手势，隐藏键盘
@@ -44,13 +50,38 @@ static NSString *footerIdentifier = @"myFootView";
     [self.tableView addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
 
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self reloadDataArray];
+
 }
 
+- (void)reloadDataArray{
+#warning qing qiu shu ju
+    AVQuery *query = [AVQuery queryWithClassName:@"Dynamic"];
+    NSDate *now = [NSDate date];
+    [query whereKey:@"createdAt" lessThanOrEqualTo:now];//查询今天之前创建的
+    query.limit = 10; // 最多返回 10 条结果
+    //query.skip = 20;  // 跳过 20 条结果
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        [self dataArrayFromArray:results];
+    }];
+}
+- (void)dataArrayFromArray:(NSArray *)array{
+    
+    NSMutableArray *mutArray = [NSMutableArray array];
+    for (int i = 0; i < array.count; i ++){
+    RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
+    [mutArray addObject:model];
+    }
+    NSArray *data = [[mutArray reverseObjectEnumerator] allObjects];
+    [self.dataArray addObjectsFromArray:data];
+    [self.tableView reloadData];
+}
+
+- (void)newMessage{//发布一条心动态
+    
+    RPublishedVC *publeshedVC = [[RPublishedVC alloc] init];
+    [self.navigationController pushViewController:publeshedVC animated:YES];
+}
 
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,6 +89,8 @@ static NSString *footerIdentifier = @"myFootView";
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 0.5;
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    self.navigationController.navigationBar.userInteractionEnabled = YES;
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,21 +102,23 @@ static NSString *footerIdentifier = @"myFootView";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;//temp
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RDynamicModel *model = self.dataArray[indexPath.section];
     RMyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifire forIndexPath:indexPath];
     cell.tempTVC = self;//把控制器传过去，确定响应者链连贯
-    cell.contentArray = [NSArray arrayWithObjects:@"kong",@"空", nil];//临时
+    cell.model = model;
     [cell.contentView setBackgroundColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
+
 
 - (void)addTableHeardView{
     //添加tableView的头部视图

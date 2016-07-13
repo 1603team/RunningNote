@@ -20,6 +20,13 @@
 		CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FAF1D2526F7000AC88C /* RRuningVC.m */; };
 		CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FB51D253053000AC88C /* RCircleTableVC.m */; };
 		CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC123FBF1D254238000AC88C /* RSetTableVC.m */; };
+		CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC31D31C1D35163800FA9997 /* RPublishedVC.m */; };
+		CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC31D31D1D35163800FA9997 /* RPublishedVC.xib */; };
+		CC38E3481D33D1C1005E2779 /* weather_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3441D33D1C1005E2779 /* weather_rain.png */; };
+		CC38E3491D33D1C1005E2779 /* weather_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3451D33D1C1005E2779 /* weather_snow.png */; };
+		CC38E34A1D33D1C1005E2779 /* weather_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3461D33D1C1005E2779 /* weather_sun.png */; };
+		CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3471D33D1C1005E2779 /* weather_cloudy.png */; };
+		CC474B171D35E55400CAED15 /* RDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC474B161D35E55400CAED15 /* RDynamicModel.m */; };
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
@@ -106,6 +113,15 @@
 		CC123FB51D253053000AC88C /* RCircleTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCircleTableVC.m; sourceTree = "<group>"; };
 		CC123FBE1D254238000AC88C /* RSetTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSetTableVC.h; sourceTree = "<group>"; };
 		CC123FBF1D254238000AC88C /* RSetTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSetTableVC.m; sourceTree = "<group>"; };
+		CC31D31B1D35163800FA9997 /* RPublishedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPublishedVC.h; sourceTree = "<group>"; };
+		CC31D31C1D35163800FA9997 /* RPublishedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPublishedVC.m; sourceTree = "<group>"; };
+		CC31D31D1D35163800FA9997 /* RPublishedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPublishedVC.xib; sourceTree = "<group>"; };
+		CC38E3441D33D1C1005E2779 /* weather_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_rain.png; sourceTree = "<group>"; };
+		CC38E3451D33D1C1005E2779 /* weather_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_snow.png; sourceTree = "<group>"; };
+		CC38E3461D33D1C1005E2779 /* weather_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_sun.png; sourceTree = "<group>"; };
+		CC38E3471D33D1C1005E2779 /* weather_cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_cloudy.png; sourceTree = "<group>"; };
+		CC474B151D35E55400CAED15 /* RDynamicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicModel.h; sourceTree = "<group>"; };
+		CC474B161D35E55400CAED15 /* RDynamicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicModel.m; sourceTree = "<group>"; };
 		CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyFriendsTableVC.h; sourceTree = "<group>"; };
 		CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFriendsTableVC.m; sourceTree = "<group>"; };
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
@@ -245,10 +261,7 @@
 			children = (
 				CC123FB41D253053000AC88C /* RCircleTableVC.h */,
 				CC123FB51D253053000AC88C /* RCircleTableVC.m */,
-				CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */,
-				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
-				CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */,
-				CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */,
+				CC31D31A1D3515C000FA9997 /* RDynamicVC */,
 				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
 				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
 			);
@@ -279,6 +292,20 @@
 			name = RMyRecirdTableVC;
 			sourceTree = "<group>";
 		};
+		CC31D31A1D3515C000FA9997 /* RDynamicVC */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */,
+				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
+				CC31D31B1D35163800FA9997 /* RPublishedVC.h */,
+				CC31D31C1D35163800FA9997 /* RPublishedVC.m */,
+				CC31D31D1D35163800FA9997 /* RPublishedVC.xib */,
+				CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */,
+				CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */,
+			);
+			name = RDynamicVC;
+			sourceTree = "<group>";
+		};
 		CCC719991D26A81D0033FCB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +313,8 @@
 				CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */,
 				CCC7199C1D26A81D0033FCB2 /* RUserModel.h */,
 				CCC7199D1D26A81D0033FCB2 /* RUserModel.m */,
+				CC474B151D35E55400CAED15 /* RDynamicModel.h */,
+				CC474B161D35E55400CAED15 /* RDynamicModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,6 +448,10 @@
 		CCEBDDF01D23C8F6000E535D /* other_image */ = {
 			isa = PBXGroup;
 			children = (
+				CC38E3441D33D1C1005E2779 /* weather_rain.png */,
+				CC38E3451D33D1C1005E2779 /* weather_snow.png */,
+				CC38E3461D33D1C1005E2779 /* weather_sun.png */,
+				CC38E3471D33D1C1005E2779 /* weather_cloudy.png */,
 				CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */,
 				CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */,
 				CCEF319B1D2D310700A6F3BE /* share_btn.png */,
@@ -558,22 +591,27 @@
 			files = (
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
 				CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */,
+				CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
 				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
 				CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */,
 				CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */,
 				CC123FAD1D251E19000AC88C /* pydt_image.png in Resources */,
+				CC38E3481D33D1C1005E2779 /* weather_rain.png in Resources */,
 				CCEBDDEF1D23C3CE000E535D /* run_32.png in Resources */,
 				CC123F9F1D250456000AC88C /* duoyun.png in Resources */,
 				CCEBDE001D23E7D1000E535D /* fxpt_image.png in Resources */,
 				CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */,
 				CC123FAA1D2519F1000AC88C /* address_32.png in Resources */,
+				CC38E3491D33D1C1005E2779 /* weather_snow.png in Resources */,
+				CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */,
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
 				CCEBDDF41D23C8F6000E535D /* xunzhang_btn.png in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
 				CCC719701D2693420033FCB2 /* RXiaoDong.storyboard in Resources */,
 				CC123FA31D250E61000AC88C /* outsideSport.png in Resources */,
+				CC38E34A1D33D1C1005E2779 /* weather_sun.png in Resources */,
 				CCEBDDEA1D23C102000E535D /* icon_35_n.png in Resources */,
 				CCC719821D269BE30033FCB2 /* begin.png in Resources */,
 				CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */,
@@ -752,9 +790,11 @@
 				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,
+				CC474B171D35E55400CAED15 /* RDynamicModel.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
+				CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
 				CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */,
 				CCEBDDCD1D23AF66000E535D /* RMyRecordTableVC.m in Sources */,

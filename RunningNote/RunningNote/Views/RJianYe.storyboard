@@ -643,6 +643,7 @@
                         <outlet property="totalDistance" destination="s9o-6L-zyU" id="lkN-Y9-Y6W"/>
                         <outlet property="totalTime" destination="Upy-xl-a2z" id="HuH-ej-uEn"/>
                         <outlet property="weatherImage" destination="xho-Nn-FMD" id="fs4-0S-eUZ"/>
+                        <outlet property="weatherView" destination="xho-Nn-FMD" id="0D7-wq-Vdf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptQ-bl-QOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
