@@ -10,24 +10,36 @@
 #import "RUserModel.h"
 #import "HIPImageCropperView.h"
 #import "Masonry.h"
+#import "RUserModel.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "RUserModel.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
 
 {
-    NSIndexPath *_indexPath;
     UIDatePicker *_datePicker;
     UIImage *_image;
 }
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sexSegment;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 @property (nonatomic, strong) HIPImageCropperView *imageCroperView;
+@property (nonatomic, strong) RUserModel *model;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UILabel *height;
+@property (weak, nonatomic) IBOutlet UILabel *weight;
+@property (weak, nonatomic) IBOutlet UILabel *birthday;
+@property (weak, nonatomic) IBOutlet UILabel *address;
 
 @end
 
 @implementation RUserInfoTableVC
+static NSString *identifier = @"userInfoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //用模型给你个人信息赋值
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +52,6 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (indexPath.row == 4) {
         [self pickerView];
-//        _indexPath = indexPath;
     }else if (indexPath.section == 1 && indexPath.row != 1) {
         [self alertView:cell.textLabel.text indexPath:indexPath];
     }else if (indexPath.section == 0 && indexPath.row == 0) {
@@ -211,9 +222,27 @@
     [cancleButton addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
+#pragma mark - 保存个人信息到模型 数据库
+- (void)saveUserInfo {
+    AVUser *user = [AVUser currentUser];
+    [user setObject:_iconImage.image forKey:@"iconImage"];
+    [user setObject:_nickName.text forKey:@"nickName"];
+    [user setObject:_height.text forKey:@"height"];
+    [user setObject:_weight.text forKey:@"weight"];
+    [user setObject:_address.text forKey:@"address"];
+    [user setObject:_birthday.text forKey:@"birthday"];
+    [user setObject:@(_sexSegment.selectedSegmentIndex) forKey:@"sex"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"保存成功");
+        }else {
+            NSLog(@"%@",error);
+        }
+    }];
+}
+
 #pragma mark - HIPImageCropperViewDelegate
 - (void)imageCropperViewDidFinishLoadingImage:(HIPImageCropperView *)cropperView {
-    
 }
 
 @end

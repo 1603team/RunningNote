@@ -40,8 +40,9 @@
 		CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7199D1D26A81D0033FCB2 /* RUserModel.m */; };
 		CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */; };
 		CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */; };
+		CCDCACE61D2E8F47001A3112 /* QYDataBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDCACE51D2E8F47001A3112 /* QYDataBaseTool.m */; };
 		CCEBDD961D23A6CC000E535D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDD951D23A6CC000E535D /* main.m */; };
-		CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDD981D23A6CC000E535D /* AppDelegate.m */; };
+		CCEBDD991D23A6CC000E535D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDD981D23A6CC000E535D /* AppDelegate.mm */; };
 		CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDA01D23A6CC000E535D /* Assets.xcassets */; };
 		CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDA21D23A6CC000E535D /* LaunchScreen.storyboard */; };
 		CCEBDDAF1D23A6CC000E535D /* RunningNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDDAE1D23A6CC000E535D /* RunningNoteTests.m */; };
@@ -67,6 +68,7 @@
 		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
 		CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF31971D2D304800A6F3BE /* commente_btn.png */; };
 		CCEF319C1D2D310700A6F3BE /* share_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF319B1D2D310700A6F3BE /* share_btn.png */; };
+		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
 		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
 		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
 /* End PBXBuildFile section */
@@ -140,10 +142,13 @@
 		CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RChangePassWorldVC.m; sourceTree = "<group>"; };
 		CCC719A21D26A8600033FCB2 /* RUserInfoTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserInfoTableVC.h; sourceTree = "<group>"; };
 		CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserInfoTableVC.m; sourceTree = "<group>"; };
+		CCDCACE31D2E8F47001A3112 /* DataBaseFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBaseFile.h; path = RunningNote/DataBaseFile.h; sourceTree = SOURCE_ROOT; };
+		CCDCACE41D2E8F47001A3112 /* QYDataBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYDataBaseTool.h; path = RunningNote/QYDataBaseTool.h; sourceTree = SOURCE_ROOT; };
+		CCDCACE51D2E8F47001A3112 /* QYDataBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYDataBaseTool.m; path = RunningNote/QYDataBaseTool.m; sourceTree = SOURCE_ROOT; };
 		CCEBDD911D23A6CC000E535D /* RunningNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEBDD951D23A6CC000E535D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEBDD971D23A6CC000E535D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CCEBDD981D23A6CC000E535D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CCEBDD981D23A6CC000E535D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		CCEBDDA01D23A6CC000E535D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEBDDA31D23A6CC000E535D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEBDDA51D23A6CC000E535D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +184,8 @@
 		CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFootView.m; sourceTree = "<group>"; };
 		CCEF31971D2D304800A6F3BE /* commente_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn.png; sourceTree = "<group>"; };
 		CCEF319B1D2D310700A6F3BE /* share_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn.png; sourceTree = "<group>"; };
+		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
+		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
 		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
 		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
 		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +279,8 @@
 				CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */,
 				CCC7196B1D26933B0033FCB2 /* ROutSideVC.h */,
 				CCC7196C1D26933B0033FCB2 /* ROutSideVC.m */,
+				CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */,
+				CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */,
 			);
 			name = RRuningVC;
 			sourceTree = "<group>";
@@ -340,7 +349,7 @@
 				CCEBDDF01D23C8F6000E535D /* other_image */,
 				CCEBDDE11D23C102000E535D /* tabbar_image */,
 				CCEBDD971D23A6CC000E535D /* AppDelegate.h */,
-				CCEBDD981D23A6CC000E535D /* AppDelegate.m */,
+				CCEBDD981D23A6CC000E535D /* AppDelegate.mm */,
 				CCEBDDA01D23A6CC000E535D /* Assets.xcassets */,
 				CCEBDDA21D23A6CC000E535D /* LaunchScreen.storyboard */,
 				CCEBDDA51D23A6CC000E535D /* Info.plist */,
@@ -381,6 +390,9 @@
 		CCEBDDC91D23AC22000E535D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				CCDCACE31D2E8F47001A3112 /* DataBaseFile.h */,
+				CCDCACE41D2E8F47001A3112 /* QYDataBaseTool.h */,
+				CCDCACE51D2E8F47001A3112 /* QYDataBaseTool.m */,
 				CCC719741D2696440033FCB2 /* UIViewController+RVCForStoryBoard.h */,
 				CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */,
 				CCC7198C1D26A7180033FCB2 /* RCommon.h */,
@@ -750,18 +762,20 @@
 				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
 				CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
+				CCEBDD991D23A6CC000E535D /* AppDelegate.mm in Sources */,
 				CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */,
-				CCEBDD991D23A6CC000E535D /* AppDelegate.m in Sources */,
 				CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */,
 				CCC7196E1D26933B0033FCB2 /* ROutSideVC.m in Sources */,
 				CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */,
 				CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */,
+				CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
 				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
+				CCDCACE61D2E8F47001A3112 /* QYDataBaseTool.m in Sources */,
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
