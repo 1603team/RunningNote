@@ -8,8 +8,39 @@
 
 #import "RUserModel.h"
 #import "RCommon.h"
+#import "AVUser.h"
+#import "QYDataBaseTool.h"
 
 @implementation RUserModel
+
++ (instancetype)sharedUserInfo {
+    static RUserModel *userModel;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+    });
+    return userModel;
+}
+
+- (void)getDataFromLeanCloud {
+    AVUser *user = [AVUser currentUser];
+    _iconImage = [user objectForKey:kIconImage];
+    _nickName = [user objectForKey:kIconImage];
+    _sex = [user objectForKey:kIconImage];
+    _height = [[user objectForKey:kIconImage] integerValue];
+    _weight = [[user objectForKey:kIconImage] integerValue];
+    _birthday = [user objectForKey:kIconImage];
+    _address = [user objectForKey:kIconImage];
+    _totalDistance = [[user objectForKey:kIconImage] integerValue];
+    _totalTime = [[user objectForKey:kIconImage] integerValue];
+    _totalCalorie = [[user objectForKey:kIconImage] integerValue];
+    _bestScore = [[user objectForKey:kIconImage] integerValue];
+    _fastSpeed = [[user objectForKey:kIconImage] integerValue];
+    _longsetTime = [[user objectForKey:kIconImage] integerValue];
+    _longestDistance = [[user objectForKey:kIconImage] integerValue];
+    _halfwayTime = [[user objectForKey:kIconImage] integerValue];
+    _wholeTime = [[user objectForKey:kIconImage] integerValue];
+}
 
 + (instancetype)userWithDictionary:(NSDictionary *)dict {
     return [[self alloc] initWithDictionary:dict];

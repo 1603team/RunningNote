@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "RUserModel.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "RUserModel.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
@@ -37,6 +38,8 @@ static NSString *identifier = @"userInfoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //用模型给你个人信息赋值
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -221,11 +224,25 @@ static NSString *identifier = @"userInfoCell";
 
 #pragma mark - 保存个人信息到模型 数据库
 - (void)saveUserInfo {
-    
+    AVUser *user = [AVUser currentUser];
+    [user setObject:_iconImage.image forKey:@"iconImage"];
+    [user setObject:_nickName.text forKey:@"nickName"];
+    [user setObject:_height.text forKey:@"height"];
+    [user setObject:_weight.text forKey:@"weight"];
+    [user setObject:_address.text forKey:@"address"];
+    [user setObject:_birthday.text forKey:@"birthday"];
+    [user setObject:@(_sexSegment.selectedSegmentIndex) forKey:@"sex"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"保存成功");
+        }else {
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 #pragma mark - HIPImageCropperViewDelegate
-- (void)imageCropperViewDidFinishLoadingImagex:(HIPImageCropperView *)cropperView {
+- (void)imageCropperViewDidFinishLoadingImage:(HIPImageCropperView *)cropperView {
 }
 
 @end
