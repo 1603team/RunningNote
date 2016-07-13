@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *userName;//用户名
 @property (nonatomic, copy) NSString *objectid;//用户ID
 @property (nonatomic, copy) NSString *body;//发表的文字内容
-@property (nonatomic, strong)NSString  *images;//发表的图片内容
+@property (nonatomic, strong)NSData  *images;//发表的图片内容
 @property (nonatomic, strong)NSDate  *createdAt;//创建时间
 @property (nonatomic, copy) NSString *location;//位置信息
 @property (nonatomic, strong)NSArray *comments;//包含评论的数组

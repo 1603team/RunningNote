@@ -34,7 +34,7 @@ static NSString *footerIdentifier = @"myFootView";
     [self addTableHeardView];
     self.tableView.estimatedRowHeight = 200;
     self.tableView.showsVerticalScrollIndicator = NO;
-
+    self.dataArray = [NSMutableArray array];
     //注册cell
     NSString *nibNama = NSStringFromClass([RMyTableViewCell class]);
     UINib *nib = [UINib nibWithNibName:nibNama bundle:nil];
@@ -57,12 +57,18 @@ static NSString *footerIdentifier = @"myFootView";
 - (void)reloadDataArray{
 #warning qing qiu shu ju
     AVQuery *query = [AVQuery queryWithClassName:@"Dynamic"];
-    NSDate *now = [NSDate date];
-    [query whereKey:@"createdAt" lessThanOrEqualTo:now];//查询今天之前创建的
+    //NSDate *now = [NSDate date];
+    //[query whereKey:@"createdAt" lessThanOrEqualTo:now];//查询今天之前创建的
+    [query orderByDescending:@"createdAt"];
     query.limit = 10; // 最多返回 10 条结果
     //query.skip = 20;  // 跳过 20 条结果
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        [self dataArrayFromArray:results];
+        if (error) {
+            NSLog(@"error ---> %@",error);
+        }else{
+            
+            [self dataArrayFromArray:results];
+        }
     }];
 }
 - (void)dataArrayFromArray:(NSArray *)array{
@@ -72,12 +78,11 @@ static NSString *footerIdentifier = @"myFootView";
     RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
     [mutArray addObject:model];
     }
-    NSArray *data = [[mutArray reverseObjectEnumerator] allObjects];
-    [self.dataArray addObjectsFromArray:data];
+    [self.dataArray addObjectsFromArray:mutArray];
     [self.tableView reloadData];
 }
 
-- (void)newMessage{//发布一条心动态
+- (void)newMessage{//发布一条动态
     
     RPublishedVC *publeshedVC = [[RPublishedVC alloc] init];
     [self.navigationController pushViewController:publeshedVC animated:YES];
@@ -91,6 +96,7 @@ static NSString *footerIdentifier = @"myFootView";
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
     [SVProgressHUD dismiss];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

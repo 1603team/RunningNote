@@ -31,21 +31,24 @@
 
 - (void)setModel:(RDynamicModel *)model{
 #warning temp
-    //_sharViewHeight.constant = 0;
+    _sharViewHeight.constant = 0;
     
     _model = model;
     if (model.body) {                       //有无文字
         _contentLabel.text = model.body;
     }
     if (model.images) {                     //有无图片
-        //_contentImage.image =
+        _contentImage.image = [UIImage imageWithData:model.images];
+        _contenImageViewHeight.constant = 200;
     }else{
         _contenImageViewHeight.constant = 0;
+    }
+    if (model.location) {
+        _locationLabel.text = model.location;
     }
     if (model.comments) {                   //有无评论
         RCommentesTableVC *commentesTVC = [[RCommentesTableVC alloc] init];
         [_tempTVC addChildViewController:commentesTVC];
-        
         commentesTVC.commentesArray = @[@"嘿嘿嘿",@"嚯嚯嚯",@"滴滴滴",@"闷闷闷",@"biubiubiu",@"DuangDuangDuang",@"锵锵锵",@"咚咚咚",@"这是评论",@"这个也是",@"恩，评论"];//temp
         _commentesViewHeight.constant = commentesTVC.commentesArray.count * 20;
         

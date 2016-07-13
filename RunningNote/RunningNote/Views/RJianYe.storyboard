@@ -1190,9 +1190,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="address_32.png" width="33" height="32"/>
+        <image name="address_32.png" width="32" height="32"/>
         <image name="calendar_image.png" width="200" height="200"/>
-        <image name="chat_32.png" width="35" height="32"/>
+        <image name="chat_32.png" width="32" height="32"/>
         <image name="ciecle_35_n.png" width="35" height="35"/>
         <image name="circle_35_s.png" width="35" height="35"/>
         <image name="duoyun.png" width="576" height="360"/>

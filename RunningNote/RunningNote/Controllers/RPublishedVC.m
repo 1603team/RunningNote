@@ -11,8 +11,10 @@
 #import <AVUser.h>
 #import <SVProgressHUD.h>
 
-@interface RPublishedVC ()
+
+@interface RPublishedVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -37,19 +39,19 @@
     self.navigationController.navigationBar.userInteractionEnabled = NO;
     self.view.alpha = 0.5;
     
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 1);
     NSString *string = self.textView.text;
     AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"Dynamic"];// 构建对象
     [todoFolder setObject:[AVUser currentUser].username forKey:@"userName"];
     [todoFolder setObject:string forKey:@"body"];
-#warning more
-    //[todoFolder setObject:<#(id)#> forKey:@"images"];
-    //[todoFolder setObject:@1 forKey:@"priority"];// 设置优先级
+    [todoFolder setObject:imageData forKey:@"images"];
+    [todoFolder setObject:@"位置" forKey:@"location"];
     [todoFolder saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [SVProgressHUD showSuccessWithStatus:@"发布成功"];
             [self performSelector:@selector(delayDismiss) withObject:nil afterDelay:2.0f];
         } else {
-            [SVProgressHUD showWithStatus:@"发布失败!"];
+            [SVProgressHUD showErrorWithStatus:@"发布失败!"];
             [SVProgressHUD dismissWithDelay:2.0f];
             self.view.userInteractionEnabled = YES;
             self.navigationController.navigationBar.userInteractionEnabled = YES;
@@ -65,6 +67,59 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)changeImage:(UIButton *)sender {//添加图片
+    //创建UIAlertController
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"选择图片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action;
+    //创建UIImagePickerController
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    //创建类型
+    __block NSUInteger sourceType;
+    //判断能否访问相机
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        action = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = sourceType;
+            // 跳转到相机
+            [self presentViewController:imagePickerController animated:YES completion:nil];
+        }];
+    }
+    if (action) {
+        [alertVC addAction:action];
+    }
+    //从相册选择图片
+    UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = sourceType;
+        // 跳转到图集
+        [self presentViewController:imagePickerController animated:YES completion:nil];
+    }];
+    //取消Action
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:photoAction];
+    [alertVC addAction:cancleAction];
+    [self presentViewController:alertVC animated:YES completion:nil];
+    
+}
+
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image = image;
+}
+
+
 //
 //通过 limit 语句来限定返回结果大小，比如限定返回 100 个：
 //+
