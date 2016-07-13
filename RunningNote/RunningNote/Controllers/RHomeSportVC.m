@@ -7,6 +7,8 @@
 //
 
 #import "RHomeSportVC.h"
+#import <CoreMotion/CoreMotion.h>
+#import "AppDelegate.h"
 
 @interface RHomeSportVC ()
 {
@@ -35,6 +37,13 @@
 
 @property (nonatomic, copy) NSString *currentTime;      //当前显示的时间
 @property (nonatomic, strong) UILabel *countdownLabel;  //倒计时的label
+
+/**
+ *  运动相关(实现自己的计算模式)
+ *  使用健康的话返回数据太慢，影响实用性
+ */
+@property (nonatomic, strong) CMMotionManager *mManager;
+
 
 @end
 
@@ -88,8 +97,7 @@
     [super viewDidLoad];
     [self hiddenAllLabel];
     self.stopButton.enabled = NO;
-#warning 之后将隐藏设为YES
-    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -115,7 +123,7 @@
     if (_chooseModeBtn.hidden == NO || _tishiInfo.hidden == NO) {
         [_chooseModeBtn removeFromSuperview];
         [_tishiInfo removeFromSuperview];
-#warning 倒计时后显示所有的Label
+        
         //改变状态
         sender.selected = !sender.selected;
         if (_stopButton.enabled == NO) {
@@ -136,7 +144,7 @@
 #pragma mark - 返回按钮
 
 - (IBAction)backBtn:(UIButton *)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - 停止按钮
@@ -182,7 +190,6 @@
     arcLayer.frame = self.view.frame;
     [numLabel.layer addSublayer:arcLayer];
     [self drawLineAnimation:arcLayer];
-    
 }
 
 -(void)drawLineAnimation:(CAShapeLayer*)layer
@@ -204,7 +211,7 @@
 #pragma mark - 计时更新
 -(void)runAction{
     _milliSeconds++;
-    NSInteger timeNum;
+    NSInteger timeNum;//不能设初值，否则释放不掉，程序就会有问题
     if (((_milliSeconds - 1) % 100) == 0) {
         timeNum = (_milliSeconds - 1) / 100;
     }
@@ -233,11 +240,19 @@
     NSInteger allSeconds = _milliSeconds - 300;
     if (allSeconds < 0) {
         allSeconds = 0;
+    }else{
+        //开始计步
+        
     }
     
     //动态改变时间
     _timeNow.text = [NSString stringWithFormat:@"%02li:%02li.%02li",allSeconds / 100 / 60 % 60, allSeconds / 100 % 60, allSeconds % 100];
+    
 }
+
+#pragma mark - 计步与距离
+
+
 
 #pragma mark - 保存记录
 
