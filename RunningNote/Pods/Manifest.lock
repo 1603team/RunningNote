@@ -19,6 +19,7 @@ PODS:
     - AVOSCloud
   - AVOSCloudIM (3.3.5):
     - AVOSCloud
+  - BaiduMapKit (3.0.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudCrashReporting
   - AVOSCloudIM
+  - BaiduMapKit
   - FMDB (~> 2.6.2)
   - HIPImageCropper (~> 2.0.0)
   - Masonry (~> 1.0.1)
@@ -45,12 +47,17 @@ SPEC CHECKSUMS:
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
   AVOSCloudIM: dc307c48e951fcd861f4ae6db6d807e7b40639c8
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 420470b9fe2d9340a0d864e8d8140fd55d7ed423
+=======
+PODFILE CHECKSUM: 6f35cc3dfee7107e10b5ba5779268d33c290d2de
+>>>>>>> 580595018031bf8f40f13c662bbae799b1a2aad9
 
 COCOAPODS: 1.0.1
