@@ -13,6 +13,8 @@
 #import "RUserModel.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "RUserModel.h"
+#import "RCommon.h"
+#import "QYDataBaseTool.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
@@ -38,8 +40,25 @@ static NSString *identifier = @"userInfoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //用模型给你个人信息赋值
     
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUserInfo)];
+    [rightItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    AVUser *currentUser = [AVUser currentUser];
+    _iconImage.image = [UIImage imageWithData:[currentUser objectForKey:kIconImage]];
+    //用模型给你个人信息赋值
+    RUserModel *user = [RUserModel sharedUserInfo];
+//    _iconImage.image = [UIImage imageWithData:user.iconImage];
+    _nickName.text = user.nickName;
+    BOOL number = user.sex;
+    NSLog(@"%d",number);
+    _sexSegment.selectedSegmentIndex = number;
+    
+    _birthday.text = user.birthday;
+    _weight.text = [NSString stringWithFormat:@"%ld",user.weight];
+    _height.text = [NSString stringWithFormat:@"%ld",user.height];
+    _address.text = user.address;
+//    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -224,14 +243,29 @@ static NSString *identifier = @"userInfoCell";
 
 #pragma mark - 保存个人信息到模型 数据库
 - (void)saveUserInfo {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //    (:iconImage,:nickName,:sex,:height,:weight,:birthday,:address)
+    [dict setObject:_iconImage.image forKey:kIconImage];
+    [dict setObject:_nickName.text forKey:kNickName];
+    [dict setObject:@(_sexSegment.selectedSegmentIndex) forKey:kSex];
+    [dict setObject:_height.text forKey:kHeight];
+    [dict setObject:_weight.text forKey:kWeight];
+    [dict setObject:_birthday.text forKey:kBirthday];
+    [dict setObject:_address.text forKey:kAddress];
+    [QYDataBaseTool updateStatementsSql:Delete_UserInfo withParsmeters:nil block:^(BOOL isOk, NSString *errorMsg) {
+    }];
+    [QYDataBaseTool updateStatementsSql:INSERT_UserInfo_SQL withParsmeters:dict block:^(BOOL isOk, NSString *errorMsg) {
+        NSLog(@"%d",isOk);
+    }];
     AVUser *user = [AVUser currentUser];
-    [user setObject:_iconImage.image forKey:@"iconImage"];
-    [user setObject:_nickName.text forKey:@"nickName"];
-    [user setObject:_height.text forKey:@"height"];
-    [user setObject:_weight.text forKey:@"weight"];
-    [user setObject:_address.text forKey:@"address"];
-    [user setObject:_birthday.text forKey:@"birthday"];
-    [user setObject:@(_sexSegment.selectedSegmentIndex) forKey:@"sex"];
+    NSData *imageData = UIImageJPEGRepresentation(_iconImage.image, 0.5);
+    [user setObject:imageData forKey:kIconImage];
+    [user setObject:_nickName.text forKey:kNickName];
+    [user setObject:_height.text forKey:kHeight];
+    [user setObject:_weight.text forKey:kWeight];
+    [user setObject:_address.text forKey:kAddress];
+    [user setObject:_birthday.text forKey:kBirthday];
+    [user setObject:@(_sexSegment.selectedSegmentIndex) forKey:kSex];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"保存成功");

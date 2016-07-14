@@ -29,6 +29,7 @@ static FMDatabaseQueue *queue;
     if (!queue) {
         
         queue=[FMDatabaseQueue databaseQueueWithPath:[QYDataBaseTool getFilePath]];
+        NSLog(@"%@",[QYDataBaseTool getFilePath]);
         //创建表
         [QYDataBaseTool createTable];
     }
