@@ -25,9 +25,6 @@ PODS:
   - FMDB/standard (2.6.2)
   - HIPImageCropper (2.0.0)
   - Masonry (1.0.1)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
@@ -39,7 +36,6 @@ DEPENDENCIES:
   - FMDB (~> 2.6.2)
   - HIPImageCropper (~> 2.0.0)
   - Masonry (~> 1.0.1)
-  - SDWebImage (~> 3.8.1)
   - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
@@ -51,13 +47,8 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HIPImageCropper: 080054a1d885660e24ca365904842a287207cce2
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-<<<<<<< HEAD
-PODFILE CHECKSUM: 420470b9fe2d9340a0d864e8d8140fd55d7ed423
-=======
-PODFILE CHECKSUM: 6f35cc3dfee7107e10b5ba5779268d33c290d2de
->>>>>>> 580595018031bf8f40f13c662bbae799b1a2aad9
+PODFILE CHECKSUM: 4c47868fa35737a459eef760f07896138ad4a8f1
 
 COCOAPODS: 1.0.1

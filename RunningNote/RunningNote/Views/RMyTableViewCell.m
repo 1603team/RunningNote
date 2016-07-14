@@ -31,7 +31,7 @@
 
 - (void)setModel:(RDynamicModel *)model{
 #warning temp
-    _sharViewHeight.constant = 0;
+    //_sharViewHeight.constant = 0;
     
     _model = model;
     if (model.body) {                       //有无文字
