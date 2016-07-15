@@ -9,8 +9,8 @@
 #ifndef RCommon_h
 #define RCommon_h
 
-static NSString * const kUserName = @"userName";//用户名
-static NSString * const kPassWord = @"passWord";//密码
+//static NSString * const kUserName = @"userName";//用户名
+//static NSString * const kPassWord = @"passWord";//密码
 static NSString * const kIconImage = @"iconImage";//头像
 static NSString * const kNickName = @"nickName";//昵称
 static NSString * const kSex = @"sex";//性别
