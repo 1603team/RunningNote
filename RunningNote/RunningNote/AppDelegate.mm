@@ -12,12 +12,23 @@
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
 @interface AppDelegate ()<BMKGeneralDelegate>
-
+{
+    CMMotionManager *motionmanager;
+}
 @property (nonatomic, strong)BMKMapManager *manager;
 
 @end
 
 @implementation AppDelegate
+
+- (CMMotionManager *)sharedManager
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        motionmanager = [[CMMotionManager alloc] init];
+    });
+    return motionmanager;
+}
 
 -(void)onGetNetworkState:(int)iError{
     NSLog(@"%d", iError);

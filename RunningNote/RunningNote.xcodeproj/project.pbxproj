@@ -51,7 +51,6 @@
 		CCC719831D269BE30033FCB2 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC7197F1D269BE30033FCB2 /* stop.png */; };
 		CCC719841D269BE30033FCB2 /* timeOut.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC719801D269BE30033FCB2 /* timeOut.png */; };
 		CCC719861D26A5480033FCB2 /* RHBStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */; };
-		CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */; };
 		CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7199D1D26A81D0033FCB2 /* RUserModel.m */; };
 		CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A11D26A8600033FCB2 /* RChangePassWorldVC.m */; };
 		CCC719A51D26A8600033FCB2 /* RUserInfoTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719A31D26A8600033FCB2 /* RUserInfoTableVC.m */; };
@@ -161,8 +160,6 @@
 		CCC719801D269BE30033FCB2 /* timeOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeOut.png; path = run_image/timeOut.png; sourceTree = "<group>"; };
 		CCC719851D26A5480033FCB2 /* RHBStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RHBStoryboard.storyboard; sourceTree = "<group>"; };
 		CCC7198C1D26A7180033FCB2 /* RCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCommon.h; path = RunningNote/RCommon.h; sourceTree = SOURCE_ROOT; };
-		CCC7199A1D26A81D0033FCB2 /* RRuningModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRuningModel.h; sourceTree = "<group>"; };
-		CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRuningModel.m; sourceTree = "<group>"; };
 		CCC7199C1D26A81D0033FCB2 /* RUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserModel.h; sourceTree = "<group>"; };
 		CCC7199D1D26A81D0033FCB2 /* RUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserModel.m; sourceTree = "<group>"; };
 		CCC719A01D26A8600033FCB2 /* RChangePassWorldVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RChangePassWorldVC.h; sourceTree = "<group>"; };
@@ -329,8 +326,6 @@
 		CCC719991D26A81D0033FCB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CCC7199A1D26A81D0033FCB2 /* RRuningModel.h */,
-				CCC7199B1D26A81D0033FCB2 /* RRuningModel.m */,
 				CCC7199C1D26A81D0033FCB2 /* RUserModel.h */,
 				CCC7199D1D26A81D0033FCB2 /* RUserModel.m */,
 				CC474B151D35E55400CAED15 /* RDynamicModel.h */,
@@ -821,7 +816,6 @@
 				CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
-				CCC7199E1D26A81D0033FCB2 /* RRuningModel.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,
 				CC474B171D35E55400CAED15 /* RDynamicModel.m in Sources */,
