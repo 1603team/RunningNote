@@ -31,7 +31,7 @@
 
 - (void)setModel:(RDynamicModel *)model{
 #warning temp
-    //_sharViewHeight.constant = 0;
+    _sharViewHeight.constant = 0;
     
     _model = model;
     if (model.body) {                       //有无文字
@@ -56,14 +56,12 @@
         [commentesTVC.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(@0);
         }];
-        
     }else{
         _commentesViewHeight.constant = 0;
     }
     
-    if (model.createdAt) {
-        NSDate *date = model.createdAt;
-        NSString *str = [self dateStringFormDate:date];
+    if (model.createdAt) {//创建时间
+        NSString *str = [self dateStringFormDate:model.createdAt];
         _timeLabel.text = str;
     }
     
@@ -75,11 +73,15 @@
         return [NSString stringWithFormat:@"%d分钟前",(int)(interval / 60)];
     }else if (interval < 60 * 60 * 24 ){//一天内
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"HH:mm"];
+        [formatter setDateFormat:@"MM-dd HH:mm"];
         return [formatter stringFromDate:date];
     }else if (interval < 60 * 60 * 24 * 30 && interval >= 60 * 60 * 24 ){//天级
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"MM-dd"];
+        [formatter setDateFormat:@"MM-dd HH:mm"];
+        return [formatter stringFromDate:date];
+    }else {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterShortStyle];
         return [formatter stringFromDate:date];
     }
     return nil;

@@ -39,6 +39,7 @@
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
+		CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
 		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
 		CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC7196A1D26933B0033FCB2 /* RHomeSportVC.m */; };
@@ -70,7 +71,6 @@
 		CCEBDDED1D23C102000E535D /* set_35_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDE71D23C102000E535D /* set_35_s.png */; };
 		CCEBDDEF1D23C3CE000E535D /* run_32.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDEE1D23C3CE000E535D /* run_32.png */; };
 		CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDF11D23C8F6000E535D /* icon_btn.png */; };
-		CCEBDDF41D23C8F6000E535D /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDF21D23C8F6000E535D /* xunzhang_btn.png */; };
 		CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDF91D23DFA2000E535D /* calendar_image.png */; };
 		CCEBDE001D23E7D1000E535D /* fxpt_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFB1D23E7D1000E535D /* fxpt_image.png */; };
 		CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */; };
@@ -120,7 +120,7 @@
 		CC123FBF1D254238000AC88C /* RSetTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSetTableVC.m; sourceTree = "<group>"; };
 		CC31D31B1D35163800FA9997 /* RPublishedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPublishedVC.h; sourceTree = "<group>"; };
 		CC31D31C1D35163800FA9997 /* RPublishedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPublishedVC.m; sourceTree = "<group>"; };
-		CC31D31D1D35163800FA9997 /* RPublishedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RPublishedVC.xib; sourceTree = "<group>"; };
+		CC31D31D1D35163800FA9997 /* RPublishedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RPublishedVC.xib; path = ../Controllers/RPublishedVC.xib; sourceTree = "<group>"; };
 		CC38E3441D33D1C1005E2779 /* weather_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_rain.png; sourceTree = "<group>"; };
 		CC38E3451D33D1C1005E2779 /* weather_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_snow.png; sourceTree = "<group>"; };
 		CC38E3461D33D1C1005E2779 /* weather_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_sun.png; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
 		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
 		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
+		CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
 		CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicTableVC.h; sourceTree = "<group>"; };
 		CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicTableVC.m; sourceTree = "<group>"; };
 		CCC719661D26932A0033FCB2 /* ChooseModeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseModeTableVC.h; sourceTree = "<group>"; };
@@ -194,7 +195,6 @@
 		CCEBDDE71D23C102000E535D /* set_35_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_35_s.png; sourceTree = "<group>"; };
 		CCEBDDEE1D23C3CE000E535D /* run_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run_32.png; sourceTree = "<group>"; };
 		CCEBDDF11D23C8F6000E535D /* icon_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_btn.png; sourceTree = "<group>"; };
-		CCEBDDF21D23C8F6000E535D /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
 		CCEBDDF91D23DFA2000E535D /* calendar_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_image.png; sourceTree = "<group>"; };
 		CCEBDDFB1D23E7D1000E535D /* fxpt_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fxpt_image.png; sourceTree = "<group>"; };
 		CCEBDDFC1D23E7D1000E535D /* fxpy_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fxpy_image.png; sourceTree = "<group>"; };
@@ -320,7 +320,6 @@
 				CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */,
 				CC31D31B1D35163800FA9997 /* RPublishedVC.h */,
 				CC31D31C1D35163800FA9997 /* RPublishedVC.m */,
-				CC31D31D1D35163800FA9997 /* RPublishedVC.xib */,
 				CCEF318B1D2CE18900A6F3BE /* RCommentesTableVC.h */,
 				CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */,
 			);
@@ -446,6 +445,7 @@
 				CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */,
 				CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */,
 				CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */,
+				CC31D31D1D35163800FA9997 /* RPublishedVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 				CC123F9E1D250456000AC88C /* duoyun.png */,
 				CCEBDDF91D23DFA2000E535D /* calendar_image.png */,
 				CCEBDDF11D23C8F6000E535D /* icon_btn.png */,
-				CCEBDDF21D23C8F6000E535D /* xunzhang_btn.png */,
+				CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */,
 			);
 			path = other_image;
 			sourceTree = "<group>";
@@ -641,7 +641,6 @@
 				CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */,
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
-				CCEBDDF41D23C8F6000E535D /* xunzhang_btn.png in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
 				CC474B1F1D36428400CAED15 /* image_zhanwei.png in Resources */,
@@ -649,6 +648,7 @@
 				CC123FA31D250E61000AC88C /* outsideSport.png in Resources */,
 				CC38E34A1D33D1C1005E2779 /* weather_sun.png in Resources */,
 				CC474B251D3651CF00CAED15 /* commente_btn_s.png in Resources */,
+				CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */,
 				CCEBDDEA1D23C102000E535D /* icon_35_n.png in Resources */,
 				CCC719821D269BE30033FCB2 /* begin.png in Resources */,
 				CCC719811D269BE30033FCB2 /* Back.png in Resources */,
@@ -971,6 +971,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -986,6 +987,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";

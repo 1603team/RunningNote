@@ -38,8 +38,8 @@
     self.view.userInteractionEnabled = NO;
     self.navigationController.navigationBar.userInteractionEnabled = NO;
     self.view.alpha = 0.5;
-    
-    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 1);
+#warning (self.imageView.image, 0.1);   0.1
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.1);
     NSString *string = self.textView.text;
     AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"Dynamic"];// 构建对象
     [todoFolder setObject:[AVUser currentUser].username forKey:@"userName"];

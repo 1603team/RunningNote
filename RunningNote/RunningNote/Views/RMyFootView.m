@@ -54,13 +54,13 @@
 //            make.left.mas_equalTo(@40);
             make.centerX.mas_equalTo(-(RScreenW/4.0));
             make.centerY.mas_equalTo(6);
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
         
         [self.shareBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(RScreenW/4.0);
             make.centerY.mas_equalTo(6);
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
         
         

@@ -72,7 +72,6 @@ static NSString *footerIdentifier = @"myFootView";
     }];
 }
 - (void)dataArrayFromArray:(NSArray *)array{
-    
     NSMutableArray *mutArray = [NSMutableArray array];
     for (int i = 0; i < array.count; i ++){
     RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
@@ -83,7 +82,6 @@ static NSString *footerIdentifier = @"myFootView";
 }
 
 - (void)newMessage{//发布一条动态
-    
     RPublishedVC *publeshedVC = [[RPublishedVC alloc] init];
     [self.navigationController pushViewController:publeshedVC animated:YES];
 }
@@ -134,7 +132,7 @@ static NSString *footerIdentifier = @"myFootView";
 }
 //设置sectionFooterView的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 39;
+    return 20;
 }
 
 //sectionFooterView
