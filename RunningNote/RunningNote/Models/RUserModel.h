@@ -31,6 +31,6 @@
 //初始化方法
 + (instancetype)userWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-//+ (instancetype)sharedUserInfo;
++ (instancetype)sharedUserInfo;
 
 @end
