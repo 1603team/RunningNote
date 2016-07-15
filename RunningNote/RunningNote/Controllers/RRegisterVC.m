@@ -24,6 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+//点击View收回键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)registerAction:(UIButton *)sender {
     if (_userName.text.length == 0 || _passWord.text.length == 0) {
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户名或密码不能为空" preferredStyle:(UIAlertControllerStyleAlert)];
