@@ -80,6 +80,10 @@
 		CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */; };
 		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
 		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
+		CCEF77F81D39041C00BEDBE0 /* RAddAFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF77F71D39041C00BEDBE0 /* RAddAFriendVC.m */; };
+		CCEF77FD1D390EDB00BEDBE0 /* friends_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF77FC1D390EDB00BEDBE0 /* friends_bg.png */; };
+		CCEF77FF1D39129E00BEDBE0 /* bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF77FE1D39129E00BEDBE0 /* bg_blue.png */; };
+		CCEF78011D391DC900BEDBE0 /* bg_whit.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF78001D391DC900BEDBE0 /* bg_whit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +211,11 @@
 		CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFootView.m; sourceTree = "<group>"; };
 		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
 		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
+		CCEF77F61D39041C00BEDBE0 /* RAddAFriendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAddAFriendVC.h; sourceTree = "<group>"; };
+		CCEF77F71D39041C00BEDBE0 /* RAddAFriendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAddAFriendVC.m; sourceTree = "<group>"; };
+		CCEF77FC1D390EDB00BEDBE0 /* friends_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends_bg.png; sourceTree = "<group>"; };
+		CCEF77FE1D39129E00BEDBE0 /* bg_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_blue.png; sourceTree = "<group>"; };
+		CCEF78001D391DC900BEDBE0 /* bg_whit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_whit.png; sourceTree = "<group>"; };
 		CE8E53509365D78498DBE025 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C0041AE20D073D5FCD043F /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DC232A14415C4D35B3F3A8 /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,8 +287,7 @@
 				CC123FB41D253053000AC88C /* RCircleTableVC.h */,
 				CC123FB51D253053000AC88C /* RCircleTableVC.m */,
 				CC31D31A1D3515C000FA9997 /* RDynamicVC */,
-				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
-				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
+				CCEF77F51D3903DB00BEDBE0 /* RFriends */,
 			);
 			name = RCircleTableVC;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				CCC7197E1D269BE30033FCB2 /* begin.png */,
 				CCC7197F1D269BE30033FCB2 /* stop.png */,
 				CCC719801D269BE30033FCB2 /* timeOut.png */,
+				CCEF77F91D390B9000BEDBE0 /* bg_image */,
 				CCEBDDF01D23C8F6000E535D /* other_image */,
 				CCEBDDE11D23C102000E535D /* tabbar_image */,
 				CCEBDD971D23A6CC000E535D /* AppDelegate.h */,
@@ -488,6 +497,28 @@
 				CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */,
 			);
 			path = other_image;
+			sourceTree = "<group>";
+		};
+		CCEF77F51D3903DB00BEDBE0 /* RFriends */ = {
+			isa = PBXGroup;
+			children = (
+				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
+				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
+				CCEF77F61D39041C00BEDBE0 /* RAddAFriendVC.h */,
+				CCEF77F71D39041C00BEDBE0 /* RAddAFriendVC.m */,
+			);
+			name = RFriends;
+			sourceTree = "<group>";
+		};
+		CCEF77F91D390B9000BEDBE0 /* bg_image */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF78001D391DC900BEDBE0 /* bg_whit.png */,
+				CCEF77FE1D39129E00BEDBE0 /* bg_blue.png */,
+				CCEF77FC1D390EDB00BEDBE0 /* friends_bg.png */,
+			);
+			name = bg_image;
+			path = tabbar_image;
 			sourceTree = "<group>";
 		};
 		D034DB24E4C554F48F5078E0 /* Frameworks */ = {
@@ -616,6 +647,7 @@
 			files = (
 				CC474B2B1D36742400CAED15 /* chat_32.png in Resources */,
 				CC474B261D3651CF00CAED15 /* share_ben_s.png in Resources */,
+				CCEF77FF1D39129E00BEDBE0 /* bg_blue.png in Resources */,
 				CC474B291D36740300CAED15 /* address_32.png in Resources */,
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
 				CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */,
@@ -623,11 +655,13 @@
 				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
 				CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */,
 				CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */,
+				CCEF78011D391DC900BEDBE0 /* bg_whit.png in Resources */,
 				CC123FAD1D251E19000AC88C /* pydt_image.png in Resources */,
 				CC38E3481D33D1C1005E2779 /* weather_rain.png in Resources */,
 				CCEBDDEF1D23C3CE000E535D /* run_32.png in Resources */,
 				CC474B1B1D363D0200CAED15 /* add_btn.png in Resources */,
 				CC474B1D1D363EE900CAED15 /* add_btn_s.png in Resources */,
+				CCEF77FD1D390EDB00BEDBE0 /* friends_bg.png in Resources */,
 				CC123F9F1D250456000AC88C /* duoyun.png in Resources */,
 				CCEBDE001D23E7D1000E535D /* fxpt_image.png in Resources */,
 				CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */,
@@ -821,6 +855,7 @@
 				CC474B171D35E55400CAED15 /* RDynamicModel.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
 				CCDCACE61D2E8F47001A3112 /* QYDataBaseTool.m in Sources */,
+				CCEF77F81D39041C00BEDBE0 /* RAddAFriendVC.m in Sources */,
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */,

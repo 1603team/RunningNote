@@ -7,6 +7,7 @@
 //
 
 #import "RMyFriendsTableVC.h"
+#import "RAddAFriendVC.h"
 
 @interface RMyFriendsTableVC ()
 
@@ -19,12 +20,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriend)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
+    self.navigationItem.title = @"好友列表";
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)addFriend{//添加好友
+    
+    RAddAFriendVC *friendVC = [[RAddAFriendVC alloc] init];
+    [self.navigationController pushViewController:friendVC animated:YES];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 1;
+    //self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
