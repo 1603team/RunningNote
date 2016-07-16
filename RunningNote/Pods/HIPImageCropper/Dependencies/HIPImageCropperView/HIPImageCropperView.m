@@ -43,7 +43,6 @@
     }
     
     [self setBackgroundColor:[UIColor blackColor]];
-    self.alpha = 0.7f;
     [self setAutoresizingMask:(UIViewAutoresizingFlexibleWidth |
                                UIViewAutoresizingFlexibleHeight)];
     

@@ -34,6 +34,7 @@
     self.navigationController.navigationBar.alpha = 1;
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
 }
 
 - (void)didReceiveMemoryWarning {
