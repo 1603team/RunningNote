@@ -8,6 +8,8 @@
 
 #import "RMyFriendsTableVC.h"
 #import "RAddAFriendVC.h"
+#import "RFriendsInfor.h"
+#import <AVStatus.h>
 
 @interface RMyFriendsTableVC ()
 
@@ -16,37 +18,52 @@
 @end
 
 @implementation RMyFriendsTableVC
-
+static NSString *identifier = @"mycell";
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //添加好友的按钮
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriend)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
     self.navigationItem.title = @"好友列表";
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:imageView];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.tableView.backgroundView = imageView;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self reloadFriendsArray];
 }
 
 - (void)addFriend{//添加好友
-    
     RAddAFriendVC *friendVC = [[RAddAFriendVC alloc] init];
     [self.navigationController pushViewController:friendVC animated:YES];
-    
 }
+
+- (void)reloadFriendsArray{//获取好友列表
+    
+    //AVQuery *query= [AVUser followeeQuery:@"USER_OBJECT_ID"];
+    [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"error-----> %@",error);
+        }
+        NSMutableArray *mutArray = [NSMutableArray array];
+        for (AVUser *user in objects) {
+            [mutArray addObject:user];
+        }
+#warning 本地化好友列表
+        self.friendsArray = mutArray;//获取到好友，本地化处理⚠️
+        [self.tableView reloadData];
+    }];
+
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 1;
-    //self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
 
@@ -59,22 +76,41 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.friendsArray.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {//temp
     
-    // Configure the cell...
-    
+    AVUser *user = self.friendsArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];/////////cell没有注册
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = user.username;
+    //cell.backgroundColor = [UIColor colorWithRed:12/255.0 green:21/255.0 blue:59/255.0 alpha:1.0];
+    cell.backgroundView.alpha = 0.3;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_black"]];
+//    [cell setBackgroundView:imageView];
     return cell;
 }
-*/
+
+#pragma mark - Table view data source
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    AVUser *user = self.friendsArray[indexPath.row];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"RFriends-Chat" bundle:nil];
+    RFriendsInfor *friendInfor = [sb instantiateViewControllerWithIdentifier:@"rfriendsInfor"];
+    friendInfor.friendsUser = user;
+    [self.navigationController pushViewController:friendInfor animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

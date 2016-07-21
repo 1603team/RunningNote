@@ -12,7 +12,7 @@
 #import "RMyFootView.h"
 #import "RPublishedVC.h"
 #import <SVProgressHUD.h>
-#import <AVQuery.h>
+#import <AVStatus.h>
 #import "RDynamicModel.h"
 #define RScreenW [UIScreen mainScreen].bounds.size.width
 @interface RDynamicTableVC ()<UITextViewDelegate>
@@ -30,6 +30,11 @@ static NSString *identifire = @"mycell";
 static NSString *footerIdentifier = @"myFootView";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.refreshControl  = [[UIRefreshControl alloc] init];//添加下拉刷新
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(reloadDataArray) forControlEvents:UIControlEventValueChanged];
+    
     
     [self addTableHeardView];
     self.tableView.estimatedRowHeight = 200;
@@ -56,19 +61,25 @@ static NSString *footerIdentifier = @"myFootView";
 
 - (void)reloadDataArray{
 #warning qing qiu shu ju
-    AVQuery *query = [AVQuery queryWithClassName:@"Dynamic"];
-    //NSDate *now = [NSDate date];
-    //[query whereKey:@"createdAt" lessThanOrEqualTo:now];//查询今天之前创建的
-    [query orderByDescending:@"createdAt"];
-    query.limit = 10; // 最多返回 10 条结果
-    //query.skip = 20;  // 跳过 20 条结果
-    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+    [self.refreshControl beginRefreshing];
+    NSMutableArray *mutArray = [NSMutableArray array];
+    [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
         if (error) {
-            NSLog(@"error ---> %@",error);
-        }else{
-            
-            [self dataArrayFromArray:results];
+            NSLog(@"error-----> %@",error);
         }
+        for (AVUser *user in objects) {
+            [mutArray addObject:user];
+        }
+        [mutArray addObject:[AVUser currentUser]];
+        AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
+        //      限制条数
+        query.limit=20;
+        //设置消息类型
+        query.inboxType=kAVStatusTypeTimeline;
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            //获得 AVStatus 数组
+            [self dataArrayFromArray:objects];
+        }];
     }];
 }
 - (void)dataArrayFromArray:(NSArray *)array{
@@ -78,6 +89,7 @@ static NSString *footerIdentifier = @"myFootView";
     [mutArray addObject:model];
     }
     [self.dataArray addObjectsFromArray:mutArray];
+    [self.refreshControl endRefreshing];//停止刷新视图
     [self.tableView reloadData];
 }
 
@@ -104,7 +116,6 @@ static NSString *footerIdentifier = @"myFootView";
 
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArray.count;
 }

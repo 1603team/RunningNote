@@ -7,6 +7,7 @@
 //
 
 #import "RPublishedVC.h"
+#import "RUserModel.h"
 #import <AVOSCloud.h>
 #import <AVUser.h>
 #import <SVProgressHUD.h>
@@ -38,17 +39,30 @@
     self.view.userInteractionEnabled = NO;
     self.navigationController.navigationBar.userInteractionEnabled = NO;
     self.view.alpha = 0.5;
-#warning (self.imageView.image, 0.1);   0.1
-    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.1);
+    
+    NSData *imageData = [[NSData alloc] init];
+    if (self.imageView.image) {
+        imageData = UIImageJPEGRepresentation(self.imageView.image, 0.3);//图片压缩比例0.3⚠️
+    }
     NSString *string = self.textView.text;
-    AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"Dynamic"];// 构建对象
-    [todoFolder setObject:[AVUser currentUser].username forKey:@"userName"];
-    [todoFolder setObject:string forKey:@"body"];
-    [todoFolder setObject:imageData forKey:@"images"];
-    [todoFolder setObject:@"位置" forKey:@"location"];
-    [todoFolder saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//    AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"Dynamic"];// 构建对象
+//    [todoFolder setObject:[AVUser currentUser].username forKey:@"userName"];
+//    [todoFolder setObject:string forKey:@"body"];
+//    [todoFolder setObject:imageData forKey:@"images"];
+//    [todoFolder setObject:@"位置" forKey:@"location"];
+    
+    AVStatus *status=[[AVStatus alloc] init];//把发布的状态放入status表中
+    NSString *userName = [RUserModel sharedUserInfo].nickName;//1111111111111
+    status.data=@{@"text":string,
+                  @"images":imageData,
+                  @"location":@"位置信息",
+                  @"sourceName":userName
+                  };
+    
+    [AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+            //延迟调用使界面消失
             [self performSelector:@selector(delayDismiss) withObject:nil afterDelay:2.0f];
         } else {
             [SVProgressHUD showErrorWithStatus:@"发布失败!"];
@@ -59,8 +73,6 @@
             NSLog(@"%@",error);
         }
     }];
-    
-    
 }
 
 - (void)delayDismiss{

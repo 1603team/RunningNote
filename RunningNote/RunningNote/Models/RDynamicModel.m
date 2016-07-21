@@ -7,7 +7,7 @@
 //
 
 #import "RDynamicModel.h"
-
+#import <AVStatus.h>
 @implementation RDynamicModel
 
 
@@ -17,15 +17,18 @@
 }
 -(instancetype)initWithResults:(id)results{
     if (self = [super init]) {
-        _userName = results[@"localData"][@"userName"];
-        _body     = results[@"localData"][@"body"];
-        _objectid = results[@"objectId"];
-        _createdAt = results[@"createdAt"];
-        _images = results[@"images"];
-
+        AVStatus *status = results;
+        _objectid = status.objectId;
+        _createdAt = status.createdAt;
+        NSString *base = status.data[@"images"][@"base64"];
+        if (base.length) {
+            NSData *nsdataFromBase64String = [[NSData alloc] initWithBase64EncodedString:base options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            _images = nsdataFromBase64String;
+        }
+        _text   = status.data[@"text"];
+        _location = status.data[@"location"];
+        _userName = status.data[@"sourceName"];
     }
-    
-    
     return self;
 }
 
