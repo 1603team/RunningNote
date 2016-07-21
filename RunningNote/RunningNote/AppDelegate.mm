@@ -32,8 +32,13 @@
     
     UIViewController *rootVC;
     if ([AVUser currentUser] != nil) {
-        //现实首页
-        rootVC = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+        //显示首页
+        AVUser *user = [AVUser currentUser];
+        if ([user objectForKey:@"nickName"] == nil) {
+            rootVC = [self getVCFromStoryBoardWithIdentifier:@"RUserInfoNav"];
+        }else{
+            rootVC = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+        }
     }else {
         //注册登录
         rootVC = [self getVCFromStoryBoardWithIdentifier:@"RLloginVC"];
@@ -49,8 +54,11 @@
 //根据id从storyBoard中获取控制器
 -(UIViewController *)getVCFromStoryBoardWithIdentifier:(NSString *)identifier{
     UIStoryboard *sb;
+    if ([identifier isEqualToString:@"RUserInfoNav"]) {
+        sb = [UIStoryboard storyboardWithName:@"RHBStoryboard" bundle:nil];
+    }
     if ([identifier isEqualToString:@"MainTabBarController"]) {
-        _clientDelegate = [[AVIMClient alloc] initWithClientId:[AVUser currentUser].username];
+//        _clientDelegate = [[AVIMClient alloc] initWithClientId:[AVUser currentUser].username];
         sb = [UIStoryboard storyboardWithName:@"RJianYe" bundle:nil];
     }
     if ([identifier isEqualToString:@"RLloginVC"]) {
@@ -61,7 +69,15 @@
 
 
 -(void)showHomeVC{
-    _window.rootViewController = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+    UIViewController *rootVC;
+    AVUser *user = [AVUser currentUser];
+    if ([user objectForKey:@"nickName"] == nil) {
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"RUserInfoNav"];
+    }else{
+        rootVC = [self getVCFromStoryBoardWithIdentifier:@"MainTabBarController"];
+    }
+
+    _window.rootViewController = rootVC;
 }
 
 - (void)showLoginVC {

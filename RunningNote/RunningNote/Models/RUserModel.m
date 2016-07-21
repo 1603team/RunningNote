@@ -10,6 +10,7 @@
 #import "RCommon.h"
 #import "AVUser.h"
 #import "QYDataBaseTool.h"
+#import "NSMutableDictionary+setObj.h"
 
 @implementation RUserModel
 
@@ -27,15 +28,21 @@
 }
 
 - (void)getDataFromLocation {
+    
+    [self getDataFromNet];
+    
     [QYDataBaseTool selectStatementsSql:SELECT_UserInfo_ALL withParsmeters:nil forMode:nil block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
-        NSDictionary *dict = resposeOjbc[0];
-        _iconImage = dict[kIconImage];
-        _nickName = dict[kNickName];
-        _sex = [dict[kSex] integerValue];
-        _height = [dict[kHeight] integerValue];
-        _weight = [dict[kWeight] integerValue];
-        _birthday = dict[kBirthday];
-        _address = dict[kAddress];
+        if (resposeOjbc != nil) {
+            NSDictionary *dict = resposeOjbc[0];
+            _iconImage = dict[kIconImage];
+            _nickName = dict[kNickName];
+            _sex = [dict[kSex] integerValue];
+            _height = [dict[kHeight] integerValue];
+            _weight = [dict[kWeight] integerValue];
+            _birthday = dict[kBirthday];
+            _address = dict[kAddress];
+        }
+        
 //        _totalDistance = [[user objectForKey:kTotalDistance] integerValue];
 //        _totalTime = [[user objectForKey:kTotalTime] integerValue];
 //        _totalCalorie = [[user objectForKey:ktotalCalorie] integerValue];
@@ -45,6 +52,23 @@
 //        _longestDistance = [[user objectForKey:kLongestDistance] integerValue];
 //        _halfwayTime = [[user objectForKey:kHalfwayTime] integerValue];
 //        _wholeTime = [[user objectForKey:kWholeTime] integerValue];
+    }];
+}
+
+- (void)getDataFromNet {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    AVUser *user = [AVUser currentUser];
+    [dict GHB_setObject:[user objectForKey:kIconImage] forKey:kIconImage];
+    [dict GHB_setObject:[user objectForKey:kNickName] forKey:kNickName];
+    [dict GHB_setObject:[user objectForKey:kSex] forKey:kSex];
+    [dict GHB_setObject:[user objectForKey:kHeight] forKey:kHeight];
+    [dict GHB_setObject:[user objectForKey:kWeight] forKey:kWeight];
+    [dict GHB_setObject:[user objectForKey:kBirthday] forKey:kBirthday];
+    [dict GHB_setObject:[user objectForKey:kAddress] forKey:kAddress];
+    [QYDataBaseTool updateStatementsSql:Delete_UserInfo withParsmeters:nil block:^(BOOL isOk, NSString *errorMsg) {
+    }];
+    [QYDataBaseTool updateStatementsSql:INSERT_UserInfo_SQL withParsmeters:dict block:^(BOOL isOk, NSString *errorMsg) {
+        NSLog(@"%d",isOk);
     }];
 }
 

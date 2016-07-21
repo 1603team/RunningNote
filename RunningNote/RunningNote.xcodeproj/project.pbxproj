@@ -68,6 +68,7 @@
 		CCEF31991D2D304800A6F3BE /* commente_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF31971D2D304800A6F3BE /* commente_btn.png */; };
 		CCEF319C1D2D310700A6F3BE /* share_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF319B1D2D310700A6F3BE /* share_btn.png */; };
 		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
+		CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */; };
 		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
 		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
 /* End PBXBuildFile section */
@@ -183,6 +184,8 @@
 		CCEF319B1D2D310700A6F3BE /* share_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn.png; sourceTree = "<group>"; };
 		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
 		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
+		CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+setObj.h"; path = "RunningNote/NSMutableDictionary+setObj.h"; sourceTree = SOURCE_ROOT; };
+		CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+setObj.m"; path = "RunningNote/NSMutableDictionary+setObj.m"; sourceTree = SOURCE_ROOT; };
 		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
 		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
 		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +393,8 @@
 				CCDCACE51D2E8F47001A3112 /* QYDataBaseTool.m */,
 				CCC719741D2696440033FCB2 /* UIViewController+RVCForStoryBoard.h */,
 				CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */,
+				CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */,
+				CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */,
 				CCC7198C1D26A7180033FCB2 /* RCommon.h */,
 			);
 			path = Others;
@@ -765,6 +770,7 @@
 				CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */,
 				CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
+				CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,
