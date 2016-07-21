@@ -80,6 +80,11 @@
 		CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */; };
 		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
 		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
+
+		CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */; };
+		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
+		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,9 +212,13 @@
 		CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyFootView.m; sourceTree = "<group>"; };
 		CCEF436C1D2E768300EE4CF8 /* RAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAnnotation.h; sourceTree = "<group>"; };
 		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
-		CE8E53509365D78498DBE025 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1C0041AE20D073D5FCD043F /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E7DC232A14415C4D35B3F3A8 /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+setObj.h"; path = "RunningNote/NSMutableDictionary+setObj.h"; sourceTree = SOURCE_ROOT; };
+		CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+setObj.m"; path = "RunningNote/NSMutableDictionary+setObj.m"; sourceTree = SOURCE_ROOT; };
+		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
+		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
+		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BF2956FFFDC8C66D4515F0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F98E99630AB719A6DFEA7235 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +433,8 @@
 				CCDCACE51D2E8F47001A3112 /* QYDataBaseTool.m */,
 				CCC719741D2696440033FCB2 /* UIViewController+RVCForStoryBoard.h */,
 				CCC719751D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m */,
+				CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */,
+				CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */,
 				CCC7198C1D26A7180033FCB2 /* RCommon.h */,
 			);
 			path = Others;
@@ -815,6 +826,7 @@
 				CCEDF9221D2C9AD800DED18E /* RLloginVC.m in Sources */,
 				CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
+				CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */,
 				CC123FB61D253053000AC88C /* RCircleTableVC.m in Sources */,
 				CC123FC01D254238000AC88C /* RSetTableVC.m in Sources */,
 				CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */,

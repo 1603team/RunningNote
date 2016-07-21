@@ -13,6 +13,11 @@
 #import "Masonry.h"
 
 @interface ROutSideVC ()<BMKLocationServiceDelegate,BMKMapViewDelegate>
+{
+    NSTimer * _runTimer;            //定时器
+    NSInteger _milliSeconds;        //秒数
+    CAShapeLayer *arcLayer;     //
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *chooseModeBtn;//模式选择
 //涉及“文本”的注释内容不需更改只是为隐藏而做
@@ -32,6 +37,7 @@
 @property (nonatomic, strong) NSMutableArray *allLocations;
 @property (nonatomic, strong) RAnnotation *nowAnnotation;
 @property (nonatomic) BOOL isStart;
+@property (nonatomic, strong) UILabel *countdownLabel;
 
 @property (nonatomic, strong) CLLocationManager *manager;//位置管理器
 
@@ -47,26 +53,38 @@
     return _mapView;
 }
 
+//BMKLocationService
 - (BMKLocationService *)locationService {
     if (_locationService == nil) {
         _locationService = [[BMKLocationService alloc] init];
         _locationService.distanceFilter = 15.f;
-        _locationService.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationService.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         _locationService.delegate = self;
     }
     return _locationService;
+}
+//倒计时label
+- (UILabel *)countdownLabel {
+    if (_countdownLabel == nil) {
+        _countdownLabel = [[UILabel alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _countdownLabel.font = [UIFont systemFontOfSize:200.0];
+        _countdownLabel.textAlignment = NSTextAlignmentCenter;
+        _countdownLabel.backgroundColor = [UIColor blackColor];
+    }
+    return _countdownLabel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //初始化位置数组
     _allLocations = [NSMutableArray array];
+    
     //添加mapView
     [self.view addSubview:self.mapView];
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(64);
-        make.bottom.mas_equalTo(_kmNumber).with.offset(10);
+        make.bottom.mas_equalTo(_kmNumber.mas_top).with.offset(-5);
     }];
     
     self.manager = [[CLLocationManager alloc] init];
@@ -97,31 +115,31 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_locationService startUserLocationService];
-    
-#pragma mark - CLLocationManagerDelegate
-}
-//授权状态改变的响应方法
--(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-    
 }
 
-//更新位置
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    CLLocation *location = [locations lastObject];
-    //经纬度
-    CLLocationCoordinate2D coordinate = location.coordinate;
-    //水平精度
-    CLLocationAccuracy accuracy = location.horizontalAccuracy;
-    //垂直的精度
-    CLLocationAccuracy acc = location.verticalAccuracy;
-    //海拔高度
-    CLLocationDistance distance = location.altitude;
-}
-
-//失败，或者出错
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    
-}
+//#pragma mark - CLLocationManagerDelegate
+////授权状态改变的响应方法
+//-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+//    
+//}
+//
+////更新位置
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+//    CLLocation *location = [locations lastObject];
+//    //经纬度
+//    CLLocationCoordinate2D coordinate = location.coordinate;
+//    //水平精度
+//    CLLocationAccuracy accuracy = location.horizontalAccuracy;
+//    //垂直的精度
+//    CLLocationAccuracy acc = location.verticalAccuracy;
+//    //海拔高度
+//    CLLocationDistance distance = location.altitude;
+//}
+//
+////失败，或者出错
+//-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+//    
+//}
 
 #pragma mark - 隐藏所有的Label
 
@@ -182,11 +200,99 @@
         [_locationService startUserLocationService];
     }
     _isStart = !_isStart;
+//    sender.selected = !sender.selected;
+//    if (_stopButton.enabled == NO) {
+//        _stopButton.enabled = YES;
+//    }
+    if(_runTimer == nil){
+        //每隔0.01秒刷新一次页面
+        _runTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(runAction) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_runTimer forMode:NSRunLoopCommonModes];
+    }else{
+        [_runTimer invalidate];   //让定时器失效
+        _runTimer = nil;
+    }
+
+}
+
+#pragma mark - 计时更新
+-(void)runAction{
+    _milliSeconds++;
+    NSInteger timeNum;
+    if (((_milliSeconds - 1) % 100) == 0) {
+        timeNum = (_milliSeconds - 1) / 100;
+    }
+    switch (timeNum) {
+        case 0:
+            [self.view addSubview:self.countdownLabel];
+            _countdownLabel.text = [@(3 - timeNum) stringValue];
+            _countdownLabel.textColor = [UIColor redColor];
+            [self intiUIOfView:self.countdownLabel];
+            break;
+        case 1:
+            _countdownLabel.text = [@(3 - timeNum) stringValue];
+            _countdownLabel.textColor = [UIColor yellowColor];
+            [self intiUIOfView:self.countdownLabel];
+            break;
+        case 2:
+            _countdownLabel.text = [@(3 - timeNum) stringValue];
+            _countdownLabel.textColor = [UIColor greenColor];
+            [self performSelector:@selector(removeFromView:) withObject:_countdownLabel afterDelay:1];
+            [self intiUIOfView:self.countdownLabel];
+            break;
+        default:
+            break;
+    }
+    //保证显示正常
+    NSInteger allSeconds = _milliSeconds - 300;
+    if (allSeconds < 0) {
+        allSeconds = 0;
+    }
+    
+    //动态改变时间
+    _timeNow.text = [NSString stringWithFormat:@"%02li:%02li.%02li",allSeconds / 100 / 60 % 60, allSeconds / 100 % 60, allSeconds % 100];
+}
+
+#pragma mark - 倒计时相关
+
+-(void)intiUIOfView:(UILabel *)numLabel
+{
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGRect rect = [UIScreen mainScreen].bounds;
+    [path addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2) radius:100 startAngle:-M_PI_2 endAngle:3*M_PI clockwise:YES];
+    [arcLayer removeFromSuperlayer];
+    
+    arcLayer = [CAShapeLayer layer];
+    arcLayer.path = path.CGPath;
+    arcLayer.fillColor = [UIColor clearColor].CGColor;
+    arcLayer.strokeColor = numLabel.textColor.CGColor;
+    arcLayer.lineWidth = 5;
+    arcLayer.frame = self.view.frame;
+    [numLabel.layer addSublayer:arcLayer];
+    [self drawLineAnimation:arcLayer];
+    
+}
+
+-(void)drawLineAnimation:(CAShapeLayer*)layer
+{
+    CABasicAnimation *bas=[CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    bas.duration = 1;
+    bas.repeatCount = 1;
+    bas.fromValue = [NSNumber numberWithInteger:0];
+    bas.toValue = [NSNumber numberWithInteger:1];
+    [layer addAnimation:bas forKey:@"key"];
+}
+
+- (void)removeFromView:(UIView *)view
+{
+    [view removeFromSuperview];
+    view = nil;
 }
 
 #pragma mark - 停止按钮
 
 - (IBAction)stopBtn:(UIButton *)sender {
+    
     [self.locationService stopUserLocationService];
     
     RAnnotation *anno = [[RAnnotation alloc] init];
@@ -194,7 +300,53 @@
     anno.type = 3;
     anno.title = @"结束";
     [self.mapView addAnnotation:anno];
+    [_runTimer invalidate];   //让定时器失效
+    _runTimer=nil;
+    __weak ROutSideVC *weakSelf = self;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否保存本次记录" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf saveRecord];
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"不保存" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf replaceView];
+    }];
+    [alertController addAction:action1];
+    [alertController addAction:action2];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
+
+#pragma mark - 保存记录
+
+-(void)saveRecord{
+#warning create and add a plistDictionary for this record
+    //取当前时间作为记录的标题，其他内容为记录的数据
+    NSDate *senddate = [NSDate date];
+    NSDateFormatter  *dateformatter = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"YYYYMMddHHmmss"];
+    NSString *locationString = [dateformatter stringFromDate:senddate];
+    NSString *titleString = [NSString stringWithFormat:@"%@",locationString];
+    
+    NSDictionary *plistDict = @{@"title" : titleString, @"time" : _timeNow.text, @"kilometre" : _kmNumber.text, @"speed" : _speedNumber.text};
+    //获取Document目录(本地化的数据存储位置)
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths lastObject];
+    NSMutableArray *plistArray = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath]];
+    if (plistArray == nil) {
+        plistArray = [NSMutableArray array];
+    }
+    [plistArray insertObject:plistDict atIndex:0];
+    [plistArray writeToFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath] atomically:YES];
+    [self replaceView];
+}
+
+-(void)replaceView{
+    _timeNow.text = @"00:00:00";
+    _milliSeconds=0;
+//    runButton.selected = NO;
+//    _stopButton.enabled = NO;
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 
 #pragma mark - 返回按钮
 
