@@ -10,10 +10,12 @@
 
 @interface RMyRecordTableVC ()
 
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *pm;
-@property (weak, nonatomic) IBOutlet UILabel *airQuality;
-@property (weak, nonatomic) IBOutlet UILabel *temperature;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherView;
+
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;//位置
+@property (weak, nonatomic) IBOutlet UILabel *pm;//pm2.5
+@property (weak, nonatomic) IBOutlet UILabel *airQuality;//空气质量
+@property (weak, nonatomic) IBOutlet UILabel *temperature;//温度
 @property (weak, nonatomic) IBOutlet UIImageView *icon;     //用户头像
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;    //用户名
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;      //用户ID
@@ -41,6 +43,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     CGRect frame = _weatherImage.frame;
     _frame = frame;
+    
+    
+    self.weatherView.image = [UIImage imageNamed:@"weather_rain"];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

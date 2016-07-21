@@ -7,6 +7,9 @@
 //
 
 #import "RHomeSportVC.h"
+#import <CoreMotion/CoreMotion.h>
+#import "AppDelegate.h"
+#import "RUserModel.h"
 
 @interface RHomeSportVC ()
 {
@@ -35,6 +38,15 @@
 
 @property (nonatomic, copy) NSString *currentTime;      //当前显示的时间
 @property (nonatomic, strong) UILabel *countdownLabel;  //倒计时的label
+
+/**
+ *  运动相关(实现自己的计算模式)
+ *  使用健康的话返回数据太慢，影响实用性
+ */
+@property (nonatomic, strong) CMMotionManager *mManager;
+@property (nonatomic, assign) NSInteger stepNum;//步数
+@property (nonatomic, assign) CGFloat lastNum;//最后一次记录的跑步值
+@property (nonatomic, assign) CGFloat difference;//差值，用于判断是否最大值
 
 @end
 
@@ -88,8 +100,7 @@
     [super viewDidLoad];
     [self hiddenAllLabel];
     self.stopButton.enabled = NO;
-#warning 之后将隐藏设为YES
-    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -115,10 +126,11 @@
     if (_chooseModeBtn.hidden == NO || _tishiInfo.hidden == NO) {
         [_chooseModeBtn removeFromSuperview];
         [_tishiInfo removeFromSuperview];
-#warning 倒计时后显示所有的Label
+        
         //改变状态
         sender.selected = !sender.selected;
         if (_stopButton.enabled == NO) {
+            _stepNum = 0;
             _stopButton.enabled = YES;
         }
         if(_runTimer == nil){
@@ -136,7 +148,7 @@
 #pragma mark - 返回按钮
 
 - (IBAction)backBtn:(UIButton *)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - 停止按钮
@@ -182,7 +194,6 @@
     arcLayer.frame = self.view.frame;
     [numLabel.layer addSublayer:arcLayer];
     [self drawLineAnimation:arcLayer];
-    
 }
 
 -(void)drawLineAnimation:(CAShapeLayer*)layer
@@ -204,7 +215,7 @@
 #pragma mark - 计时更新
 -(void)runAction{
     _milliSeconds++;
-    NSInteger timeNum;
+    NSInteger timeNum;//不能设初值，否则释放不掉，程序就会有问题
     if (((_milliSeconds - 1) % 100) == 0) {
         timeNum = (_milliSeconds - 1) / 100;
     }
@@ -233,10 +244,39 @@
     NSInteger allSeconds = _milliSeconds - 300;
     if (allSeconds < 0) {
         allSeconds = 0;
+    }else{
+        //开始计步
+        [self startRunning];
     }
     
     //动态改变时间
     _timeNow.text = [NSString stringWithFormat:@"%02li:%02li.%02li",allSeconds / 100 / 60 % 60, allSeconds / 100 % 60, allSeconds % 100];
+    
+}
+
+#pragma mark - 计步与距离
+
+-(void)startRunning{
+    CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+    if ([mManager isAccelerometerAvailable]) {
+        [mManager setAccelerometerUpdateInterval:0.02];//设置刷新频率，每秒50次
+        [mManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
+            CGFloat sqrtA = sqrt(accelerometerData.acceleration.x * accelerometerData.acceleration.x + accelerometerData.acceleration.y * accelerometerData.acceleration.y + accelerometerData.acceleration.z * accelerometerData.acceleration.z);//三个方向的矢量和
+            if (sqrtA > 1.552188) {//这个值是走路的值，跑步的阈(yu)值应该会更大一些
+                if (_lastNum != 0) {
+                    //判断上一次差值为正，本次差值为负则为最大值
+                    if ((_difference >= 0) && (sqrtA - _lastNum <= 0)) {
+                        _stepNum++;
+#warning 通过步数计算_kmNumber,_speedNumber,_paceNumber,_calorieNumber,_heartRate
+                        NSInteger stepLength = [RUserModel sharedUserInfo].height * 0.45;//取出身高并计算步长
+                        _kmNumber.text = [NSString stringWithFormat:@"%ld",(long)_stepNum];
+                    }
+                }
+                _difference = sqrtA - _lastNum;
+                _lastNum = sqrtA;
+            }
+        }];
+    }
 }
 
 #pragma mark - 保存记录

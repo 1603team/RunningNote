@@ -10,6 +10,8 @@
 
 @interface RMyFriendsTableVC ()
 
+@property (nonatomic ,strong) NSArray *friendsArray;//
+
 @end
 
 @implementation RMyFriendsTableVC

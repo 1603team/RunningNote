@@ -22,7 +22,7 @@
 -(UIButton *)commenteBtn{
     if (_commenteBtn == nil) {
         _commenteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_commenteBtn setImage:[UIImage imageNamed:@"commente_btn"] forState:UIControlStateNormal];
+        [_commenteBtn setImage:[UIImage imageNamed:@"commente_btn_n"] forState:UIControlStateNormal];
         [_commenteBtn setImage:[UIImage imageNamed:@"commente_btn_s"] forState:UIControlStateHighlighted];
         _commenteBtn.tag = 1001;
         [_commenteBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -32,7 +32,7 @@
 -(UIButton *)shareBtn{
     if (_shareBtn == nil) {
         _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_shareBtn setImage:[UIImage imageNamed:@"share_btn"] forState:UIControlStateNormal];
+        [_shareBtn setImage:[UIImage imageNamed:@"share_btn_n"] forState:UIControlStateNormal];
         [_shareBtn setImage:[UIImage imageNamed:@"share_btn_s"] forState:UIControlStateHighlighted];
         _shareBtn.tag = 1002;
         [_shareBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -53,14 +53,14 @@
         [self.commenteBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
 //            make.left.mas_equalTo(@40);
             make.centerX.mas_equalTo(-(RScreenW/4.0));
-            make.centerY.mas_equalTo(0);
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.centerY.mas_equalTo(6);
+            make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
         
         [self.shareBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(RScreenW/4.0);
-            make.centerY.mas_equalTo(0);
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.centerY.mas_equalTo(6);
+            make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
         
         
