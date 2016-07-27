@@ -40,6 +40,7 @@
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
+		CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */; };
 		CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
 		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
@@ -177,6 +178,8 @@
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
 		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
 		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
+		CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSendSMSCodeVC.h; sourceTree = "<group>"; };
+		CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSendSMSCodeVC.m; sourceTree = "<group>"; };
 		CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
 		CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicTableVC.h; sourceTree = "<group>"; };
 		CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicTableVC.m; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 				CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */,
 				CCEDF9201D2C9AD800DED18E /* RLloginVC.h */,
 				CCEDF9211D2C9AD800DED18E /* RLloginVC.m */,
+				CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */,
+				CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */,
 			);
 			name = RSetTableVC;
 			sourceTree = "<group>";
@@ -1034,6 +1039,7 @@
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */,
+				CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
 				CCE683701D474F7200E025AA /* RAudioPlayer.m in Sources */,
 				CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */,

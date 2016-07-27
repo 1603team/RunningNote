@@ -10,4 +10,6 @@
 
 @interface RChangePassWorldVC : UIViewController
 
+@property (nonatomic, strong) NSString *phoneNumber;
+
 @end

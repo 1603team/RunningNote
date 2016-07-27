@@ -10,7 +10,7 @@
 
 @implementation UIViewController (RVCForStoryBoard)
 
-+(UIViewController *)controllerForStoryBoardName:(NSString *)SBName ControllerName:(NSString *)VCName{
++(__kindof UIViewController *)controllerForStoryBoardName:(NSString *)SBName ControllerName:(NSString *)VCName{
     return [[UIStoryboard storyboardWithName:SBName bundle:nil] instantiateViewControllerWithIdentifier:VCName];
 }
 

@@ -22,8 +22,8 @@
 //            NSLog(@"%d",isOk);
         }];
         userModel = [[RUserModel alloc] init];
-        [userModel getDataFromLocation];
     });
+    [userModel getDataFromLocation];
     return userModel;
 }
 
@@ -42,6 +42,15 @@
             _birthday = dict[kBirthday];
             _address = dict[kAddress];
         }
+//        _totalDistance = [[user objectForKey:kTotalDistance] integerValue];
+//        _totalTime = [[user objectForKey:kTotalTime] integerValue];
+//        _totalCalorie = [[user objectForKey:ktotalCalorie] integerValue];
+//        _bestScore = [[user objectForKey:kBestScore] integerValue];
+//        _fastSpeed = [[user objectForKey:kFastSpeed] integerValue];
+//        _longsetTime = [[user objectForKey:kLongestTime] integerValue];
+//        _longestDistance = [[user objectForKey:kLongestDistance] integerValue];
+//        _halfwayTime = [[user objectForKey:kHalfwayTime] integerValue];
+//        _wholeTime = [[user objectForKey:kWholeTime] integerValue];
     }];
 }
 

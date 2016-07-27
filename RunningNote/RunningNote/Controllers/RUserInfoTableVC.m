@@ -17,6 +17,7 @@
 #import "QYDataBaseTool.h"
 #import "UIViewController+RVCForStoryBoard.h"
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
@@ -159,7 +160,6 @@ static NSString *identifier = @"userInfoCell";
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *date = [calendar dateFromComponents:components];
     datePicker.date = date;
-#warning datePicker创建时现实的时间应该是cell跳转是传过来的时间！！！！
     UIView *view = [[UIView alloc] initWithFrame:SCREEN];
     view.backgroundColor = [UIColor grayColor];
 //    view.alpha = .9f;
@@ -265,12 +265,14 @@ static NSString *identifier = @"userInfoCell";
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"保存成功");
+            [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }else {
             NSLog(@"%@",error);
         }
     }];
-    if ((_nickName.text == nil) | [_nickName.text isEqualToString:@"－"]) {
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"昵称不能为空" preferredStyle:(UIAlertControllerStyleAlert)];
+    if ((_nickName.text == nil) | [_nickName.text isEqualToString:@"必填"] | (_height.text == nil) | [_height.text isEqualToString:@"必填"] | (_weight.text == nil) | [_weight.text isEqualToString:@"必填"]) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请填写昵称&身高&体重" preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
         [alertVC addAction:action];
         [self presentViewController:alertVC animated:YES completion:nil];
