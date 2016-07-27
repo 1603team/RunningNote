@@ -28,6 +28,7 @@
 
 - (void)getDataFromLocation {
     [QYDataBaseTool selectStatementsSql:SELECT_UserInfo_ALL withParsmeters:nil forMode:nil block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+        
         NSDictionary *dict = resposeOjbc[0];
         _iconImage = dict[kIconImage];
         _nickName = dict[kNickName];
