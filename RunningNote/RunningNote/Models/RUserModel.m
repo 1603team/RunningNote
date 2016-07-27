@@ -22,8 +22,8 @@
 //            NSLog(@"%d",isOk);
         }];
         userModel = [[RUserModel alloc] init];
-        [userModel getDataFromLocation];
     });
+    [userModel getDataFromLocation];
     return userModel;
 }
 
