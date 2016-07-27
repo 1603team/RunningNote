@@ -15,6 +15,8 @@
 #import "RUserModel.h"
 #import "RCommon.h"
 #import "QYDataBaseTool.h"
+#import "UIViewController+RVCForStoryBoard.h"
+#import "AppDelegate.h"
 
 #define SCREEN [UIScreen mainScreen].bounds
 @interface RUserInfoTableVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,HIPImageCropperViewDelegate>
@@ -41,24 +43,26 @@ static NSString *identifier = @"userInfoCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUserInfo)];
     [rightItem setTintColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem = rightItem;
     AVUser *currentUser = [AVUser currentUser];
-    _iconImage.image = [UIImage imageWithData:[currentUser objectForKey:kIconImage]];
-    //用模型给你个人信息赋值
-    RUserModel *user = [RUserModel sharedUserInfo];
-//    _iconImage.image = [UIImage imageWithData:user.iconImage];
-    _nickName.text = user.nickName;
-    BOOL number = user.sex;
-    NSLog(@"%d",number);
-    _sexSegment.selectedSegmentIndex = number;
-    
-    _birthday.text = user.birthday;
-    _weight.text = [NSString stringWithFormat:@"%ld",user.weight];
-    _height.text = [NSString stringWithFormat:@"%ld",user.height];
-    _address.text = user.address;
-//    [self.tableView reloadData];
+    if ([currentUser objectForKey:kNickName]) {
+        _iconImage.image = [UIImage imageWithData:[currentUser objectForKey:kIconImage]];
+        self.iconImage.layer.cornerRadius = 20;
+        self.iconImage.layer.masksToBounds = YES;
+        //用模型给你个人信息赋值
+        RUserModel *user = [RUserModel sharedUserInfo];
+        _nickName.text = user.nickName;
+        BOOL number = user.sex;
+        _sexSegment.selectedSegmentIndex = number;
+        _birthday.text = user.birthday;
+        _weight.text = [NSString stringWithFormat:@"%ld",user.weight];
+        _height.text = [NSString stringWithFormat:@"%ld",user.height];
+        _address.text = user.address;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -150,6 +154,11 @@ static NSString *identifier = @"userInfoCell";
     datePicker.datePickerMode = UIDatePickerModeDate;
     datePicker.backgroundColor = [UIColor brownColor];
     datePicker.maximumDate = [NSDate date];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year = 1990;
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *date = [calendar dateFromComponents:components];
+    datePicker.date = date;
 #warning datePicker创建时现实的时间应该是cell跳转是传过来的时间！！！！
     UIView *view = [[UIView alloc] initWithFrame:SCREEN];
     view.backgroundColor = [UIColor grayColor];
@@ -243,20 +252,7 @@ static NSString *identifier = @"userInfoCell";
 
 #pragma mark - 保存个人信息到模型 数据库
 - (void)saveUserInfo {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    //    (:iconImage,:nickName,:sex,:height,:weight,:birthday,:address)
-    [dict setObject:_iconImage.image forKey:kIconImage];
-    [dict setObject:_nickName.text forKey:kNickName];
-    [dict setObject:@(_sexSegment.selectedSegmentIndex) forKey:kSex];
-    [dict setObject:_height.text forKey:kHeight];
-    [dict setObject:_weight.text forKey:kWeight];
-    [dict setObject:_birthday.text forKey:kBirthday];
-    [dict setObject:_address.text forKey:kAddress];
-    [QYDataBaseTool updateStatementsSql:Delete_UserInfo withParsmeters:nil block:^(BOOL isOk, NSString *errorMsg) {
-    }];
-    [QYDataBaseTool updateStatementsSql:INSERT_UserInfo_SQL withParsmeters:dict block:^(BOOL isOk, NSString *errorMsg) {
-        NSLog(@"%d",isOk);
-    }];
+    
     AVUser *user = [AVUser currentUser];
     NSData *imageData = UIImageJPEGRepresentation(_iconImage.image, 0.5);
     [user setObject:imageData forKey:kIconImage];
@@ -273,6 +269,15 @@ static NSString *identifier = @"userInfoCell";
             NSLog(@"%@",error);
         }
     }];
+    if ((_nickName.text == nil) | [_nickName.text isEqualToString:@"－"]) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"昵称不能为空" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
+        [alertVC addAction:action];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    }else {
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        [delegate showHomeVC];
+    }
 }
 
 #pragma mark - HIPImageCropperViewDelegate

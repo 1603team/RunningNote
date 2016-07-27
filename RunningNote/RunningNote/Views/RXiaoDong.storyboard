@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ohj-YK-nnH">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -26,6 +25,7 @@
                                     <constraint firstAttribute="width" constant="80" id="l6Q-vJ-rzv"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="begin.png"/>
+                                <state key="selected" image="timeOut.png"/>
                                 <connections>
                                     <action selector="startBtn:" destination="ohj-YK-nnH" eventType="touchUpInside" id="JZz-62-hI9"/>
                                 </connections>
@@ -106,8 +106,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心率：次/分钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WY-lc-Vyq">
-                                <rect key="frame" x="374" y="448" width="64" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="步数：步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WY-lc-Vyq">
+                                <rect key="frame" x="374" y="448" width="40" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -168,6 +168,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="StG-Fb-1RS" id="jII-sd-AVG"/>
                         <outlet property="calorieNumber" destination="330-sE-3tT" id="ORO-n4-qR7"/>
                         <outlet property="calorieText" destination="s27-oq-sSv" id="VS7-Oj-kfF"/>
                         <outlet property="chooseModeBtn" destination="FP1-Sl-kpy" id="dyZ-iG-sk0"/>
@@ -177,8 +178,10 @@
                         <outlet property="kmText" destination="yY2-QY-awU" id="nc9-ew-z6S"/>
                         <outlet property="paceNumber" destination="UMh-Mu-e1K" id="IGc-o3-lG8"/>
                         <outlet property="paceText" destination="szm-KV-tAg" id="3uJ-Uv-1qI"/>
+                        <outlet property="runButton" destination="uhS-Uh-Unu" id="yAd-ig-6hW"/>
                         <outlet property="speedNumber" destination="UmI-VB-GQI" id="iyY-y1-FHg"/>
                         <outlet property="speedText" destination="37e-x1-t12" id="EDd-pi-eym"/>
+                        <outlet property="stopButton" destination="4ZT-3p-Tyu" id="hXi-6u-vo8"/>
                         <outlet property="timeNow" destination="mqL-vv-4sa" id="VTu-W2-DL1"/>
                     </connections>
                 </viewController>
@@ -377,8 +380,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="心率：次/分钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yY-hu-d8Q">
-                                <rect key="frame" x="374" y="362" width="64" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="步数：步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yY-hu-d8Q">
+                                <rect key="frame" x="375" y="362" width="40" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

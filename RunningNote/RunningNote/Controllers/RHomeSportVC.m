@@ -183,7 +183,7 @@
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
     CGRect rect = [UIScreen mainScreen].bounds;
-    [path addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2) radius:100 startAngle:-M_PI_2 endAngle:3*M_PI clockwise:YES];
+    [path addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2) radius:100 startAngle:-M_PI_2 endAngle:3*M_PI_2 clockwise:YES];
     [arcLayer removeFromSuperlayer];
     
     arcLayer = [CAShapeLayer layer];
@@ -267,9 +267,26 @@
                     //判断上一次差值为正，本次差值为负则为最大值
                     if ((_difference >= 0) && (sqrtA - _lastNum <= 0)) {
                         _stepNum++;
-#warning 通过步数计算_kmNumber,_speedNumber,_paceNumber,_calorieNumber,_heartRate
-                        NSInteger stepLength = [RUserModel sharedUserInfo].height * 0.45;//取出身高并计算步长
-                        _kmNumber.text = [NSString stringWithFormat:@"%ld",(long)_stepNum];
+                        _heartRate.text = [NSString stringWithFormat:@"%ld",(long)_stepNum];
+                        
+                        CGFloat stepLength = [RUserModel sharedUserInfo].height * 0.4 / 100;//取出身高并计算步长，即一大步为身高的0.8
+                        NSInteger kg = [RUserModel sharedUserInfo].weight;
+                        
+                        CGFloat km = stepLength * _stepNum / 1000;
+                        _kmNumber.text = [NSString stringWithFormat:@"%.02f",km];
+                        
+                        NSInteger i = _milliSeconds - 300;//取出当前的秒数
+                        CGFloat speed = km / i;
+                        _speedNumber.text = [NSString stringWithFormat:@"%.02f",speed * 3600];
+                        NSInteger pace = 1 / speed;//秒每千米
+                        if (pace >= 60) {
+                            _paceNumber.text = [NSString stringWithFormat:@"%ld\'%02ld\"",pace / 60,pace % 60];
+                        }else{
+                            _paceNumber.text = [NSString stringWithFormat:@"0\'%02ld\"",(long)pace];
+                        }
+                        
+                        CGFloat kcal = kg * km * 1.036;
+                        _calorieNumber.text = [NSString stringWithFormat:@"%.02f",kcal];
                     }
                 }
                 _difference = sqrtA - _lastNum;

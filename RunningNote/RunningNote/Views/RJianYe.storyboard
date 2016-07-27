@@ -643,6 +643,7 @@
                         <outlet property="totalDistance" destination="s9o-6L-zyU" id="lkN-Y9-Y6W"/>
                         <outlet property="totalTime" destination="Upy-xl-a2z" id="HuH-ej-uEn"/>
                         <outlet property="weatherImage" destination="xho-Nn-FMD" id="fs4-0S-eUZ"/>
+                        <outlet property="weatherView" destination="xho-Nn-FMD" id="0D7-wq-Vdf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptQ-bl-QOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1189,9 +1190,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="address_32.png" width="33" height="32"/>
+        <image name="address_32.png" width="32" height="32"/>
         <image name="calendar_image.png" width="200" height="200"/>
-        <image name="chat_32.png" width="35" height="32"/>
+        <image name="chat_32.png" width="32" height="32"/>
         <image name="ciecle_35_n.png" width="35" height="35"/>
         <image name="circle_35_s.png" width="35" height="35"/>
         <image name="duoyun.png" width="576" height="360"/>

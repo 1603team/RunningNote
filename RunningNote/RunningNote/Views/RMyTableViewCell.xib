@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,9 +18,15 @@
                         <rect key="frame" x="10" y="10" width="44" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="1X5-La-agd"/>
+                            <constraint firstAttribute="height" constant="44" id="nB3-ue-rkV"/>
                             <constraint firstAttribute="height" constant="44" id="qaq-Td-AcQ"/>
                         </constraints>
                         <state key="normal" image="icon_btn.png"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qaq-Td-AcQ"/>
+                            </mask>
+                        </variation>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDa-Lb-dih">
                         <rect key="frame" x="64" y="10" width="56" height="17"/>
@@ -44,19 +49,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lva-5z-egX">
                         <rect key="frame" x="10" y="64" width="371" height="60"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xunzhang_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="7vb-VH-DBc">
+                                <rect key="frame" x="8" y="8" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="i4T-Td-Cye"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="跑了12.10KM，配速6'48''用时01小时13分16秒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-ZU-Lte">
                                 <rect key="frame" x="61" y="8" width="302" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xunzhang_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="7vb-VH-DBc">
-                                <rect key="frame" x="8" y="8" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="i4T-Td-Cye"/>
-                                    <constraint firstAttribute="height" constant="45" id="pj1-dh-CUK"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -71,15 +75,15 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吧啦吧啦吧啦吧啦吧" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poP-oy-PkD">
-                        <rect key="frame" x="8" y="124" width="375" height="40"/>
+                        <rect key="frame" x="8" y="124" width="375" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outsideSport.png" translatesAutoresizingMaskIntoConstraints="NO" id="QXr-QD-Qge">
-                        <rect key="frame" x="10" y="173.5" width="371" height="160"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outsideSport.png" translatesAutoresizingMaskIntoConstraints="NO" id="QXr-QD-Qge">
+                        <rect key="frame" x="10" y="133.5" width="371" height="200"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="160" id="nfg-bM-jrC"/>
+                            <constraint firstAttribute="height" constant="200" id="eot-xt-wzf"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-Y6-pV1">
@@ -96,6 +100,7 @@
                     <constraint firstAttribute="trailing" secondItem="QXr-QD-Qge" secondAttribute="trailing" constant="10" id="3rS-cC-Iap"/>
                     <constraint firstAttribute="trailingMargin" secondItem="poP-oy-PkD" secondAttribute="trailing" id="BKa-3m-vbT"/>
                     <constraint firstItem="QXr-QD-Qge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Baz-1s-VqK"/>
+                    <constraint firstAttribute="trailing" secondItem="QXr-QD-Qge" secondAttribute="trailing" constant="10" id="Hmg-GS-kj2"/>
                     <constraint firstItem="bFt-Uy-I6z" firstAttribute="bottom" secondItem="OZR-xA-94D" secondAttribute="bottom" id="MG6-wO-XJ4"/>
                     <constraint firstItem="MDa-Lb-dih" firstAttribute="top" secondItem="OZR-xA-94D" secondAttribute="top" id="N2o-6c-Zl9"/>
                     <constraint firstItem="bFt-Uy-I6z" firstAttribute="leading" secondItem="MDa-Lb-dih" secondAttribute="leading" id="NiN-BC-G44"/>
@@ -105,6 +110,7 @@
                     <constraint firstAttribute="trailing" secondItem="lva-5z-egX" secondAttribute="trailing" constant="10" id="TRh-nU-07Q"/>
                     <constraint firstItem="OZR-xA-94D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TeF-Hr-SJx"/>
                     <constraint firstItem="lva-5z-egX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wgf-T4-vra"/>
+                    <constraint firstItem="QXr-QD-Qge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Zmp-p1-8ew"/>
                     <constraint firstItem="Jqn-Y6-pV1" firstAttribute="top" secondItem="QXr-QD-Qge" secondAttribute="bottom" constant="10" id="dId-dV-Uo7"/>
                     <constraint firstAttribute="trailing" secondItem="Xag-LL-NDU" secondAttribute="trailing" constant="10" id="j2t-vs-LdK"/>
                     <constraint firstItem="lva-5z-egX" firstAttribute="top" secondItem="OZR-xA-94D" secondAttribute="bottom" constant="10" id="k8u-1u-uV2"/>
@@ -119,7 +125,7 @@
             <connections>
                 <outlet property="commentesView" destination="Jqn-Y6-pV1" id="me1-8b-y9k"/>
                 <outlet property="commentesViewHeight" destination="bC7-dk-KHa" id="pmi-J3-IZf"/>
-                <outlet property="contenImageViewHeight" destination="nfg-bM-jrC" id="yvu-ZB-JHf"/>
+                <outlet property="contenImageViewHeight" destination="eot-xt-wzf" id="bu9-TA-lhx"/>
                 <outlet property="contentImage" destination="QXr-QD-Qge" id="yDf-Dw-cE0"/>
                 <outlet property="contentLabel" destination="poP-oy-PkD" id="Zc7-nj-1f2"/>
                 <outlet property="iconBtn" destination="OZR-xA-94D" id="5zT-Ck-dNn"/>
