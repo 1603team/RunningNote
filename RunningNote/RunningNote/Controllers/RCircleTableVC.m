@@ -9,6 +9,7 @@
 #import "RCircleTableVC.h"
 #import "RDynamicTableVC.h"
 #import "RMyFriendsTableVC.h"
+#import "RChatsListTableVC.h"
 
 @interface RCircleTableVC ()
 
@@ -19,13 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -39,7 +33,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)myFriends:(UIBarButtonItem *)sender {
@@ -52,6 +45,8 @@
 
 - (IBAction)MyMessage:(UIBarButtonItem *)sender {
     //我的消息
+    RChatsListTableVC *chatsList = [[RChatsListTableVC alloc] init];
+    [self.navigationController pushViewController:chatsList animated:YES];
     
 }
 

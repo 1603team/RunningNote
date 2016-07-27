@@ -51,7 +51,7 @@ static NSString *identifier = @"mycell";
         for (AVUser *user in objects) {
             [mutArray addObject:user];
         }
-#warning 本地化好友列表
+#warning 本地化好友列表  现在好友为AVUSer 转换为模型在本地 需要nickName
         self.friendsArray = mutArray;//获取到好友，本地化处理⚠️
         [self.tableView reloadData];
     }];
@@ -100,60 +100,23 @@ static NSString *identifier = @"mycell";
 //    [cell setBackgroundView:imageView];
     return cell;
 }
-
-#pragma mark - Table view data source
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     AVUser *user = self.friendsArray[indexPath.row];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"RFriends-Chat" bundle:nil];
     RFriendsInfor *friendInfor = [sb instantiateViewControllerWithIdentifier:@"rfriendsInfor"];
     friendInfor.friendsUser = user;
+    
+    //1.设置self.tabBarController.tabBar.hidden=YES;
+    self.tabBarController.tabBar.hidden=YES;
+    //2.如果在push跳转时需要隐藏tabBar，设置self.hidesBottomBarWhenPushed=YES;
+    self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:friendInfor animated:YES];
+    self.hidesBottomBarWhenPushed=NO;
+    
+    //并在push后设置self.hidesBottomBarWhenPushed=NO;
+    //这样back回来的时候，tabBar会恢复正常显示。
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

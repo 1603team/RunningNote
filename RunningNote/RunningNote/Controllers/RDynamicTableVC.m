@@ -60,7 +60,6 @@ static NSString *footerIdentifier = @"myFootView";
 }
 
 - (void)reloadDataArray{
-#warning qing qiu shu ju
     [self.refreshControl beginRefreshing];
     NSMutableArray *mutArray = [NSMutableArray array];
     [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
@@ -88,6 +87,7 @@ static NSString *footerIdentifier = @"myFootView";
     RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
     [mutArray addObject:model];
     }
+    [self.dataArray removeAllObjects];
     [self.dataArray addObjectsFromArray:mutArray];
     [self.refreshControl endRefreshing];//停止刷新视图
     [self.tableView reloadData];

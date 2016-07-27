@@ -7,6 +7,7 @@
 //
 
 #import "RFriendsInfor.h"
+#import "ChartVC.h"
 #import <AVStatus.h>
 @interface RFriendsInfor ()
 
@@ -21,20 +22,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _nickName.text = _friendsUser.username;
+    self.title = @"好友信息";
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%ld,%ld",indexPath.row,indexPath.section);
+    if (indexPath.section == 3) {//发消息  、、temp
+       // ChartVC *chartVc = [[UIStoryboard storyboardWithName:@"RFriends-Chat" bundle:nil] instantiateViewControllerWithIdentifier:@""];
+        ChartVC *chartVC = [[ChartVC alloc] init];
+        chartVC.friendUser = _friendsUser;
+        
+        self.tabBarController.tabBar.hidden=YES;
+        //2.如果在push跳转时需要隐藏tabBar，设置self.hidesBottomBarWhenPushed=YES;
+        self.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:chartVC animated:YES];        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

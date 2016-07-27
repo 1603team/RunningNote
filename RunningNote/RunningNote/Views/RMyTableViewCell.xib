@@ -140,7 +140,7 @@
     </objects>
     <resources>
         <image name="icon_btn.png" width="200" height="200"/>
-        <image name="outsideSport.png" width="2036" height="1226"/>
+        <image name="outsideSport.png" width="600" height="361"/>
         <image name="xunzhang_btn.png" width="200" height="200"/>
     </resources>
 </document>
