@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		168320E281EBC6A749F29032 /* libPods-RunningNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */; };
-		1FFFD67139AB8B8D707BC217 /* libPods-RunningNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8E53509365D78498DBE025 /* libPods-RunningNoteUITests.a */; };
-		2137B6AF3B060EE682FBD2A8 /* libPods-RunningNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DC232A14415C4D35B3F3A8 /* libPods-RunningNote.a */; };
+		1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9A1D24F785000AC88C /* RJianYe.storyboard */; };
 		CC123F9F1D250456000AC88C /* duoyun.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9E1D250456000AC88C /* duoyun.png */; };
 		CC123FA21D250E61000AC88C /* homeSport.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123FA01D250E61000AC88C /* homeSport.png */; };
@@ -39,6 +39,7 @@
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
+		CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */; };
 		CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
 		CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC719671D26932A0033FCB2 /* ChooseModeTableVC.m */; };
@@ -80,11 +81,7 @@
 		CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318C1D2CE18900A6F3BE /* RCommentesTableVC.m */; };
 		CCEF31901D2D08A400A6F3BE /* RMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */; };
 		CCEF436E1D2E768300EE4CF8 /* RAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */; };
-
 		CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */; };
-		CCFF2ED51D2DE80E004F22D6 /* commente_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */; };
-		CCFF2ED71D2DE8C7004F22D6 /* share_btn_s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +144,8 @@
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
 		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
 		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
+		CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSendSMSCodeVC.h; sourceTree = "<group>"; };
+		CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSendSMSCodeVC.m; sourceTree = "<group>"; };
 		CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
 		CCB3E8FB1D27C0840093C575 /* RDynamicTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDynamicTableVC.h; sourceTree = "<group>"; };
 		CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDynamicTableVC.m; sourceTree = "<group>"; };
@@ -214,11 +213,6 @@
 		CCEF436D1D2E768300EE4CF8 /* RAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAnnotation.m; sourceTree = "<group>"; };
 		CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+setObj.h"; path = "RunningNote/NSMutableDictionary+setObj.h"; sourceTree = SOURCE_ROOT; };
 		CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+setObj.m"; path = "RunningNote/NSMutableDictionary+setObj.m"; sourceTree = SOURCE_ROOT; };
-		CCFF2ED41D2DE80E004F22D6 /* commente_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commente_btn_s.png; sourceTree = "<group>"; };
-		CCFF2ED61D2DE8C7004F22D6 /* share_btn_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_btn_s.png; sourceTree = "<group>"; };
-		EE4B6821CB7437E125CCDDAF /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4BF2956FFFDC8C66D4515F0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F98E99630AB719A6DFEA7235 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +222,7 @@
 			files = (
 				CC4AE2611D2A423A00D64C13 /* MapKit.framework in Frameworks */,
 				CC4AE25F1D2A05A300D64C13 /* CoreLocation.framework in Frameworks */,
-				2137B6AF3B060EE682FBD2A8 /* libPods-RunningNote.a in Frameworks */,
+				2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFFD67139AB8B8D707BC217 /* libPods-RunningNoteUITests.a in Frameworks */,
+				1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +253,6 @@
 				0AE6865D77D4438B9725C9CC /* Pods-RunningNoteTests.debug.xcconfig */,
 				9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */,
 				C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */,
-				D1C0041AE20D073D5FCD043F /* Pods-RunningNoteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -277,6 +270,8 @@
 				CCEDF91E1D2C8F8F00DED18E /* RRegisterVC.m */,
 				CCEDF9201D2C9AD800DED18E /* RLloginVC.h */,
 				CCEDF9211D2C9AD800DED18E /* RLloginVC.m */,
+				CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */,
+				CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */,
 			);
 			name = RSetTableVC;
 			sourceTree = "<group>";
@@ -506,9 +501,7 @@
 			children = (
 				CC4AE2601D2A423A00D64C13 /* MapKit.framework */,
 				CC4AE25E1D2A05A300D64C13 /* CoreLocation.framework */,
-				E7DC232A14415C4D35B3F3A8 /* libPods-RunningNote.a */,
 				0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */,
-				CE8E53509365D78498DBE025 /* libPods-RunningNoteUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -836,6 +829,7 @@
 				CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */,
 				CCC7199F1D26A81D0033FCB2 /* RUserModel.m in Sources */,
 				CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */,
+				CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */,
 				CCEBDD961D23A6CC000E535D /* main.m in Sources */,
 				CCEDF91F1D2C8F8F00DED18E /* RRegisterVC.m in Sources */,
 				CCEBDDCD1D23AF66000E535D /* RMyRecordTableVC.m in Sources */,
@@ -1041,7 +1035,6 @@
 		};
 		CCEBDDC61D23A6CC000E535D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1C0041AE20D073D5FCD043F /* Pods-RunningNoteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RunningNoteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

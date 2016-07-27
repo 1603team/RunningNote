@@ -9,6 +9,7 @@
 #import "RLloginVC.h"
 #import "AppDelegate.h"
 #import <AVUser.h>
+#import <SVProgressHUD.h>
 
 @interface RLloginVC ()
 
@@ -51,13 +52,19 @@
     [AVUser logInWithUsernameInBackground:_userName.text password:_passWord.text block:^(AVUser *user, NSError *error) {
         if (user != nil){
             NSLog(@"登录成功");
+            [SVProgressHUD showSuccessWithStatus:@"登录成功！"];
+//            [SVProgressHUD dismissWithDelay:1.0];
             AppDelegate *delegate = [UIApplication sharedApplication].delegate;
             [delegate showHomeVC];
         }else{
             NSLog(@"登录失败:%@",error);
+            if (error.code == 210) {
+                [SVProgressHUD showErrorWithStatus:@"密码错误！"];
+            }else if (error.code == 211) {
+                [SVProgressHUD showErrorWithStatus:@"账户不存在！"];
+            }
         }
     }];
-
 }
 
 - (void)didReceiveMemoryWarning {
