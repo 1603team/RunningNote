@@ -438,6 +438,7 @@
 		CCEA9AE01D40E8C2000B287E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				CCF06C7B1D49998F00E57A59 /* SendImage */,
 				CCEBDB501D4633F0007FE53C /* Faces */,
 				CCE683631D46FD1400E025AA /* Talk */,
 				CCF280751D41B14D00AF657D /* ChartBar.h */,
@@ -672,6 +673,13 @@
 			);
 			name = bg_image;
 			path = tabbar_image;
+			sourceTree = "<group>";
+		};
+		CCF06C7B1D49998F00E57A59 /* SendImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SendImage;
 			sourceTree = "<group>";
 		};
 		D034DB24E4C554F48F5078E0 /* Frameworks */ = {
