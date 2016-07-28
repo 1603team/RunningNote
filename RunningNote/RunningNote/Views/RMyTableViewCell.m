@@ -33,9 +33,13 @@
 #warning temp
     _sharViewHeight.constant = 0;
     
+    _nicknameLabel.text = model.userName;
+//    _iconBtn.imageView.image = model.icon //头像
+    
+    
     _model = model;
-    if (model.body) {                       //有无文字
-        _contentLabel.text = model.body;
+    if (model.text) {                       //有无文字
+        _contentLabel.text = model.text;
     }
     if (model.images) {                     //有无图片
         _contentImage.image = [UIImage imageWithData:model.images];

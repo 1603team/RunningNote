@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FOe-fd-If6" customClass="ChartBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fIY-f6-2mk">
+                    <rect key="frame" x="90" y="8" width="225" height="38"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuw-Ab-GpL" customClass="RMessageBarButton">
+                    <rect key="frame" x="45" y="6" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Tl7-hf-ue2"/>
+                        <constraint firstAttribute="height" constant="40" id="oE0-Kn-Ikc"/>
+                    </constraints>
+                    <state key="normal" image="messageBar_Smiley"/>
+                    <connections>
+                        <action selector="btnClickAction:" destination="FOe-fd-If6" eventType="touchUpInside" id="P9M-w3-108"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-VH-AXA">
+                    <rect key="frame" x="90" y="8" width="225" height="38"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="按下说话">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="drageEnter:" destination="FOe-fd-If6" eventType="touchDragEnter" id="wbx-cc-WfP"/>
+                        <action selector="drageExit:" destination="FOe-fd-If6" eventType="touchDragExit" id="9rR-Vb-dIV"/>
+                        <action selector="touchCancel:" destination="FOe-fd-If6" eventType="touchCancel" id="QBB-LN-8Ak"/>
+                        <action selector="touchDown:" destination="FOe-fd-If6" eventType="touchDown" id="4pO-ap-hi1"/>
+                        <action selector="touchUpInSide:" destination="FOe-fd-If6" eventType="touchUpInside" id="WhR-GQ-Bse"/>
+                        <action selector="touchUpOutSiade:" destination="FOe-fd-If6" eventType="touchUpOutside" id="35z-ob-xD1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u54-lg-B8J" customClass="RMessageBarButton">
+                    <rect key="frame" x="5" y="6" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="STR-yY-ylV"/>
+                        <constraint firstAttribute="width" constant="40" id="wmI-M0-QHd"/>
+                    </constraints>
+                    <state key="normal" image="messageBar_Add"/>
+                    <connections>
+                        <action selector="btnClickAction:" destination="FOe-fd-If6" eventType="touchUpInside" id="Tuh-iZ-xc2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-D7-YE7" customClass="RMessageBarButton">
+                    <rect key="frame" x="320" y="4" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="6z7-L1-8TS"/>
+                        <constraint firstAttribute="width" constant="50" id="Aug-Nb-2F7"/>
+                    </constraints>
+                    <state key="normal" image="messageBar_Microphone"/>
+                    <connections>
+                        <action selector="btnClickAction:" destination="FOe-fd-If6" eventType="touchUpInside" id="fnX-zZ-nJA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="u5Z-VH-AXA" firstAttribute="top" secondItem="FOe-fd-If6" secondAttribute="top" constant="8" id="326-ee-7kV"/>
+                <constraint firstAttribute="trailing" secondItem="UDe-D7-YE7" secondAttribute="trailing" constant="5" id="9N0-le-NQg"/>
+                <constraint firstItem="fIY-f6-2mk" firstAttribute="leading" secondItem="iuw-Ab-GpL" secondAttribute="trailing" constant="5" id="H5V-u1-u8T"/>
+                <constraint firstItem="u5Z-VH-AXA" firstAttribute="leading" secondItem="iuw-Ab-GpL" secondAttribute="trailing" constant="5" id="Pmj-Pw-rd7"/>
+                <constraint firstItem="UDe-D7-YE7" firstAttribute="leading" secondItem="fIY-f6-2mk" secondAttribute="trailing" constant="5" id="Qk3-PG-UtJ"/>
+                <constraint firstAttribute="bottom" secondItem="UDe-D7-YE7" secondAttribute="bottom" id="SJv-m2-14x"/>
+                <constraint firstAttribute="bottom" secondItem="iuw-Ab-GpL" secondAttribute="bottom" constant="8" id="VOa-EL-ht3"/>
+                <constraint firstAttribute="bottom" secondItem="u54-lg-B8J" secondAttribute="bottom" constant="8" id="XLF-zJ-d5v"/>
+                <constraint firstItem="fIY-f6-2mk" firstAttribute="top" secondItem="FOe-fd-If6" secondAttribute="top" constant="8" id="cXP-KM-YmU"/>
+                <constraint firstAttribute="bottom" secondItem="fIY-f6-2mk" secondAttribute="bottom" constant="8" id="dNq-is-M1b"/>
+                <constraint firstItem="iuw-Ab-GpL" firstAttribute="leading" secondItem="u54-lg-B8J" secondAttribute="trailing" id="gGk-Gc-fdu"/>
+                <constraint firstItem="u54-lg-B8J" firstAttribute="leading" secondItem="FOe-fd-If6" secondAttribute="leading" constant="5" id="p1H-H8-3vC"/>
+                <constraint firstAttribute="bottom" secondItem="u5Z-VH-AXA" secondAttribute="bottom" constant="8" id="rLX-dp-8bG"/>
+                <constraint firstItem="UDe-D7-YE7" firstAttribute="leading" secondItem="u5Z-VH-AXA" secondAttribute="trailing" constant="5" id="yVJ-kR-GxE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addButton" destination="u54-lg-B8J" id="ylz-Vx-2JY"/>
+                <outlet property="facesButton" destination="iuw-Ab-GpL" id="vbb-UZ-0PV"/>
+                <outlet property="inputTextView" destination="fIY-f6-2mk" id="hDd-wW-vrB"/>
+                <outlet property="sendButton" destination="UDe-D7-YE7" id="OAl-KI-5IC"/>
+                <outlet property="talkButton" destination="u5Z-VH-AXA" id="RLh-25-ik0"/>
+            </connections>
+            <point key="canvasLocation" x="179.5" y="-155.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="messageBar_Add" width="16" height="16"/>
+        <image name="messageBar_Microphone" width="26" height="27"/>
+        <image name="messageBar_Smiley" width="22" height="22"/>
+    </resources>
+</document>
