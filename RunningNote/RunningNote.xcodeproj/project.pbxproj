@@ -40,6 +40,10 @@
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
+		CC72F9391D4A28C4006D71AC /* RUserRunRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */; };
+		CC72F93F1D4A316A006D71AC /* RMyDetailRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */; };
+		CC72F9431D4A37C0006D71AC /* RUserRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */; };
+		CC72F9441D4A37C0006D71AC /* RUserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */; };
 		CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */; };
 		CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
@@ -66,6 +70,9 @@
 		CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */; };
 		CCEA9AEF1D40EE45000B287E /* bg_qiang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEE1D40EE45000B287E /* bg_qiang.png */; };
 		CCEA9AF31D40F6E6000B287E /* bg_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AF21D40F6E6000B287E /* bg_chat.png */; };
+		CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */; };
+		CCEB0D211D4AE9A70074B6CF /* bg_record_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */; };
+		CCEB0D231D4AEA7A0074B6CF /* bg_record_cellout.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */; };
 		CCEBDB4F1D463139007FE53C /* ChartBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB4E1D463139007FE53C /* ChartBar.xib */; };
 		CCEBDB611D463419007FE53C /* Facecell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDB521D463419007FE53C /* Facecell.m */; };
 		CCEBDB621D463419007FE53C /* Facecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB531D463419007FE53C /* Facecell.xib */; };
@@ -178,6 +185,13 @@
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
 		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
 		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
+		CC72F9371D4A28C4006D71AC /* RUserRunRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserRunRecord.h; sourceTree = "<group>"; };
+		CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserRunRecord.m; sourceTree = "<group>"; };
+		CC72F93D1D4A316A006D71AC /* RMyDetailRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyDetailRecordVC.h; sourceTree = "<group>"; };
+		CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyDetailRecordVC.m; sourceTree = "<group>"; };
+		CC72F9401D4A37C0006D71AC /* RUserRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserRecordCell.h; sourceTree = "<group>"; };
+		CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserRecordCell.m; sourceTree = "<group>"; };
+		CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUserRecordCell.xib; sourceTree = "<group>"; };
 		CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSendSMSCodeVC.h; sourceTree = "<group>"; };
 		CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSendSMSCodeVC.m; sourceTree = "<group>"; };
 		CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
@@ -220,6 +234,9 @@
 		CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "RFriends-Chat.storyboard"; sourceTree = "<group>"; };
 		CCEA9AEE1D40EE45000B287E /* bg_qiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_qiang.png; sourceTree = "<group>"; };
 		CCEA9AF21D40F6E6000B287E /* bg_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_chat.png; sourceTree = "<group>"; };
+		CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUserRecordCellOut.xib; sourceTree = "<group>"; };
+		CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cell.png; sourceTree = "<group>"; };
+		CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cellout.png; sourceTree = "<group>"; };
 		CCEBDB4E1D463139007FE53C /* ChartBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartBar.xib; sourceTree = "<group>"; };
 		CCEBDB511D463419007FE53C /* Facecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facecell.h; sourceTree = "<group>"; };
 		CCEBDB521D463419007FE53C /* Facecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facecell.m; sourceTree = "<group>"; };
@@ -393,6 +410,8 @@
 			children = (
 				CCEBDDCB1D23AF66000E535D /* RMyRecordTableVC.h */,
 				CCEBDDCC1D23AF66000E535D /* RMyRecordTableVC.m */,
+				CC72F93D1D4A316A006D71AC /* RMyDetailRecordVC.h */,
+				CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */,
 			);
 			name = RMyRecirdTableVC;
 			sourceTree = "<group>";
@@ -417,6 +436,8 @@
 				CCC7199D1D26A81D0033FCB2 /* RUserModel.m */,
 				CC474B151D35E55400CAED15 /* RDynamicModel.h */,
 				CC474B161D35E55400CAED15 /* RDynamicModel.m */,
+				CC72F9371D4A28C4006D71AC /* RUserRunRecord.h */,
+				CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -523,6 +544,8 @@
 		CCEBDD941D23A6CC000E535D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */,
+				CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */,
 				CCEA9AF21D40F6E6000B287E /* bg_chat.png */,
 				CCEA9ADE1D40E306000B287E /* bg_cell_black.png */,
 				CCC7197D1D269BE30033FCB2 /* Back.png */,
@@ -599,6 +622,10 @@
 				CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */,
 				CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */,
 				CC31D31D1D35163800FA9997 /* RPublishedVC.xib */,
+				CC72F9401D4A37C0006D71AC /* RUserRecordCell.h */,
+				CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */,
+				CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */,
+				CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -802,6 +829,8 @@
 				CCEF77FF1D39129E00BEDBE0 /* bg_blue.png in Resources */,
 				CC474B291D36740300CAED15 /* address_32.png in Resources */,
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
+				CCEB0D231D4AEA7A0074B6CF /* bg_record_cellout.png in Resources */,
+				CCEB0D211D4AE9A70074B6CF /* bg_record_cell.png in Resources */,
 				CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
 				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
@@ -826,7 +855,9 @@
 				CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */,
 				CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */,
 				CCF280971D423BA900AF657D /* chart_right.png in Resources */,
+				CC72F9441D4A37C0006D71AC /* RUserRecordCell.xib in Resources */,
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
+				CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCE6836A1D46FF0600E025AA /* RVoiceRecordingView.xib in Resources */,
@@ -1006,6 +1037,7 @@
 				CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */,
 				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
 				CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */,
+				CC72F93F1D4A316A006D71AC /* RMyDetailRecordVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
 				CCEBDD991D23A6CC000E535D /* AppDelegate.mm in Sources */,
 				CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */,
@@ -1030,9 +1062,11 @@
 				CCEBDB631D463419007FE53C /* FaceModel.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
 				CCEBDB611D463419007FE53C /* Facecell.m in Sources */,
+				CC72F9431D4A37C0006D71AC /* RUserRecordCell.m in Sources */,
 				CCEBDB6D1D463473007FE53C /* RMessageBarButton.m in Sources */,
 				CCF280801D41B2FB00AF657D /* ChartVC.m in Sources */,
 				CCDCACE61D2E8F47001A3112 /* QYDataBaseTool.m in Sources */,
+				CC72F9391D4A28C4006D71AC /* RUserRunRecord.m in Sources */,
 				CCEF77F81D39041C00BEDBE0 /* RAddAFriendVC.m in Sources */,
 				CCF2808F1D4223D000AF657D /* ChartCell.m in Sources */,
 				CCEA9AEA1D40EC3F000B287E /* RFriendsInfor.m in Sources */,

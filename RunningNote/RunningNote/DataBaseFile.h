@@ -33,19 +33,29 @@
 #define BaseFileName @"RunNote.db"
 //创建表
 
-#define createTabel @"create table if not exists userInfo(iconImage blob,nickName text,sex intger,height integer,weight integer, birthday text,address text);" @"create table if not exists RunNote(totalTime integer,totalDistance integer,totalCalorie integer,bestScore integer,fastSpeed integer,longestDistance integer,longsetTime integer,halfwayTime integer,wholeTime integer)"
+#define createTabel @"create table if not exists userInfo(iconImage blob,nickName text,sex intger,height integer,weight integer, birthday text,address text);" @"create table if not exists RunNote(totalTime integer,totalDistance integer,totalCalorie integer,bestScore integer,fastSpeed integer,longestDistance integer,longsetTime integer,halfwayTime integer,wholeTime integer);" @"create table if not exists myRunNote(title text,time real,distance real,speed real,isHome integer)"
 //插入数据
 #define INSERT_RunNote_SQL @"insert into RunNote values(:totalTime,:totalDistance,:totalCalorie,:bestScore,:fastSpeed,:longestDistance,:longsetTime,:halfwayTime,:wholeTime)"
 
 #define INSERT_UserInfo_SQL @"insert into userInfo values(:iconImage,:nickName,:sex,:height,:weight,:birthday,:address)"
+
+#define INSERT_MyRunNote_SQL @"insert into myRunNote values(:title,:time,:distance,:speed,:isHome)"
 //查询所有的数据
 #define SELECT_RunNote_ALL @"select * from RunNote"
 
 #define SELECT_UserInfo_ALL @"select * from userInfo"
 
+#define SELECT_MyRunNote_ALL @"select * from myRunNote order by title"
+
+#define SELECT_MyRunNote_BY @"select * from myRunNote order by "
 //删除数据
 #define Delete_RunNote @"delete from RunNote"
 
 #define Delete_UserInfo @"delete from userInfo"
+
+#define Delete_MyRunNote @"delete from myRunNote"
+
+//数据累积求和
+#define SELECT_MyRunNote_SUM_Distance @"select sum(distance) from myRunNote"
 
 #endif /* DataBaseFile_h */

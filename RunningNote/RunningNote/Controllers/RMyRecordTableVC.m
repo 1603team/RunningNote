@@ -7,6 +7,13 @@
 //
 
 #import "RMyRecordTableVC.h"
+#import "RMyDetailRecordVC.h"
+#import "AVUser.h"
+#import "RCommon.h"
+#import "RUserRunRecord.h"
+#import "DataBaseFile.h"
+#import "QYDataBaseTool.h"
+#import "RUserModel.h"
 
 @interface RMyRecordTableVC ()
 
@@ -47,7 +54,6 @@
     
     self.weatherView.image = [UIImage imageNamed:@"weather_rain"];
     
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,11 +61,53 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)loadDatas {
+    RUserModel *user = [RUserModel sharedUserInfo];
+    _nameLabel.text = user.nickName;
+    AVUser *currentUser = [AVUser currentUser];
+    if ([currentUser objectForKey:kNickName]) {
+        _icon.image = [UIImage imageWithData:[currentUser objectForKey:kIconImage]];
+        self.icon.layer.cornerRadius = 20;
+        self.icon.layer.masksToBounds = YES;
+        
+        RUserRunRecord *record = [RUserRunRecord getbestData:@"time"];
+        _timeLabel.text = record.time;
+        
+        RUserRunRecord *recordDis = [RUserRunRecord getbestData:@"distance"];
+        _distanceLabel.text = [NSString stringWithFormat:@"%g",recordDis.distance];
+        
+//        [QYDataBaseTool selectStatementsSql:[SELECT_MyRunNote_BY stringByAppendingString:@"distance"] withParsmeters:nil forMode:@"RUserRunRecord" block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+//            if (resposeOjbc) {
+//                RUserRunRecord *record = resposeOjbc.lastObject;
+//                _distanceLabel.text = [NSString stringWithFormat:@"%g",record.distance];
+//            }
+//        }];
+//        [QYDataBaseTool selectStatementsSql:[SELECT_MyRunNote_BY stringByAppendingString:@"time"] withParsmeters:nil forMode:@"RUserRunRecord" block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+//            if (resposeOjbc) {
+//                RUserRunRecord *record = resposeOjbc.lastObject;
+//                _timeLabel.text = record.time;
+//            }
+//        }];
+        [QYDataBaseTool selectStatementsSql:SELECT_MyRunNote_SUM_Distance withParsmeters:nil forMode:nil block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+            NSDictionary *dict = [resposeOjbc firstObject];
+//            NSLog(@"%@",[dict[@"sum(distance)"] stringValue]);
+            if (![dict[@"sum(distance)"] isKindOfClass:[NSNull class]]) {
+                _totalDistance.text = [dict[@"sum(distance)"] stringValue];
+            }
+        }];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self loadDatas];
+}
 
 - (IBAction)iconClick:(UITapGestureRecognizer *)sender {
     NSLog(@"头像点击事件");
@@ -77,7 +125,8 @@
         if (indexPath.row == 0) {
             //跑步记录
             NSLog(@"跑步记录");
-            //[self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>];
+            RMyDetailRecordVC *recordVC = [[RMyDetailRecordVC alloc] init];
+            [self.navigationController pushViewController:recordVC animated:YES];
         }else if (indexPath.row == 1){
             //跑步日历
             NSLog(@"跑步日历");

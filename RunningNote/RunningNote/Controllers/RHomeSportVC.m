@@ -10,6 +10,11 @@
 #import <CoreMotion/CoreMotion.h>
 #import "AppDelegate.h"
 #import "RUserModel.h"
+#import "RUserRunRecord.h"
+#import "QYDataBaseTool.h"
+#import "DataBaseFile.h"
+#import "AVOSCloud.h"
+#import "SVProgressHUD.h"
 
 @interface RHomeSportVC ()
 {
@@ -307,16 +312,31 @@
     NSString *locationString = [dateformatter stringFromDate:senddate];
     NSString *titleString = [NSString stringWithFormat:@"%@",locationString];
     
-    NSDictionary *plistDict = @{@"title" : titleString, @"time" : _timeNow.text, @"kilometre" : _kmNumber.text, @"speed" : _speedNumber.text};
-    //获取Document目录(本地化的数据存储位置)
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docPath = [paths lastObject];
-    NSMutableArray *plistArray = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath]];
-    if (plistArray == nil) {
-        plistArray = [NSMutableArray array];
-    }
-    [plistArray insertObject:plistDict atIndex:0];
-    [plistArray writeToFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath] atomically:YES];
+//    NSDictionary *plistDict = @{@"title" : titleString, @"time" : _timeNow.text, @"distance" : _kmNumber.text, @"speed" : _speedNumber.text,@"isHome" : @YES};
+    AVObject *runNote = [[AVObject alloc] initWithClassName:@"runNote"];
+    [runNote setObject:titleString forKey:@"title"];
+    [runNote setObject:_timeNow.text forKey:@"time"];
+    [runNote setObject:_kmNumber.text forKey:@"distance"];
+    [runNote setObject:_speedNumber.text forKey:@"speed"];
+    [runNote setObject:@YES forKey:@"isHome"];
+    [runNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
+        }
+    }];
+//    RUserRunRecord *record = [RUserRunRecord recordModelWithDictionary:plistDict];
+//    //获取Document目录(本地化的数据存储位置)
+//    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *docPath = [paths lastObject];
+//    NSMutableArray *plistArray = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath]];
+//    if (plistArray == nil) {
+//        plistArray = [NSMutableArray array];
+//    }
+//    [plistArray insertObject:plistDict atIndex:0];
+//    [plistArray writeToFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath] atomically:YES];
+    //将纪录保存在数据库
+//    [QYDataBaseTool updateStatementsSql:INSERT_MyRunNote_SQL withParsmeters:plistDict block:^(BOOL isOk, NSString *errorMsg) {
+//    }];
     [self replaceView];
 }
 
