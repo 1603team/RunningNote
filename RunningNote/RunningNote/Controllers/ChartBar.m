@@ -231,6 +231,7 @@
 -(FunctionView *)functionView{
     if (!_functionView) {
         _functionView = [[[NSBundle mainBundle] loadNibNamed:@"FunctionView" owner:nil options:nil] firstObject];
+        _functionView.delegate = (id)self.delegate;
     }
     return _functionView;
 }

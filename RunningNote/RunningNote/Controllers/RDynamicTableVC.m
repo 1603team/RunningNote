@@ -137,8 +137,8 @@ static NSString *footerIdentifier = @"myFootView";
 
 - (void)addTableHeardView{
     //添加tableView的头部视图
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"outsideSport.png"]];
-    imageView.frame = CGRectMake(0, 0, 0, 200);
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"circle"]];
+    imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
     self.tableView.tableHeaderView = imageView;
 }
 //设置sectionFooterView的高度
