@@ -32,8 +32,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fat-7h-RfS">
                         <rect key="frame" x="188" y="3" width="70" height="49.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenderVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="maU-4i-ITv">
-                                <rect key="frame" x="20" y="8" width="40" height="33.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SenderVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="maU-4i-ITv">
+                                <rect key="frame" x="18" y="8" width="42" height="33.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="LGz-ZU-2Id"/>
@@ -54,7 +54,7 @@
                             <constraint firstAttribute="bottom" secondItem="JXh-Vm-5kg" secondAttribute="bottom" constant="8" id="WZV-YK-81v"/>
                             <constraint firstItem="JXh-Vm-5kg" firstAttribute="leading" secondItem="fat-7h-RfS" secondAttribute="leading" constant="10" id="fTs-aX-3N3"/>
                             <constraint firstAttribute="bottom" secondItem="maU-4i-ITv" secondAttribute="bottom" constant="8" id="inl-Vr-E9J"/>
-                            <constraint firstAttribute="width" constant="70" id="rLu-T2-RWF"/>
+                            <constraint firstAttribute="width" priority="500" constant="70" id="rLu-T2-RWF"/>
                         </constraints>
                     </view>
                 </subviews>

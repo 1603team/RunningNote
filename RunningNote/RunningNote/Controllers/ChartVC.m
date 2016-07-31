@@ -12,8 +12,9 @@
 #import "RUserModel.h"
 #import "ChartCell.h"
 #import "RAudioPlayer.h"
+#import "FunctionView.h"
 #import <Masonry.h>
-@interface ChartVC () <UITableViewDataSource, UITableViewDelegate,ChartBarDelegate,MessageManagerDelegate>
+@interface ChartVC () <UITableViewDataSource, UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ChartBarDelegate,MessageManagerDelegate,FuncitonDelegate>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (nonatomic, strong)ChartBar *chartBar;//聊天的输入栏
 @property (nonatomic, strong)AVIMConversation *conversation;
@@ -52,9 +53,15 @@
         [self.tableView addGestureRecognizer:tap];
         //注册cell
         UINib *left = [UINib nibWithNibName:@"ChartCellLeft" bundle:nil];
+        UINib *leftImage = [UINib nibWithNibName:@"ChartImageCellLeft" bundle:nil];
         [self.tableView registerNib:left forCellReuseIdentifier:@"chartcellleft"];
+        [self.tableView registerNib:leftImage forCellReuseIdentifier:@"chartimagecellleft"];
+        
         UINib *right = [UINib nibWithNibName:@"ChartCellRight" bundle:nil];
+        UINib *rightImage = [UINib nibWithNibName:@"ChartImageCellRight" bundle:nil];
         [self.tableView registerNib:right forCellReuseIdentifier:@"chartcellright"];
+        [self.tableView registerNib:rightImage forCellReuseIdentifier:@"chartimagecellright"];
+
     }
     return _tableView;
 }
@@ -181,9 +188,19 @@
     ChartCell *cell;
     if ([message.clientId isEqualToString:[AVUser currentUser].username]) {
         //自己的消息
-        cell = [tableView dequeueReusableCellWithIdentifier:@"chartcellright" forIndexPath:indexPath];
+        if (message.mediaType == kAVIMMessageMediaTypeImage) {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"chartimagecellright" forIndexPath:indexPath];
+        }else{
+            cell = [tableView dequeueReusableCellWithIdentifier:@"chartcellright" forIndexPath:indexPath];
+        }
     }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"chartcellleft" forIndexPath:indexPath];
+        if (message.mediaType == kAVIMMessageMediaTypeImage) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"chartimagecellleft" forIndexPath:indexPath];
+        }else{
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"chartcellleft" forIndexPath:indexPath];
+        }
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell bandingMessage:message];
@@ -221,6 +238,10 @@
             [cell startAnimation];
         }];
     }
+    //点击cell为图片
+    if (message.mediaType == kAVIMMessageMediaTypeImage) {
+        
+    }
     
 }
 - (void)didReceiveMemoryWarning {
@@ -228,6 +249,55 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - function delegate
+
+-(void)selectAction:(NSInteger)actionIndex{
+    switch (actionIndex) {
+        case 1://选择图片
+        {
+            
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.delegate = self;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+            break;
+        case 2://相机
+            NSLog(@"2");
+            break;
+        case 3://位置
+            NSLog(@"3");
+            break;
+        default:
+            break;
+    }
+    
+}
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    //[self.revalViewC dismissViewControllerAnimated:YES completion:nil];
+    
+    AVFile *file = [AVFile fileWithData:UIImageJPEGRepresentation(image, 0.3)];
+    AVIMImageMessage *message = [AVIMImageMessage messageWithText:[NSString stringWithFormat:@"%f:%f",image.size.width,image.size.height] file:file attributes:nil];
+    [self sendMessage:message];
+    
+}
+
 
 
 @end
+
+
+
+
+
+
+

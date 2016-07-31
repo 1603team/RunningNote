@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chartimagecellright" rowHeight="56" id="Xuj-zT-Qh2" customClass="ChartCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="Xuj-zT-Qh2" id="9Xa-cb-SlI">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="SJw-fK-ic8">
+                        <rect key="frame" x="268" y="-1" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="cU0-9Q-Mxf"/>
+                            <constraint firstAttribute="width" constant="44" id="hG7-jF-rzr"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="chart_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="tHE-86-OSY">
+                        <rect key="frame" x="184" y="0.0" width="84" height="50"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-LA-g7K">
+                        <rect key="frame" x="192" y="8" width="60" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="2aI-5O-RZz"/>
+                            <constraint firstAttribute="height" constant="45.5" id="f3O-w0-5mt"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="tHE-86-OSY" firstAttribute="bottom" secondItem="pvX-LA-g7K" secondAttribute="bottom" constant="8" id="7fR-0Y-R8c"/>
+                    <constraint firstAttribute="bottom" secondItem="SJw-fK-ic8" secondAttribute="bottom" constant="7" id="KPL-VK-toi"/>
+                    <constraint firstItem="pvX-LA-g7K" firstAttribute="top" secondItem="9Xa-cb-SlI" secondAttribute="top" constant="8" id="MkS-xh-zwU"/>
+                    <constraint firstAttribute="bottom" secondItem="pvX-LA-g7K" secondAttribute="bottom" constant="8" id="OTm-PO-MJQ"/>
+                    <constraint firstItem="tHE-86-OSY" firstAttribute="top" secondItem="pvX-LA-g7K" secondAttribute="top" constant="-8" id="VYM-3L-jXI"/>
+                    <constraint firstAttribute="trailing" secondItem="SJw-fK-ic8" secondAttribute="trailing" constant="8" id="bx3-dH-2va"/>
+                    <constraint firstItem="tHE-86-OSY" firstAttribute="leading" secondItem="pvX-LA-g7K" secondAttribute="leading" constant="-8" id="lj5-hI-3Di"/>
+                    <constraint firstItem="SJw-fK-ic8" firstAttribute="leading" secondItem="pvX-LA-g7K" secondAttribute="trailing" constant="16" id="uyd-k6-L5W"/>
+                    <constraint firstItem="tHE-86-OSY" firstAttribute="trailing" secondItem="pvX-LA-g7K" secondAttribute="trailing" constant="16" id="wd3-pU-ZD6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="bgImage" destination="tHE-86-OSY" id="kvw-Dp-boQ"/>
+                <outlet property="icon" destination="SJw-fK-ic8" id="FlU-Qx-Dzf"/>
+                <outlet property="imageHeight" destination="f3O-w0-5mt" id="gHC-FV-Ayw"/>
+                <outlet property="imageWith" destination="2aI-5O-RZz" id="MFR-EJ-Hbj"/>
+                <outlet property="showImage" destination="pvX-LA-g7K" id="8cr-Vo-mXt"/>
+            </connections>
+            <point key="canvasLocation" x="266" y="209"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chart_right.png" width="70" height="50"/>
+        <image name="icon_btn.png" width="200" height="200"/>
+    </resources>
+</document>

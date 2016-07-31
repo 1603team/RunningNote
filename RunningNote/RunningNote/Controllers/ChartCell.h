@@ -19,6 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *timelabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 
+@property (weak, nonatomic) IBOutlet UIImageView *showImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWith;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
+
+
+
 
 
 

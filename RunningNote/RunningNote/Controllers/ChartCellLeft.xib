@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -32,22 +33,22 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-22-T2g">
                         <rect key="frame" x="66" y="8" width="71" height="39"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tld-ZB-b4E">
+                                <rect key="frame" x="61" y="8" width="0.0" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReceiverVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="7J8-EA-m4g">
                                 <rect key="frame" x="8" y="5" width="40" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Pch-qG-2me"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tld-ZB-b4E">
-                                <rect key="frame" x="61" y="8" width="0.0" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="7J8-EA-m4g" secondAttribute="bottom" constant="5" id="06l-Lo-NtQ"/>
-                            <constraint firstAttribute="width" constant="71" id="2tz-RX-HHz"/>
+                            <constraint firstAttribute="width" priority="500" constant="71" id="2tz-RX-HHz"/>
                             <constraint firstItem="Tld-ZB-b4E" firstAttribute="top" secondItem="3sl-22-T2g" secondAttribute="top" constant="8" id="Mh2-hx-J1r"/>
                             <constraint firstAttribute="bottom" secondItem="Tld-ZB-b4E" secondAttribute="bottom" constant="8" id="eAB-5f-Ale"/>
                             <constraint firstAttribute="trailing" secondItem="Tld-ZB-b4E" secondAttribute="trailing" constant="10" id="lfJ-8i-bnY"/>
