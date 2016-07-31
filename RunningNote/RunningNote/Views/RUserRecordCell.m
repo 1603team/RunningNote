@@ -28,6 +28,7 @@
     _time.text = recoedModel.time;
     _distance.text = [NSString stringWithFormat:@"%g",recoedModel.distance];
     _isHomeSegment.selectedSegmentIndex = recoedModel.isHome;
+    _isHomeSegment.userInteractionEnabled = NO;
 }
 
 - (void)awakeFromNib {
