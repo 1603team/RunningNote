@@ -108,16 +108,15 @@
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:nil];
         [alertVC addAction:action];
         [self presentViewController:alertVC animated:YES completion:nil];
-        
         return NO;
-        
     }
-    
-    
-    
     return YES;
-    
 }
+
+- (IBAction)backBtn:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation

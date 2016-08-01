@@ -107,6 +107,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     [self loadDatas];
+    [self.tableView reloadData];
 }
 
 - (IBAction)iconClick:(UITapGestureRecognizer *)sender {
