@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AVStatus.h>
+#import <AVIMConversation.h>
+
 @interface ChartVC : UIViewController
 @property (nonatomic, strong)AVUser *friendUser;
+@property (nonatomic, strong)AVIMConversation *conversation;
 
 @end

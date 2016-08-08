@@ -10,7 +10,7 @@
 #import <AVOSCloudIM.h>
 #import "FaceModel.h"
 #import <AVOSCloud.h>
-
+#import "RUserModel.h"
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
 
 @implementation ChartCell
@@ -18,37 +18,71 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)setFriendUser:(AVUser *)friendUser{
+    _friendUser = friendUser;
     UIImage *image;
-    
-    if ([self.reuseIdentifier isEqualToString:@"chartcellleft"] || [self.reuseIdentifier isEqualToString:@"chartimagecellleft"]) {
+    if ([self.reuseIdentifier isEqualToString:@"chartcellleft"] || [self.reuseIdentifier isEqualToString:@"chartimagecellleft"] || [self.reuseIdentifier isEqualToString:@"charcellvoiceleft"]) {
         //设置左边的bgimage
         image = [UIImage imageNamed:@"chart_left"];
+        NSDictionary *localData = [_friendUser valueForKey:@"localData"];
+        NSData *icomImageData = [localData valueForKey:@"iconImage"];
+        _icon.image = [UIImage imageWithData:icomImageData];
     }else {
         image = [UIImage imageNamed:@"chart_right"];
+        NSData *iconData = [RUserModel sharedUserInfo].iconImage;
+        UIImage *myIcon = [UIImage imageWithData:iconData];
+        _icon.image = myIcon;
     }
-    
+    [_icon.layer setCornerRadius:22.0];
+    [_icon.layer setBorderWidth:0.8]; //边框宽度
+    [_icon.layer setBorderColor:[UIColor grayColor].CGColor];
+    _icon.layer.masksToBounds = YES;
     //设置image拉伸
     image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(15, 35, 30, 35)];
     self.bgImage.image = image;
+    _bgImage.layer.shadowColor = [UIColor blackColor].CGColor;
+    _bgImage.layer.shadowOffset = CGSizeMake(0.1, 1);
+    _bgImage.layer.shadowOpacity = 0.8;
 }
 
 -(void)bandingMessage:(AVIMTypedMessage *)message{
-    //根据message,绑定内容
+    if (message.sendTimestamp) {
+        [self dateFromTimestamp:[NSString stringWithFormat:@"%lld",message.sendTimestamp]];
+    }else{
+        NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm"];
+        _timeLabel.text =  [formatter stringFromDate:now];
+    }
     if ([message isKindOfClass:[AVIMTextMessage class]]) {//1.文本信息
-        //将文字内容转化为富文本,图文混排
-        _voiceImage.hidden = YES;
-        self.messageText.attributedText = [self faceAttributedStringWithMessage:message.text withAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} FaceSize:28];
+        self.messageText.attributedText = [self faceAttributedStringWithMessage:message.text withAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} FaceSize:30];
     }
     if ([message isKindOfClass:[AVIMAudioMessage class]]) {//2.语音信息
         [self bandingAudioMessage:(AVIMAudioMessage *)message];
-        }
+    }
     
     if ([message isKindOfClass:[AVIMImageMessage class]]) {//3.图片消息
         [self bandingImageMessage:(AVIMImageMessage *)message];
         
     }
-    
     //设置背景素材
+}
+- (void)dateFromTimestamp:(NSString *)timeStamp{//时间戳转时间
+
+    NSTimeInterval time=([timeStamp doubleValue] / 1000);
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+    NSTimeInterval interval = -[detaildate timeIntervalSinceNow];
+    if (interval < 60 * 60 * 24 ){//一天内
+        [formatter setDateFormat:@"HH:mm"];
+       _timeLabel.text =  [formatter stringFromDate:detaildate];
+    }else{
+        [formatter setDateFormat:@"MM-dd"];
+       _timeLabel.text =  [formatter stringFromDate:detaildate];
+    }
     
 }
 //图像消息
@@ -82,11 +116,11 @@
 }
 //音频消息
 - (void)bandingAudioMessage:(AVIMAudioMessage *)message{
-    _voiceImage.hidden = NO;
+//    _voiceImage.hidden = NO;
     //设置录音的时间
     self.timelabel.text = [NSString stringWithFormat:@"%@s", message.text];
     //设置播放声音的动画
-    if ([self.reuseIdentifier isEqualToString:@"chartcellleft"]) {
+    if ([self.reuseIdentifier isEqualToString:@"charcellvoiceleft"]) {
         self.voiceImage.animationImages = @[[UIImage imageNamed:@"ReceiverVoiceNodePlaying000"],
                                             [UIImage imageNamed:@"ReceiverVoiceNodePlaying001"],
                                             [UIImage imageNamed:@"ReceiverVoiceNodePlaying002"],
@@ -98,8 +132,8 @@
                                             [UIImage imageNamed:@"SenderVoiceNodePlaying003"]];
     }
     
-    self.messageText.hidden = YES;
-    self.voiceBgView.hidden = NO;
+//    self.messageText.hidden = YES;
+//    self.voiceBgView.hidden = NO;
     //调整音频视图的宽度
     NSInteger duration = message.text.integerValue;
     NSInteger maxLength = kScreenWidth - 152;

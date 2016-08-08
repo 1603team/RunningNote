@@ -73,6 +73,8 @@
 		CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */; };
 		CCEA9AEF1D40EE45000B287E /* bg_qiang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEE1D40EE45000B287E /* bg_qiang.png */; };
 		CCEA9AF31D40F6E6000B287E /* bg_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AF21D40F6E6000B287E /* bg_chat.png */; };
+		CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */; };
+		CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */; };
 		CCEBDB4F1D463139007FE53C /* ChartBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB4E1D463139007FE53C /* ChartBar.xib */; };
 		CCEBDB611D463419007FE53C /* Facecell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDB521D463419007FE53C /* Facecell.m */; };
 		CCEBDB621D463419007FE53C /* Facecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB531D463419007FE53C /* Facecell.xib */; };
@@ -239,6 +241,8 @@
 		CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "RFriends-Chat.storyboard"; sourceTree = "<group>"; };
 		CCEA9AEE1D40EE45000B287E /* bg_qiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_qiang.png; sourceTree = "<group>"; };
 		CCEA9AF21D40F6E6000B287E /* bg_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_chat.png; sourceTree = "<group>"; };
+		CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceLeft.xib; sourceTree = "<group>"; };
+		CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceRight.xib; sourceTree = "<group>"; };
 		CCEBDB4E1D463139007FE53C /* ChartBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartBar.xib; sourceTree = "<group>"; };
 		CCEBDB511D463419007FE53C /* Facecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facecell.h; sourceTree = "<group>"; };
 		CCEBDB521D463419007FE53C /* Facecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facecell.m; sourceTree = "<group>"; };
@@ -460,6 +464,8 @@
 				CCE6836C1D47037E00E025AA /* RAudioRecorder.m */,
 				CCE6836E1D474F7200E025AA /* RAudioPlayer.h */,
 				CCE6836F1D474F7200E025AA /* RAudioPlayer.m */,
+				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
+				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 			);
 			name = Talk;
 			sourceTree = "<group>";
@@ -470,18 +476,18 @@
 				CCF06C7B1D49998F00E57A59 /* SendImage */,
 				CCEBDB501D4633F0007FE53C /* Faces */,
 				CCE683631D46FD1400E025AA /* Talk */,
+				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
+				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
 				CCF280751D41B14D00AF657D /* ChartBar.h */,
 				CCF280761D41B14D00AF657D /* ChartBar.m */,
 				CCEBDB4E1D463139007FE53C /* ChartBar.xib */,
-				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
-				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
-				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
-				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 				CCF2808D1D4223D000AF657D /* ChartCell.h */,
 				CCF2808E1D4223D000AF657D /* ChartCell.m */,
 				CCF280891D42237500AF657D /* ChartCellLeft.xib */,
+				CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */,
 				CCF06C7C1D49EEB000E57A59 /* ChartImageCellLeft.xib */,
 				CCF2808A1D42237500AF657D /* ChartCellRight.xib */,
+				CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */,
 				CCF06C7E1D49EFA700E57A59 /* ChartImageCellRight.xib */,
 			);
 			name = Chat;
@@ -875,6 +881,7 @@
 				CCEFDB231D48635200A82FE9 /* chart_bgimage.png in Resources */,
 				CCF2808C1D42237500AF657D /* ChartCellRight.xib in Resources */,
 				CC342AD21D4B050E00D3F919 /* tabbar_bg.png in Resources */,
+				CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */,
 				CCEBDB621D463419007FE53C /* Facecell.xib in Resources */,
 				CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */,
 				CC474B271D3651CF00CAED15 /* share_btn_n.png in Resources */,
@@ -887,6 +894,7 @@
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
 				CC342AD81D4D86D800D3F919 /* circle.png in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
+				CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCE6836A1D46FF0600E025AA /* RVoiceRecordingView.xib in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
@@ -1242,7 +1250,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1258,7 +1266,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
