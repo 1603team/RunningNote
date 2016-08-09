@@ -15,12 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel     *nicknameLabel;//用户昵称
 @property (weak, nonatomic) IBOutlet UILabel     *timeLabel;//发表时间
 @property (weak, nonatomic) IBOutlet UILabel     *locationLabel;//位置信息
-@property (weak, nonatomic) IBOutlet UIView      *sharView;//分享的跑步记录
+//@property (weak, nonatomic) IBOutlet UIView      *sharView;//分享的跑步记录
 @property (weak, nonatomic) IBOutlet UILabel     *contentLabel;//发表的内容文字
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;//发表的内容图片
 @property (weak, nonatomic) IBOutlet UIView *commentesView;//放置评论列表
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentesViewHeight;//评论列表约束
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sharViewHeight;//分享记录高度
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sharViewHeight;//分享记录高度
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contenImageViewHeight;//图片高度
 
 
@@ -30,13 +30,16 @@
 
 
 - (void)setModel:(RDynamicModel *)model{
-#warning temp
-    _sharViewHeight.constant = 0;
-    
-    _nicknameLabel.text = model.userName;
-//    _iconBtn.imageView.image = model.icon //头像
-    
-    
+    _nicknameLabel.text = model.userName;//base64转NSData ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+    NSString *baseStr = [model.iconData valueForKey:@"base64"];
+    if (baseStr.length) {
+        NSData *nsdataFromBase64String = [[NSData alloc] initWithBase64EncodedString:baseStr options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *iconImage = [UIImage imageWithData:nsdataFromBase64String];
+//        _iconBtn.imageView.image = iconImage; //头像
+        [_iconBtn setImage:iconImage forState:UIControlStateNormal];
+    }
+    _iconBtn.layer.cornerRadius = 22.0;
+    _iconBtn.clipsToBounds = YES;
     _model = model;
     if (model.text) {                       //有无文字
         _contentLabel.text = model.text;

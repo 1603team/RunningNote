@@ -46,48 +46,20 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lva-5z-egX">
-                        <rect key="frame" x="10" y="64" width="371" height="60"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xunzhang_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="7vb-VH-DBc">
-                                <rect key="frame" x="8" y="8" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="i4T-Td-Cye"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="跑了12.10KM，配速6'48''用时01小时13分16秒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-ZU-Lte">
-                                <rect key="frame" x="61" y="8" width="302" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7vb-VH-DBc" firstAttribute="leading" secondItem="lva-5z-egX" secondAttribute="leading" constant="8" id="Suv-Pv-txM"/>
-                            <constraint firstAttribute="trailing" secondItem="EX3-ZU-Lte" secondAttribute="trailing" constant="8" id="YeG-zm-jBe"/>
-                            <constraint firstItem="EX3-ZU-Lte" firstAttribute="leading" secondItem="7vb-VH-DBc" secondAttribute="trailing" constant="8" id="dPv-ue-LBn"/>
-                            <constraint firstItem="7vb-VH-DBc" firstAttribute="top" secondItem="lva-5z-egX" secondAttribute="top" constant="8" id="dry-uO-gFf"/>
-                            <constraint firstAttribute="bottom" secondItem="EX3-ZU-Lte" secondAttribute="bottom" constant="8" id="oM9-aE-fue"/>
-                            <constraint firstItem="EX3-ZU-Lte" firstAttribute="top" secondItem="lva-5z-egX" secondAttribute="top" constant="8" id="odA-Jx-zkD"/>
-                            <constraint firstAttribute="bottom" secondItem="7vb-VH-DBc" secondAttribute="bottom" constant="7" id="vvc-CP-REl"/>
-                            <constraint firstAttribute="height" constant="60" id="yc3-NB-Nb1"/>
-                        </constraints>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吧啦吧啦吧啦吧啦吧" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poP-oy-PkD">
-                        <rect key="frame" x="8" y="124" width="375" height="0.0"/>
+                        <rect key="frame" x="8" y="64" width="375" height="59"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outsideSport.png" translatesAutoresizingMaskIntoConstraints="NO" id="QXr-QD-Qge">
-                        <rect key="frame" x="10" y="133.5" width="371" height="200"/>
+                        <rect key="frame" x="10" y="133" width="371" height="200"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="eot-xt-wzf"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-Y6-pV1">
-                        <rect key="frame" x="10" y="343.5" width="371" height="190"/>
+                        <rect key="frame" x="10" y="343" width="371" height="190"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="190" id="bC7-dk-KHa"/>
@@ -107,19 +79,16 @@
                     <constraint firstItem="poP-oy-PkD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Paz-u7-RhD"/>
                     <constraint firstAttribute="bottom" secondItem="Jqn-Y6-pV1" secondAttribute="bottom" constant="10" id="QxX-V9-FPe"/>
                     <constraint firstItem="Jqn-Y6-pV1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RIe-cD-Y9y"/>
-                    <constraint firstAttribute="trailing" secondItem="lva-5z-egX" secondAttribute="trailing" constant="10" id="TRh-nU-07Q"/>
                     <constraint firstItem="OZR-xA-94D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TeF-Hr-SJx"/>
-                    <constraint firstItem="lva-5z-egX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wgf-T4-vra"/>
+                    <constraint firstItem="poP-oy-PkD" firstAttribute="top" secondItem="OZR-xA-94D" secondAttribute="bottom" constant="10" id="V7d-3A-jqm"/>
                     <constraint firstItem="QXr-QD-Qge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Zmp-p1-8ew"/>
                     <constraint firstItem="Jqn-Y6-pV1" firstAttribute="top" secondItem="QXr-QD-Qge" secondAttribute="bottom" constant="10" id="dId-dV-Uo7"/>
                     <constraint firstAttribute="trailing" secondItem="Xag-LL-NDU" secondAttribute="trailing" constant="10" id="j2t-vs-LdK"/>
-                    <constraint firstItem="lva-5z-egX" firstAttribute="top" secondItem="OZR-xA-94D" secondAttribute="bottom" constant="10" id="k8u-1u-uV2"/>
                     <constraint firstItem="OZR-xA-94D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kh8-Z3-bbQ"/>
                     <constraint firstAttribute="trailing" secondItem="Jqn-Y6-pV1" secondAttribute="trailing" constant="10" id="kv2-I7-qWU"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MDa-Lb-dih" secondAttribute="trailing" constant="100" id="mqv-J1-h3v"/>
                     <constraint firstItem="Xag-LL-NDU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ssH-Hb-zyd"/>
                     <constraint firstItem="MDa-Lb-dih" firstAttribute="leading" secondItem="OZR-xA-94D" secondAttribute="trailing" constant="10" id="uSp-FJ-MVK"/>
-                    <constraint firstItem="poP-oy-PkD" firstAttribute="top" secondItem="lva-5z-egX" secondAttribute="bottom" id="ujU-0g-kfK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -131,8 +100,6 @@
                 <outlet property="iconBtn" destination="OZR-xA-94D" id="5zT-Ck-dNn"/>
                 <outlet property="locationLabel" destination="Xag-LL-NDU" id="Kxh-Xb-hjo"/>
                 <outlet property="nicknameLabel" destination="MDa-Lb-dih" id="QqW-fQ-oXE"/>
-                <outlet property="sharView" destination="lva-5z-egX" id="ka1-rF-1OC"/>
-                <outlet property="sharViewHeight" destination="yc3-NB-Nb1" id="QM2-gK-Amk"/>
                 <outlet property="timeLabel" destination="bFt-Uy-I6z" id="d7t-Qq-cql"/>
             </connections>
             <point key="canvasLocation" x="421.5" y="336"/>
@@ -141,6 +108,5 @@
     <resources>
         <image name="icon_btn.png" width="200" height="200"/>
         <image name="outsideSport.png" width="600" height="361"/>
-        <image name="xunzhang_btn.png" width="200" height="200"/>
     </resources>
 </document>

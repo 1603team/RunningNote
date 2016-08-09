@@ -19,11 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.hidesBottomBarWhenPushed = YES;
+
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.tabBarController.tabBar.hidden = NO;
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     self.navigationController.navigationBar.alpha = 1;
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
@@ -61,7 +66,6 @@
                 //跑友动态
                 RDynamicTableVC *dynamicTVC = [[RDynamicTableVC alloc] initWithStyle:UITableViewStyleGrouped];
                 [self.navigationController pushViewController:dynamicTVC animated:YES];
-                
             }else if (indexPath.row == 1){
                 //我的跑团
                 NSLog(@"我的跑团");

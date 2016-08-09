@@ -10,6 +10,8 @@
 		168320E281EBC6A749F29032 /* libPods-RunningNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */; };
 		1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		6789B358DB78F668D023420A /* libPods-RunningNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */; };
+		7E7F8614F83A9BC8969B4892 /* libPods-RunningNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */; };
 		CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9A1D24F785000AC88C /* RJianYe.storyboard */; };
 		CC123F9F1D250456000AC88C /* duoyun.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9E1D250456000AC88C /* duoyun.png */; };
 		CC123FA21D250E61000AC88C /* homeSport.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123FA01D250E61000AC88C /* homeSport.png */; };
@@ -21,6 +23,11 @@
 		CC30E26D1D42F5F400D1711E /* chart_left.png in Resources */ = {isa = PBXBuildFile; fileRef = CC30E26C1D42F5F400D1711E /* chart_left.png */; };
 		CC31D31E1D35163800FA9997 /* RPublishedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC31D31C1D35163800FA9997 /* RPublishedVC.m */; };
 		CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC31D31D1D35163800FA9997 /* RPublishedVC.xib */; };
+		CC342AC81D4AF9E800D3F919 /* friends_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CC342AC71D4AF9E800D3F919 /* friends_bg.png */; };
+		CC342AD21D4B050E00D3F919 /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CC342AD11D4B050E00D3F919 /* tabbar_bg.png */; };
+		CC342AD41D4B063600D3F919 /* tabbar_bg_black.png in Resources */ = {isa = PBXBuildFile; fileRef = CC342AD31D4B063600D3F919 /* tabbar_bg_black.png */; };
+		CC342AD61D4B08CB00D3F919 /* circle_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CC342AD51D4B08CB00D3F919 /* circle_bg.png */; };
+		CC342AD81D4D86D800D3F919 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = CC342AD71D4D86D800D3F919 /* circle.png */; };
 		CC38E3481D33D1C1005E2779 /* weather_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3441D33D1C1005E2779 /* weather_rain.png */; };
 		CC38E3491D33D1C1005E2779 /* weather_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3451D33D1C1005E2779 /* weather_snow.png */; };
 		CC38E34A1D33D1C1005E2779 /* weather_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = CC38E3461D33D1C1005E2779 /* weather_sun.png */; };
@@ -66,6 +73,8 @@
 		CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */; };
 		CCEA9AEF1D40EE45000B287E /* bg_qiang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEE1D40EE45000B287E /* bg_qiang.png */; };
 		CCEA9AF31D40F6E6000B287E /* bg_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AF21D40F6E6000B287E /* bg_chat.png */; };
+		CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */; };
+		CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */; };
 		CCEBDB4F1D463139007FE53C /* ChartBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB4E1D463139007FE53C /* ChartBar.xib */; };
 		CCEBDB611D463419007FE53C /* Facecell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDB521D463419007FE53C /* Facecell.m */; };
 		CCEBDB621D463419007FE53C /* Facecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB531D463419007FE53C /* Facecell.xib */; };
@@ -107,6 +116,11 @@
 		CCEF78011D391DC900BEDBE0 /* bg_whit.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEF78001D391DC900BEDBE0 /* bg_whit.png */; };
 		CCEFDB231D48635200A82FE9 /* chart_bgimage.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEFDB221D48635200A82FE9 /* chart_bgimage.png */; };
 		CCEFDB261D48945800A82FE9 /* RChatsListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEFDB251D48945800A82FE9 /* RChatsListTableVC.m */; };
+		CCF06C7D1D49EEB000E57A59 /* ChartImageCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF06C7C1D49EEB000E57A59 /* ChartImageCellLeft.xib */; };
+		CCF06C7F1D49EFA700E57A59 /* ChartImageCellRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF06C7E1D49EFA700E57A59 /* ChartImageCellRight.xib */; };
+		CCF06C861D4A391200E57A59 /* RFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF06C841D4A391200E57A59 /* RFriendTableViewCell.m */; };
+		CCF06C871D4A391200E57A59 /* RFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF06C851D4A391200E57A59 /* RFriendTableViewCell.xib */; };
+		CCF06C8B1D4A40C500E57A59 /* friendcell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF06C8A1D4A40C500E57A59 /* friendcell_bg.png */; };
 		CCF280771D41B14D00AF657D /* ChartBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF280761D41B14D00AF657D /* ChartBar.m */; };
 		CCF280801D41B2FB00AF657D /* ChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF2807F1D41B2FB00AF657D /* ChartVC.m */; };
 		CCF280831D41FBCE00AF657D /* RMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF280821D41FBCE00AF657D /* RMessageManager.m */; };
@@ -139,6 +153,8 @@
 		0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		166A8D1783366D0CC901FE3D /* Pods-RunningNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.release.xcconfig"; sourceTree = "<group>"; };
 		59779D7800BA96DDC1255A76 /* Pods-RunningNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.debug.xcconfig"; sourceTree = "<group>"; };
+		6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteTests/Pods-RunningNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC123F9A1D24F785000AC88C /* RJianYe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RJianYe.storyboard; sourceTree = "<group>"; };
@@ -156,6 +172,11 @@
 		CC31D31B1D35163800FA9997 /* RPublishedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPublishedVC.h; sourceTree = "<group>"; };
 		CC31D31C1D35163800FA9997 /* RPublishedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPublishedVC.m; sourceTree = "<group>"; };
 		CC31D31D1D35163800FA9997 /* RPublishedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RPublishedVC.xib; path = ../Controllers/RPublishedVC.xib; sourceTree = "<group>"; };
+		CC342AC71D4AF9E800D3F919 /* friends_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends_bg.png; sourceTree = "<group>"; };
+		CC342AD11D4B050E00D3F919 /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
+		CC342AD31D4B063600D3F919 /* tabbar_bg_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg_black.png; sourceTree = "<group>"; };
+		CC342AD51D4B08CB00D3F919 /* circle_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_bg.png; sourceTree = "<group>"; };
+		CC342AD71D4D86D800D3F919 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		CC38E3441D33D1C1005E2779 /* weather_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_rain.png; sourceTree = "<group>"; };
 		CC38E3451D33D1C1005E2779 /* weather_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_snow.png; sourceTree = "<group>"; };
 		CC38E3461D33D1C1005E2779 /* weather_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_sun.png; sourceTree = "<group>"; };
@@ -220,6 +241,8 @@
 		CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "RFriends-Chat.storyboard"; sourceTree = "<group>"; };
 		CCEA9AEE1D40EE45000B287E /* bg_qiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_qiang.png; sourceTree = "<group>"; };
 		CCEA9AF21D40F6E6000B287E /* bg_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_chat.png; sourceTree = "<group>"; };
+		CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceLeft.xib; sourceTree = "<group>"; };
+		CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceRight.xib; sourceTree = "<group>"; };
 		CCEBDB4E1D463139007FE53C /* ChartBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartBar.xib; sourceTree = "<group>"; };
 		CCEBDB511D463419007FE53C /* Facecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facecell.h; sourceTree = "<group>"; };
 		CCEBDB521D463419007FE53C /* Facecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facecell.m; sourceTree = "<group>"; };
@@ -281,6 +304,12 @@
 		CCEFDB221D48635200A82FE9 /* chart_bgimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart_bgimage.png; sourceTree = "<group>"; };
 		CCEFDB241D48945800A82FE9 /* RChatsListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RChatsListTableVC.h; sourceTree = "<group>"; };
 		CCEFDB251D48945800A82FE9 /* RChatsListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RChatsListTableVC.m; sourceTree = "<group>"; };
+		CCF06C7C1D49EEB000E57A59 /* ChartImageCellLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartImageCellLeft.xib; sourceTree = "<group>"; };
+		CCF06C7E1D49EFA700E57A59 /* ChartImageCellRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartImageCellRight.xib; sourceTree = "<group>"; };
+		CCF06C831D4A391200E57A59 /* RFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFriendTableViewCell.h; sourceTree = "<group>"; };
+		CCF06C841D4A391200E57A59 /* RFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFriendTableViewCell.m; sourceTree = "<group>"; };
+		CCF06C851D4A391200E57A59 /* RFriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFriendTableViewCell.xib; sourceTree = "<group>"; };
+		CCF06C8A1D4A40C500E57A59 /* friendcell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendcell_bg.png; sourceTree = "<group>"; };
 		CCF280751D41B14D00AF657D /* ChartBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBar.h; sourceTree = "<group>"; };
 		CCF280761D41B14D00AF657D /* ChartBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartBar.m; sourceTree = "<group>"; };
 		CCF2807E1D41B2FB00AF657D /* ChartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartVC.h; sourceTree = "<group>"; };
@@ -294,6 +323,7 @@
 		CCF280951D423BA900AF657D /* chart_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart_right.png; sourceTree = "<group>"; };
 		CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+setObj.h"; path = "RunningNote/NSMutableDictionary+setObj.h"; sourceTree = SOURCE_ROOT; };
 		CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+setObj.m"; path = "RunningNote/NSMutableDictionary+setObj.m"; sourceTree = SOURCE_ROOT; };
+		FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +334,7 @@
 				CC4AE2611D2A423A00D64C13 /* MapKit.framework in Frameworks */,
 				CC4AE25F1D2A05A300D64C13 /* CoreLocation.framework in Frameworks */,
 				2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */,
+				7E7F8614F83A9BC8969B4892 /* libPods-RunningNote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */,
+				6789B358DB78F668D023420A /* libPods-RunningNoteUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +366,7 @@
 				0AE6865D77D4438B9725C9CC /* Pods-RunningNoteTests.debug.xcconfig */,
 				9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */,
 				C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */,
+				FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -431,6 +464,8 @@
 				CCE6836C1D47037E00E025AA /* RAudioRecorder.m */,
 				CCE6836E1D474F7200E025AA /* RAudioPlayer.h */,
 				CCE6836F1D474F7200E025AA /* RAudioPlayer.m */,
+				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
+				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 			);
 			name = Talk;
 			sourceTree = "<group>";
@@ -438,20 +473,22 @@
 		CCEA9AE01D40E8C2000B287E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				CCF06C7B1D49998F00E57A59 /* SendImage */,
 				CCEBDB501D4633F0007FE53C /* Faces */,
 				CCE683631D46FD1400E025AA /* Talk */,
+				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
+				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
 				CCF280751D41B14D00AF657D /* ChartBar.h */,
 				CCF280761D41B14D00AF657D /* ChartBar.m */,
 				CCEBDB4E1D463139007FE53C /* ChartBar.xib */,
-				CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */,
-				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
-				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
-				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
-				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 				CCF2808D1D4223D000AF657D /* ChartCell.h */,
 				CCF2808E1D4223D000AF657D /* ChartCell.m */,
 				CCF280891D42237500AF657D /* ChartCellLeft.xib */,
+				CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */,
+				CCF06C7C1D49EEB000E57A59 /* ChartImageCellLeft.xib */,
 				CCF2808A1D42237500AF657D /* ChartCellRight.xib */,
+				CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */,
+				CCF06C7E1D49EFA700E57A59 /* ChartImageCellRight.xib */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -459,8 +496,11 @@
 		CCEA9AE61D40EB21000B287E /* RFriendsInfor */ = {
 			isa = PBXGroup;
 			children = (
+				CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */,
 				CCEA9AE71D40EC3F000B287E /* RFriendsInfor.h */,
 				CCEA9AE81D40EC3F000B287E /* RFriendsInfor.m */,
+				CCEF77F61D39041C00BEDBE0 /* RAddAFriendVC.h */,
+				CCEF77F71D39041C00BEDBE0 /* RAddAFriendVC.m */,
 			);
 			name = RFriendsInfor;
 			sourceTree = "<group>";
@@ -479,9 +519,6 @@
 				CCEBDB571D463419007FE53C /* FacesView.h */,
 				CCEBDB581D463419007FE53C /* FacesView.m */,
 				CCEBDB591D463419007FE53C /* FacesView.xib */,
-				CCEBDB5E1D463419007FE53C /* FunctionView.h */,
-				CCEBDB5F1D463419007FE53C /* FunctionView.m */,
-				CCEBDB601D463419007FE53C /* FunctionView.xib */,
 			);
 			name = Faces;
 			sourceTree = "<group>";
@@ -523,6 +560,11 @@
 		CCEBDD941D23A6CC000E535D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC342AD71D4D86D800D3F919 /* circle.png */,
+				CC342AD51D4B08CB00D3F919 /* circle_bg.png */,
+				CC342AD31D4B063600D3F919 /* tabbar_bg_black.png */,
+				CC342AD11D4B050E00D3F919 /* tabbar_bg.png */,
+				CC342AC71D4AF9E800D3F919 /* friends_bg.png */,
 				CCEA9AF21D40F6E6000B287E /* bg_chat.png */,
 				CCEA9ADE1D40E306000B287E /* bg_cell_black.png */,
 				CCC7197D1D269BE30033FCB2 /* Back.png */,
@@ -653,11 +695,12 @@
 		CCEF77F51D3903DB00BEDBE0 /* RFriends */ = {
 			isa = PBXGroup;
 			children = (
-				CCEA9AE61D40EB21000B287E /* RFriendsInfor */,
 				CC705ED11D2BD39200CB547D /* RMyFriendsTableVC.h */,
 				CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */,
-				CCEF77F61D39041C00BEDBE0 /* RAddAFriendVC.h */,
-				CCEF77F71D39041C00BEDBE0 /* RAddAFriendVC.m */,
+				CCF06C831D4A391200E57A59 /* RFriendTableViewCell.h */,
+				CCF06C841D4A391200E57A59 /* RFriendTableViewCell.m */,
+				CCF06C851D4A391200E57A59 /* RFriendTableViewCell.xib */,
+				CCEA9AE61D40EB21000B287E /* RFriendsInfor */,
 			);
 			name = RFriends;
 			sourceTree = "<group>";
@@ -665,6 +708,7 @@
 		CCEF77F91D390B9000BEDBE0 /* bg_image */ = {
 			isa = PBXGroup;
 			children = (
+				CCF06C8A1D4A40C500E57A59 /* friendcell_bg.png */,
 				CCEA9AEE1D40EE45000B287E /* bg_qiang.png */,
 				CCEF78001D391DC900BEDBE0 /* bg_whit.png */,
 				CCEF77FE1D39129E00BEDBE0 /* bg_blue.png */,
@@ -674,12 +718,24 @@
 			path = tabbar_image;
 			sourceTree = "<group>";
 		};
+		CCF06C7B1D49998F00E57A59 /* SendImage */ = {
+			isa = PBXGroup;
+			children = (
+				CCEBDB5E1D463419007FE53C /* FunctionView.h */,
+				CCEBDB5F1D463419007FE53C /* FunctionView.m */,
+				CCEBDB601D463419007FE53C /* FunctionView.xib */,
+			);
+			name = SendImage;
+			sourceTree = "<group>";
+		};
 		D034DB24E4C554F48F5078E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				CC4AE2601D2A423A00D64C13 /* MapKit.framework */,
 				CC4AE25E1D2A05A300D64C13 /* CoreLocation.framework */,
 				0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */,
+				6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */,
+				92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -800,14 +856,19 @@
 				CC474B2B1D36742400CAED15 /* chat_32.png in Resources */,
 				CC474B261D3651CF00CAED15 /* share_ben_s.png in Resources */,
 				CCEF77FF1D39129E00BEDBE0 /* bg_blue.png in Resources */,
+				CCF06C8B1D4A40C500E57A59 /* friendcell_bg.png in Resources */,
 				CC474B291D36740300CAED15 /* address_32.png in Resources */,
+				CC342AD61D4B08CB00D3F919 /* circle_bg.png in Resources */,
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
 				CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */,
+				CCF06C7D1D49EEB000E57A59 /* ChartImageCellLeft.xib in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
 				CCC719831D269BE30033FCB2 /* stop.png in Resources */,
 				CCEBDDA41D23A6CC000E535D /* LaunchScreen.storyboard in Resources */,
+				CCF06C7F1D49EFA700E57A59 /* ChartImageCellRight.xib in Resources */,
 				CCEBDDA11D23A6CC000E535D /* Assets.xcassets in Resources */,
 				CCEF78011D391DC900BEDBE0 /* bg_whit.png in Resources */,
+				CC342AD41D4B063600D3F919 /* tabbar_bg_black.png in Resources */,
 				CC123FAD1D251E19000AC88C /* pydt_image.png in Resources */,
 				CC38E3481D33D1C1005E2779 /* weather_rain.png in Resources */,
 				CCEBDDEF1D23C3CE000E535D /* run_32.png in Resources */,
@@ -819,15 +880,21 @@
 				CCEBDE001D23E7D1000E535D /* fxpt_image.png in Resources */,
 				CCEFDB231D48635200A82FE9 /* chart_bgimage.png in Resources */,
 				CCF2808C1D42237500AF657D /* ChartCellRight.xib in Resources */,
+				CC342AD21D4B050E00D3F919 /* tabbar_bg.png in Resources */,
+				CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */,
 				CCEBDB621D463419007FE53C /* Facecell.xib in Resources */,
 				CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */,
 				CC474B271D3651CF00CAED15 /* share_btn_n.png in Resources */,
 				CC38E3491D33D1C1005E2779 /* weather_snow.png in Resources */,
 				CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */,
+				CC342AC81D4AF9E800D3F919 /* friends_bg.png in Resources */,
+				CCF06C871D4A391200E57A59 /* RFriendTableViewCell.xib in Resources */,
 				CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */,
 				CCF280971D423BA900AF657D /* chart_right.png in Resources */,
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
+				CC342AD81D4D86D800D3F919 /* circle.png in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
+				CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCE6836A1D46FF0600E025AA /* RVoiceRecordingView.xib in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
@@ -1017,6 +1084,7 @@
 				CCE6836D1D47037E00E025AA /* RAudioRecorder.m in Sources */,
 				CCC719761D2696440033FCB2 /* UIViewController+RVCForStoryBoard.m in Sources */,
 				CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */,
+				CCF06C861D4A391200E57A59 /* RFriendTableViewCell.m in Sources */,
 				CCEBDB651D463419007FE53C /* FacesView.m in Sources */,
 				CCE683661D46FEDF00E025AA /* RVoiceRecordingView.m in Sources */,
 				CCF280771D41B14D00AF657D /* ChartBar.m in Sources */,
@@ -1246,6 +1314,7 @@
 		};
 		CCEBDDC61D23A6CC000E535D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RunningNoteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

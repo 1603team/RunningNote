@@ -66,7 +66,6 @@
         //保留这次选择的按钮,下次重置
         _selectButton = sender;
     }
-    
     //点击按钮改变charbar 状态
     switch (sender.showType) {
         case kBarButtonAdd:
@@ -114,7 +113,6 @@
             [self selectedKeyBoard];
         }
             break;
-            
         default:
             break;
     }
@@ -231,6 +229,7 @@
 -(FunctionView *)functionView{
     if (!_functionView) {
         _functionView = [[[NSBundle mainBundle] loadNibNamed:@"FunctionView" owner:nil options:nil] firstObject];
+        _functionView.delegate = (id)self.delegate;
     }
     return _functionView;
 }
@@ -245,8 +244,6 @@
         [_inputTextView becomeFirstResponder];
     }
 }
-
-
 -(RAudioRecorder *)recorder{
     if (!_recorder) {
         _recorder = [[RAudioRecorder alloc] init];

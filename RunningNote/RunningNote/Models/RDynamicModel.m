@@ -19,6 +19,7 @@
     if (self = [super init]) {
         AVStatus *status = results;
         _objectid = status.objectId;
+        _messageId = status.messageId;
         _createdAt = status.createdAt;
         NSString *base = status.data[@"images"][@"base64"];
         if (base.length) {
@@ -28,6 +29,7 @@
         _text   = status.data[@"text"];
         _location = status.data[@"location"];
         _userName = status.data[@"sourceName"];
+        _iconData = status.data[@"iconImage"];
     }
     return self;
 }
