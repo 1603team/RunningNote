@@ -267,7 +267,7 @@
                     //判断上一次差值为正，本次差值为负则为最大值
                     if ((_difference >= 0) && (sqrtA - _lastNum <= 0)) {
                         _stepNum++;
-                        _heartRate.text = [NSString stringWithFormat:@"%ld",(long)_stepNum];
+                        _heartRate.text = [NSString stringWithFormat:@"%ld",(long)_stepNum / 2];
                         
                         CGFloat stepLength = [RUserModel sharedUserInfo].height * 0.4 / 100;//取出身高并计算步长，即一大步为身高的0.8
                         NSInteger kg = [RUserModel sharedUserInfo].weight;
