@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		166C0683B1A55D8F04C2D39A /* libPods-RunningNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */; };
 		168320E281EBC6A749F29032 /* libPods-RunningNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */; };
 		1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -132,6 +133,7 @@
 		CCF2808F1D4223D000AF657D /* ChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF2808E1D4223D000AF657D /* ChartCell.m */; };
 		CCF280971D423BA900AF657D /* chart_right.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF280951D423BA900AF657D /* chart_right.png */; };
 		CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */; };
+		D1A4BDF068C958DA947B992C /* libPods-RunningNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +158,10 @@
 		0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		166A8D1783366D0CC901FE3D /* Pods-RunningNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.release.xcconfig"; sourceTree = "<group>"; };
 		59779D7800BA96DDC1255A76 /* Pods-RunningNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.debug.xcconfig"; sourceTree = "<group>"; };
+		76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteTests/Pods-RunningNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC123F9A1D24F785000AC88C /* RJianYe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RJianYe.storyboard; sourceTree = "<group>"; };
 		CC123F9E1D250456000AC88C /* duoyun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duoyun.png; sourceTree = "<group>"; };
@@ -342,6 +347,7 @@
 				CC4AE2611D2A423A00D64C13 /* MapKit.framework in Frameworks */,
 				CC4AE25F1D2A05A300D64C13 /* CoreLocation.framework in Frameworks */,
 				2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */,
+				166C0683B1A55D8F04C2D39A /* libPods-RunningNote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */,
+				D1A4BDF068C958DA947B992C /* libPods-RunningNoteUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 				0AE6865D77D4438B9725C9CC /* Pods-RunningNoteTests.debug.xcconfig */,
 				9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */,
 				C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */,
+				76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -747,6 +755,8 @@
 				CC4AE2601D2A423A00D64C13 /* MapKit.framework */,
 				CC4AE25E1D2A05A300D64C13 /* CoreLocation.framework */,
 				0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */,
+				C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */,
+				823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1330,6 +1340,7 @@
 		};
 		CCEBDDC61D23A6CC000E535D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RunningNoteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
