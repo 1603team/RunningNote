@@ -11,6 +11,8 @@
 		168320E281EBC6A749F29032 /* libPods-RunningNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */; };
 		1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		6789B358DB78F668D023420A /* libPods-RunningNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */; };
+		7E7F8614F83A9BC8969B4892 /* libPods-RunningNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */; };
 		CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9A1D24F785000AC88C /* RJianYe.storyboard */; };
 		CC123F9F1D250456000AC88C /* duoyun.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123F9E1D250456000AC88C /* duoyun.png */; };
 		CC123FA21D250E61000AC88C /* homeSport.png in Resources */ = {isa = PBXBuildFile; fileRef = CC123FA01D250E61000AC88C /* homeSport.png */; };
@@ -79,6 +81,8 @@
 		CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */; };
 		CCEB0D211D4AE9A70074B6CF /* bg_record_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */; };
 		CCEB0D231D4AEA7A0074B6CF /* bg_record_cellout.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */; };
+		CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */; };
+		CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */; };
 		CCEBDB4F1D463139007FE53C /* ChartBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB4E1D463139007FE53C /* ChartBar.xib */; };
 		CCEBDB611D463419007FE53C /* Facecell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBDB521D463419007FE53C /* Facecell.m */; };
 		CCEBDB621D463419007FE53C /* Facecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB531D463419007FE53C /* Facecell.xib */; };
@@ -160,6 +164,8 @@
 		59779D7800BA96DDC1255A76 /* Pods-RunningNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.debug.xcconfig"; sourceTree = "<group>"; };
 		76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteTests/Pods-RunningNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +263,8 @@
 		CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUserRecordCellOut.xib; sourceTree = "<group>"; };
 		CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cell.png; sourceTree = "<group>"; };
 		CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cellout.png; sourceTree = "<group>"; };
+		CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceLeft.xib; sourceTree = "<group>"; };
+		CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceRight.xib; sourceTree = "<group>"; };
 		CCEBDB4E1D463139007FE53C /* ChartBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartBar.xib; sourceTree = "<group>"; };
 		CCEBDB511D463419007FE53C /* Facecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facecell.h; sourceTree = "<group>"; };
 		CCEBDB521D463419007FE53C /* Facecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facecell.m; sourceTree = "<group>"; };
@@ -337,6 +345,7 @@
 		CCF280951D423BA900AF657D /* chart_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart_right.png; sourceTree = "<group>"; };
 		CCF488AC1D40D1F80064CC03 /* NSMutableDictionary+setObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+setObj.h"; path = "RunningNote/NSMutableDictionary+setObj.h"; sourceTree = SOURCE_ROOT; };
 		CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+setObj.m"; path = "RunningNote/NSMutableDictionary+setObj.m"; sourceTree = SOURCE_ROOT; };
+		FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +357,7 @@
 				CC4AE25F1D2A05A300D64C13 /* CoreLocation.framework in Frameworks */,
 				2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */,
 				166C0683B1A55D8F04C2D39A /* libPods-RunningNote.a in Frameworks */,
+				7E7F8614F83A9BC8969B4892 /* libPods-RunningNote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +375,7 @@
 			files = (
 				1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */,
 				D1A4BDF068C958DA947B992C /* libPods-RunningNoteUITests.a in Frameworks */,
+				6789B358DB78F668D023420A /* libPods-RunningNoteUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +391,7 @@
 				9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */,
 				C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */,
 				76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */,
+				FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -481,6 +493,8 @@
 				CCE6836C1D47037E00E025AA /* RAudioRecorder.m */,
 				CCE6836E1D474F7200E025AA /* RAudioPlayer.h */,
 				CCE6836F1D474F7200E025AA /* RAudioPlayer.m */,
+				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
+				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 			);
 			name = Talk;
 			sourceTree = "<group>";
@@ -491,18 +505,18 @@
 				CCF06C7B1D49998F00E57A59 /* SendImage */,
 				CCEBDB501D4633F0007FE53C /* Faces */,
 				CCE683631D46FD1400E025AA /* Talk */,
+				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
+				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
 				CCF280751D41B14D00AF657D /* ChartBar.h */,
 				CCF280761D41B14D00AF657D /* ChartBar.m */,
 				CCEBDB4E1D463139007FE53C /* ChartBar.xib */,
-				CCF2807E1D41B2FB00AF657D /* ChartVC.h */,
-				CCF2807F1D41B2FB00AF657D /* ChartVC.m */,
-				CCF280811D41FBCE00AF657D /* RMessageManager.h */,
-				CCF280821D41FBCE00AF657D /* RMessageManager.m */,
 				CCF2808D1D4223D000AF657D /* ChartCell.h */,
 				CCF2808E1D4223D000AF657D /* ChartCell.m */,
 				CCF280891D42237500AF657D /* ChartCellLeft.xib */,
+				CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */,
 				CCF06C7C1D49EEB000E57A59 /* ChartImageCellLeft.xib */,
 				CCF2808A1D42237500AF657D /* ChartCellRight.xib */,
+				CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */,
 				CCF06C7E1D49EFA700E57A59 /* ChartImageCellRight.xib */,
 			);
 			name = Chat;
@@ -757,6 +771,8 @@
 				0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */,
 				C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */,
 				823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */,
+				6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */,
+				92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -904,6 +920,7 @@
 				CCEFDB231D48635200A82FE9 /* chart_bgimage.png in Resources */,
 				CCF2808C1D42237500AF657D /* ChartCellRight.xib in Resources */,
 				CC342AD21D4B050E00D3F919 /* tabbar_bg.png in Resources */,
+				CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */,
 				CCEBDB621D463419007FE53C /* Facecell.xib in Resources */,
 				CC123F9B1D24F785000AC88C /* RJianYe.storyboard in Resources */,
 				CC474B271D3651CF00CAED15 /* share_btn_n.png in Resources */,
@@ -918,6 +935,7 @@
 				CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */,
 				CC342AD81D4D86D800D3F919 /* circle.png in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
+				CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */,
 				CCEBDDFA1D23DFA2000E535D /* calendar_image.png in Resources */,
 				CCE6836A1D46FF0600E025AA /* RVoiceRecordingView.xib in Resources */,
 				CCEBDDEB1D23C102000E535D /* icon_35_s.png in Resources */,
@@ -1276,7 +1294,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1292,7 +1310,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunningNote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hnqingyun.www.RunningNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1341,6 +1359,7 @@
 		CCEBDDC61D23A6CC000E535D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */;
+			baseConfigurationReference = FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RunningNoteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

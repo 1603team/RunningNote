@@ -12,7 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     _iconImage.layer.cornerRadius = 30;
+    [_iconImage.layer setBorderWidth:0.8]; //边框宽度
+    [_iconImage.layer setBorderColor:[UIColor grayColor].CGColor];
     _iconImage.layer.masksToBounds = YES;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"friendcell_bg"]];
     self.backgroundView = imageView;

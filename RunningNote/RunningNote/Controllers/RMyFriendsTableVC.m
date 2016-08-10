@@ -11,6 +11,7 @@
 #import "RFriendsInfor.h"
 #import "RFriendTableViewCell.h"
 #import <AVStatus.h>
+#import <MJRefresh.h>
 
 @interface RMyFriendsTableVC ()
 
@@ -31,25 +32,25 @@ static NSString *identifier = @"friendmycell";
     headerView.contentMode = UIViewContentModeScaleToFill;
     headerView.maskView.clipsToBounds = YES;
     headerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
-//    CGRect frame = headerView.frame;
-//    frame.size.height = 20;
-//    headerView.frame = frame;
+
     self.tableView.tableHeaderView = headerView;
-    self.tabBarController.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_bg_black"];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"] forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.translucent = NO;
 
-    
+    //添加刷新风火轮
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshAction)];
+    [self.tableView.mj_header beginRefreshing];
     
     self.navigationItem.title = @"好友列表";
     self.tableView.backgroundColor = [UIColor blackColor];
    // UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
   //  imageView.contentMode = UIViewContentModeScaleAspectFill;
   //  self.tableView.backgroundView = imageView;
-    
     UINib *nib = [UINib nibWithNibName:@"RFriendTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
     
+}
+- (void)refreshAction{//上拉刷新
     [self reloadFriendsArray];
 }
 
@@ -59,8 +60,7 @@ static NSString *identifier = @"friendmycell";
 }
 
 - (void)reloadFriendsArray{//获取好友列表
-    
-    //AVQuery *query= [AVUser followeeQuery:@"USER_OBJECT_ID"];
+    __weak RMyFriendsTableVC *weekSelf = self;
     [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"error-----> %@",error);
@@ -69,17 +69,14 @@ static NSString *identifier = @"friendmycell";
         for (AVUser *user in objects) {
             [mutArray addObject:user];
         }
-#warning 本地化好友列表  现在好友为AVUSer 转换为模型在本地 需要nickName
         NSSortDescriptor *nickNameDesc = [NSSortDescriptor sortDescriptorWithKey:@"nickName" ascending:YES];
         NSArray *sortedArray = [mutArray sortedArrayUsingDescriptors:@[nickNameDesc]];
-        self.friendsArray = sortedArray;//获取到好友，本地化处理⚠️
-        [self.tableView reloadData];
+        weekSelf.friendsArray = sortedArray;//获取到好友，本地化处理⚠️
+        [weekSelf.tableView.mj_header endRefreshing];
+        [weekSelf.tableView reloadData];
     }];
 
 }
-
-
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
