@@ -174,8 +174,8 @@
 
 - (IBAction)startBtn:(UIButton *)sender {
     //移除选择模式按钮
-    if (_chooseModeBtn.hidden == NO) {
-        [_chooseModeBtn removeFromSuperview];
+    //if (_chooseModeBtn.hidden == NO) {
+      //  [_chooseModeBtn removeFromSuperview];
         //改变状态
         sender.selected = !sender.selected;
         if (_stopButton.enabled == NO) {
@@ -191,7 +191,7 @@
             _runTimer = nil;
         }
         [self showAllLabel];
-    }
+    //}
     if (_isStart) {
         [_locationService stopUserLocationService];
         
