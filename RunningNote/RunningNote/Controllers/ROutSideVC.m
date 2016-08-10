@@ -375,6 +375,8 @@
     [runNote setObject:_timeNow.text forKey:@"time"];
     [runNote setObject:_kmNumber.text forKey:@"distance"];
     [runNote setObject:_speedNumber.text forKey:@"speed"];
+    [runNote setObject:_paceText.text forKey:@"pace"];
+    [runNote setObject:_calorieNumber.text forKey:@"calorie"];
     [runNote setObject:@NO forKey:@"isHome"];
     [runNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {

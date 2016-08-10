@@ -76,6 +76,9 @@
         RUserRunRecord *recordDis = [RUserRunRecord getbestData:@"distance"];
         _distanceLabel.text = [NSString stringWithFormat:@"%g",recordDis.distance];
         
+        RUserRunRecord *recordAverage = [RUserRunRecord getbestData:@"speed"];
+        _averageLabel.text = [NSString stringWithFormat:@"%g",recordAverage.speed];
+        
 //        [QYDataBaseTool selectStatementsSql:[SELECT_MyRunNote_BY stringByAppendingString:@"distance"] withParsmeters:nil forMode:@"RUserRunRecord" block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
 //            if (resposeOjbc) {
 //                RUserRunRecord *record = resposeOjbc.lastObject;
@@ -93,6 +96,20 @@
 //            NSLog(@"%@",[dict[@"sum(distance)"] stringValue]);
             if (![dict[@"sum(distance)"] isKindOfClass:[NSNull class]]) {
                 _totalDistance.text = [dict[@"sum(distance)"] stringValue];
+            }
+        }];
+        [QYDataBaseTool selectStatementsSql:SELECT_MyRunNote_SUM_Time withParsmeters:nil forMode:nil block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+            NSDictionary *dict = [resposeOjbc firstObject];
+            //            NSLog(@"%@",[dict[@"sum(time)"] stringValue]);
+            if (![dict[@"sum(time)"] isKindOfClass:[NSNull class]]) {
+                _totalTime.text = [dict[@"sum(time)"] stringValue];
+            }
+        }];
+        [QYDataBaseTool selectStatementsSql:SELECT_MyRunNote_SUM_Calorie withParsmeters:nil forMode:nil block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+            NSDictionary *dict = [resposeOjbc firstObject];
+            //            NSLog(@"%@",[dict[@"sum(calorie)"] stringValue]);
+            if (![dict[@"sum(calorie)"] isKindOfClass:[NSNull class]]) {
+                _totalTime.text = [dict[@"sum(calorie)"] stringValue];
             }
         }];
     }

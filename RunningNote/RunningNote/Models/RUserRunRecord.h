@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *time;
 @property (nonatomic) float distance;
 @property (nonatomic) float speed;
+@property (nonatomic, strong) NSString *pace;
+@property (nonatomic, strong) NSString *calorie;
 @property (nonatomic) BOOL isHome;
 
 + (instancetype)recordModelWithDictionary:(NSDictionary *)dict;

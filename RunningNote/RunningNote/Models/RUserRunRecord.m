@@ -46,6 +46,13 @@
             }
         }];
     }
+    if ([data isEqualToString:@"speed"]) {
+        [QYDataBaseTool selectStatementsSql:[SELECT_MyRunNote_BY stringByAppendingString:@"speed"] withParsmeters:nil forMode:@"RUserRunRecord" block:^(NSMutableArray *resposeOjbc, NSString *errorMsg) {
+            if (resposeOjbc) {
+                record = resposeOjbc.lastObject;
+            }
+        }];
+    }
     return record;
 }
 
@@ -56,12 +63,14 @@
         NSArray<AVObject *> *objs = objects;
         [QYDataBaseTool updateStatementsSql:Delete_MyRunNote withParsmeters:nil block:^(BOOL isOk, NSString *errorMsg) {
         }];
-        for (AVObject *obj in objs) {
+        for (AVObject *obj in objs) {//title text,time real,distance real,speed real,pace text,calorie text,isHome integer
             NSMutableDictionary *mulDict = [NSMutableDictionary dictionary];
             [mulDict GHB_setObject:[obj objectForKey:@"title"] forKey:@"title"];
             [mulDict GHB_setObject:[obj objectForKey:@"time"] forKey:@"time"];
             [mulDict GHB_setObject:[obj objectForKey:@"distance"] forKey:@"distance"];
             [mulDict GHB_setObject:[obj objectForKey:@"speed"] forKey:@"speed"];
+            [mulDict GHB_setObject:[obj objectForKey:@"pace"] forKey:@"pace"];
+            [mulDict GHB_setObject:[obj objectForKey:@"calorie"] forKey:@"calorie"];
             [mulDict GHB_setObject:[obj objectForKey:@"isHome"] forKey:@"isHome"];
             
             [QYDataBaseTool updateStatementsSql:INSERT_MyRunNote_SQL withParsmeters:mulDict block:^(BOOL isOk, NSString *errorMsg) {
