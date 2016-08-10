@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="124" height="130.5"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecordingSignal004" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-lM-oCT">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RecordingSignal004" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-lM-oCT">
                     <rect key="frame" x="84" y="20" width="18" height="91"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sending-voice-mic" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-Xx-dwb">
                     <rect key="frame" x="11" y="19" width="65" height="91"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" patternImage="3F446BEA-91F3-4B35-B6D4-FB6939BEC382" colorSpace="pattern"/>
+            <color key="backgroundColor" patternImage="3AC4553C-8FF6-46E1-9D08-7A907F91FE65" colorSpace="pattern"/>
             <constraints>
                 <constraint firstItem="Bk7-lM-oCT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="5BZ-4I-CVu"/>
                 <constraint firstItem="sCS-Xx-dwb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S95-fb-c9g"/>
@@ -36,7 +36,7 @@
         </view>
     </objects>
     <resources>
-        <image name="3F446BEA-91F3-4B35-B6D4-FB6939BEC382" width="640" height="920">
+        <image name="3AC4553C-8FF6-46E1-9D08-7A907F91FE65" width="640" height="920">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

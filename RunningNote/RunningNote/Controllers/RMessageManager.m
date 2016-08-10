@@ -39,7 +39,7 @@
 
 //富文本类型消息接收
 -(void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message{
-    NSLog(@"type message:%@",message);
+    //NSLog(@"type message:%@",message);
     [self.delegate conversation:conversation didReceiveTypedMessage:message];
 }
 

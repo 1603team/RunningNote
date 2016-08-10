@@ -14,6 +14,7 @@
 #import <SVProgressHUD.h>
 #import <AVStatus.h>
 #import "RDynamicModel.h"
+#import "MJRefresh.h"
 #define RScreenW [UIScreen mainScreen].bounds.size.width
 @interface RDynamicTableVC ()<UITextViewDelegate>
 
@@ -30,11 +31,7 @@ static NSString *identifire = @"mycell";
 static NSString *footerIdentifier = @"myFootView";
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.refreshControl  = [[UIRefreshControl alloc] init];//添加下拉刷新
-    self.refreshControl.tintColor = [UIColor whiteColor];
-    [self.refreshControl addTarget:self action:@selector(reloadDataArray) forControlEvents:UIControlEventValueChanged];
-    
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
     
     [self addTableHeardView];
     self.tableView.estimatedRowHeight = 200;
@@ -55,41 +52,77 @@ static NSString *footerIdentifier = @"myFootView";
     [self.tableView addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
 
-    [self reloadDataArray];
-
+    //添加刷新风火轮
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadDataArray)];
+    self.tableView.mj_header.tintColor = [UIColor blackColor];
+    [self.tableView.mj_header beginRefreshing];
+    //上拉加载更多
+    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(reloadMoreData)];
+    
+    [footer setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];
+    [footer setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"数据以全部加载完毕" forState:MJRefreshStateNoMoreData];
+    self.tableView.mj_footer = footer;
+    
 }
+- (void)reloadMoreData{//上拉加载
+    __weak RDynamicTableVC *weakSelf = self;
+    AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
+    //      限制条数
+    query.limit = 10;
+    RDynamicModel *model = self.dataArray.lastObject;
+    NSInteger n = model.messageId + 1;
+    query.maxId = n;
 
-- (void)reloadDataArray{
-    [self.refreshControl beginRefreshing];
-    NSMutableArray *mutArray = [NSMutableArray array];
-    [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"error-----> %@",error);
-        }
-        for (AVUser *user in objects) {
-            [mutArray addObject:user];
-        }
-        [mutArray addObject:[AVUser currentUser]];
+    //设置消息类型
+    query.inboxType=kAVStatusTypeTimeline;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        //获得 AVStatus 数组
+        [weakSelf dataArrayFromArray:objects];
+    }];
+    
+
+    
+}
+- (void)reloadDataArray{//下拉刷新
+//    NSMutableArray *mutArray = [NSMutableArray array];
+    __weak RDynamicTableVC *weakSelf = self;
+//    [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
+//        if (error) {
+//            NSLog(@"error-----> %@",error);
+//        }
+//        for (AVUser *user in objects) {
+//            [mutArray addObject:user];
+//        }
+//        [mutArray addObject:[AVUser currentUser]];
         AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
         //      限制条数
-        query.limit=20;
+        query.limit=10;
         //设置消息类型
         query.inboxType=kAVStatusTypeTimeline;
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             //获得 AVStatus 数组
-            [self dataArrayFromArray:objects];
+            if (objects) {
+                [weakSelf.dataArray removeAllObjects];
+            }
+            [weakSelf dataArrayFromArray:objects];
         }];
-    }];
+//    }];
 }
 - (void)dataArrayFromArray:(NSArray *)array{
     NSMutableArray *mutArray = [NSMutableArray array];
     for (int i = 0; i < array.count; i ++){
-    RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
-    [mutArray addObject:model];
+        RDynamicModel *model = [[RDynamicModel alloc] initWithResults:array[i]];
+        [mutArray addObject:model];
     }
-    [self.dataArray removeAllObjects];
     [self.dataArray addObjectsFromArray:mutArray];
-    [self.refreshControl endRefreshing];//停止刷新视图
+    [self.tableView.mj_header endRefreshing];
+    if (array.count < 10) {
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        
+        [self.tableView.mj_footer endRefreshing];
+    }
     [self.tableView reloadData];
 }
 
@@ -102,8 +135,8 @@ static NSString *footerIdentifier = @"myFootView";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.alpha = 0.5;
-    self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    self.navigationController.navigationBar.alpha = 0.6;
+    self.view.backgroundColor = [UIColor blackColor];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
     [SVProgressHUD dismiss];
     [self.tableView reloadData];
@@ -137,13 +170,16 @@ static NSString *footerIdentifier = @"myFootView";
 
 - (void)addTableHeardView{
     //添加tableView的头部视图
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"outsideSport.png"]];
-    imageView.frame = CGRectMake(0, 0, 0, 200);
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"circle"]];
+    imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
     self.tableView.tableHeaderView = imageView;
 }
 //设置sectionFooterView的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 20;
+    return 60;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.1;
 }
 
 //sectionFooterView
@@ -157,6 +193,8 @@ static NSString *footerIdentifier = @"myFootView";
     };
     return footView;
 }
+
+
 
 - (void)btnClick:(NSInteger )tag{
     if (tag == 1001) {
@@ -173,7 +211,7 @@ static NSString *footerIdentifier = @"myFootView";
     [_commentText becomeFirstResponder];//再次让textView成为第一响应者（第二次）这次键盘才成功显示
 }
 - (void)createCommentsView {//创建commentsView
-    UIView *commentsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, RScreenW, 40)];
+    UIView *commentsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, RScreenW, 44)];
     commentsView.backgroundColor = [UIColor whiteColor];
     _commentText = [[UITextView alloc] initWithFrame:CGRectInset(commentsView.bounds, 5.0, 5.0)];
     _commentText.layer.borderColor   = (__bridge CGColorRef _Nullable)([UIColor blueColor]);

@@ -11,6 +11,7 @@
 #import "AVIMSignature.h"
 #import "RMessageManager.h"
 #import "RUserModel.h"
+#import "ChartVC.h"
 @interface RChatsListTableVC ()
 
 @property (nonatomic, strong) NSArray *chatsList;
@@ -28,19 +29,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"最近会话";
+    self.view.backgroundColor = [UIColor darkGrayColor];
     _chatsList = [[NSArray alloc] init];
 
     AVIMClient *client = [RMessageManager sharemessageManager].clint;
     AVIMConversationQuery *query = [client conversationQuery];
-    
-//    AVIMConversation *com = [[AVIMConversation alloc] init];
-//    [query whereKey:[AVUser currentUser].username containedIn: com.members];
+    query.cachePolicy = kAVCachePolicyNetworkElseCache;//关闭优先请求缓存，先从网络获取
+
     [query whereKey:@"m" containsAllObjectsInArray:@[[AVUser currentUser].username ]];
     [query addDescendingOrder:@"updateAt"];
     __weak RChatsListTableVC *weakSelf = self;
     // 执行查询
     if (client.status == AVIMClientStatusOpened) {
-        NSLog(@"开着");
         [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
             if (error) {
                 NSLog(@"%@",error);
@@ -49,9 +50,7 @@
             weakSelf.chatsList = objects;
             [weakSelf.tableView reloadData];
         }];
-
     }else{
-        NSLog(@"关着");
         [client openWithCallback:^(BOOL succeeded, NSError *error){
             [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
                 if (error) {
@@ -63,9 +62,6 @@
             }];
         }];
     }
-    
-//    AVIMAttr(<#attr#>)
-    
  
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
     
@@ -74,7 +70,9 @@
 
 
 #pragma mark - Table view data source
-
+- (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60.f;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.chatsList.count;
 }
@@ -85,57 +83,36 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
     }
-    
-    cell.textLabel.text = conversation.name;
+    //    cell.textLabel.text = conversation.name;
+    NSArray *array = [conversation.name componentsSeparatedByString:@"&"];
+    for (NSString *nameStr in array) {
+        if (![nameStr isEqualToString:[RUserModel sharedUserInfo].nickName]) {
+            cell.textLabel.text = nameStr;
+        }
+    }
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    AVIMConversation *conversation = self.chatsList[indexPath.row];
+    ChartVC *chartVC = [[ChartVC alloc] init];
+    chartVC.conversation = conversation;
+    self.tabBarController.tabBar.hidden=YES;
+    self.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:chartVC animated:YES];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 1;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

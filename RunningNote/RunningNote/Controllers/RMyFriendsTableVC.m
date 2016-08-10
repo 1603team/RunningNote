@@ -9,7 +9,9 @@
 #import "RMyFriendsTableVC.h"
 #import "RAddAFriendVC.h"
 #import "RFriendsInfor.h"
+#import "RFriendTableViewCell.h"
 #import <AVStatus.h>
+#import <MJRefresh.h>
 
 @interface RMyFriendsTableVC ()
 
@@ -18,20 +20,37 @@
 @end
 
 @implementation RMyFriendsTableVC
-static NSString *identifier = @"mycell";
+static NSString *identifier = @"friendmycell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //添加好友的按钮
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriend)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
+    
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"friends_bg"]];
+    headerView.contentMode = UIViewContentModeScaleToFill;
+    headerView.maskView.clipsToBounds = YES;
+    headerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+
+    self.tableView.tableHeaderView = headerView;
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.translucent = NO;
+
+    //添加刷新风火轮
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshAction)];
+    [self.tableView.mj_header beginRefreshing];
+    
     self.navigationItem.title = @"好友列表";
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.tableView.backgroundView = imageView;
+    self.tableView.backgroundColor = [UIColor blackColor];
+   // UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
+  //  imageView.contentMode = UIViewContentModeScaleAspectFill;
+  //  self.tableView.backgroundView = imageView;
+    UINib *nib = [UINib nibWithNibName:@"RFriendTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
     
-    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
-    
+}
+- (void)refreshAction{//上拉刷新
     [self reloadFriendsArray];
 }
 
@@ -41,8 +60,7 @@ static NSString *identifier = @"mycell";
 }
 
 - (void)reloadFriendsArray{//获取好友列表
-    
-    //AVQuery *query= [AVUser followeeQuery:@"USER_OBJECT_ID"];
+    __weak RMyFriendsTableVC *weekSelf = self;
     [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"error-----> %@",error);
@@ -51,15 +69,14 @@ static NSString *identifier = @"mycell";
         for (AVUser *user in objects) {
             [mutArray addObject:user];
         }
-#warning 本地化好友列表  现在好友为AVUSer 转换为模型在本地 需要nickName
-        self.friendsArray = mutArray;//获取到好友，本地化处理⚠️
-        [self.tableView reloadData];
+        NSSortDescriptor *nickNameDesc = [NSSortDescriptor sortDescriptorWithKey:@"nickName" ascending:YES];
+        NSArray *sortedArray = [mutArray sortedArrayUsingDescriptors:@[nickNameDesc]];
+        weekSelf.friendsArray = sortedArray;//获取到好友，本地化处理⚠️
+        [weekSelf.tableView.mj_header endRefreshing];
+        [weekSelf.tableView reloadData];
     }];
 
 }
-
-
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -74,7 +91,6 @@ static NSString *identifier = @"mycell";
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -87,18 +103,21 @@ static NSString *identifier = @"mycell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {//temp
     
     AVUser *user = self.friendsArray[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];/////////cell没有注册
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.textLabel.text = user.username;
-    //cell.backgroundColor = [UIColor colorWithRed:12/255.0 green:21/255.0 blue:59/255.0 alpha:1.0];
-    cell.backgroundView.alpha = 0.3;
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor clearColor];
+    RFriendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NSDictionary *localData = [user valueForKey:@"localData"];
+    NSData *icomImageData = [localData valueForKey:@"iconImage"];
+    NSString *nickName = [localData valueForKey:@"nickName"];
+    cell.iconImage.image = [UIImage imageWithData:icomImageData];
+    cell.nickName.text = nickName;
+    cell.nickName.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor lightGrayColor];
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_black"]];
 //    [cell setBackgroundView:imageView];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70.0f;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     AVUser *user = self.friendsArray[indexPath.row];
@@ -106,9 +125,7 @@ static NSString *identifier = @"mycell";
     RFriendsInfor *friendInfor = [sb instantiateViewControllerWithIdentifier:@"rfriendsInfor"];
     friendInfor.friendsUser = user;
     
-    //1.设置self.tabBarController.tabBar.hidden=YES;
     self.tabBarController.tabBar.hidden=YES;
-    //2.如果在push跳转时需要隐藏tabBar，设置self.hidesBottomBarWhenPushed=YES;
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:friendInfor animated:YES];
     self.hidesBottomBarWhenPushed=NO;

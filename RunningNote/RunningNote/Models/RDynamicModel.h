@@ -17,6 +17,8 @@
 @property (nonatomic, strong)NSDate  *createdAt;//创建时间
 @property (nonatomic, copy) NSString *location;//位置信息
 @property (nonatomic, strong)NSArray *comments;//包含评论的数组
+@property (nonatomic        )NSInteger  messageId;//messageId
+@property (nonatomic, strong)NSData  *iconData;
 
 +(instancetype)modelWithResults:(id)results;
 -(instancetype)initWithResults:(id)results;
