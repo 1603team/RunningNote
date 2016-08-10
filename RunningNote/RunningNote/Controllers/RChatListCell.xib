@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="chatListcell" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="RChatListCell">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="与XXX的会话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIu-f4-Tei">
+                        <rect key="frame" x="20" y="8" width="107.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-yB-ZN2">
+                        <rect key="frame" x="25" y="34" width="305" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.44427628708551481" green="0.44427628708551481" blue="0.44427628708551481" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxP-2V-YNR">
+                        <rect key="frame" x="364" y="20" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="LU4-tS-ucp"/>
+                            <constraint firstAttribute="height" constant="20" id="qb6-wY-BHQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OBg-yB-ZN2" firstAttribute="top" secondItem="uIu-f4-Tei" secondAttribute="bottom" constant="5" id="5Bs-r6-4Rl"/>
+                    <constraint firstAttribute="trailing" secondItem="OBg-yB-ZN2" secondAttribute="trailing" constant="70" id="B98-4e-anO"/>
+                    <constraint firstAttribute="trailing" secondItem="pxP-2V-YNR" secondAttribute="trailing" constant="16" id="Lg1-tB-SWF"/>
+                    <constraint firstItem="OBg-yB-ZN2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="Qrf-3t-0aI"/>
+                    <constraint firstItem="uIu-f4-Tei" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RTG-LX-9Ly"/>
+                    <constraint firstItem="uIu-f4-Tei" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Zx0-cX-rlc"/>
+                    <constraint firstItem="pxP-2V-YNR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eRe-Ac-qOu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lastMessageLabel" destination="OBg-yB-ZN2" id="HtZ-cU-B2U"/>
+                <outlet property="nickNameLabel" destination="uIu-f4-Tei" id="qp2-7V-a3e"/>
+                <outlet property="numberLabel" destination="pxP-2V-YNR" id="mqc-oZ-iom"/>
+            </connections>
+            <point key="canvasLocation" x="432" y="339"/>
+        </tableViewCell>
+    </objects>
+</document>

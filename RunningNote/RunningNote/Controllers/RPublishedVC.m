@@ -26,6 +26,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 1;
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    self.tabBarController.tabBar.hidden = YES;
     
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(creatNewDynamic)];
     self.navigationItem.rightBarButtonItem = rightButtonItem;

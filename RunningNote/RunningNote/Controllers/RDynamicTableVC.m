@@ -14,15 +14,19 @@
 #import <SVProgressHUD.h>
 #import <AVStatus.h>
 #import "RDynamicModel.h"
+#import "RUserModel.h"
 #import "MJRefresh.h"
 #define RScreenW [UIScreen mainScreen].bounds.size.width
 @interface RDynamicTableVC ()<UITextViewDelegate>
 
-@property (nonatomic , strong)NSMutableArray *dataArray;//数据源
+@property (nonatomic, strong)NSMutableArray *dataArray;//数据源
+@property (nonatomic, strong)NSMutableArray *commentesArray;//?
 
 
 @property (nonatomic , strong)UITextView *commentText; //文本框
-@property (nonatomic ,strong) UIView     *commentesView;
+@property (nonatomic ,strong) UIView     *commentesView; //评论列表
+
+@property (nonatomic)          NSInteger sectionNumber;//点击的评论为哪条的
 
 @end
 
@@ -32,7 +36,6 @@ static NSString *footerIdentifier = @"myFootView";
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.edgesForExtendedLayout = UIRectEdgeAll;
-    
     [self addTableHeardView];
     self.tableView.estimatedRowHeight = 200;
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -80,34 +83,21 @@ static NSString *footerIdentifier = @"myFootView";
         //获得 AVStatus 数组
         [weakSelf dataArrayFromArray:objects];
     }];
-    
-
-    
 }
 - (void)reloadDataArray{//下拉刷新
-//    NSMutableArray *mutArray = [NSMutableArray array];
     __weak RDynamicTableVC *weakSelf = self;
-//    [[AVUser currentUser] getFollowees:^(NSArray *objects, NSError *error) {
-//        if (error) {
-//            NSLog(@"error-----> %@",error);
-//        }
-//        for (AVUser *user in objects) {
-//            [mutArray addObject:user];
-//        }
-//        [mutArray addObject:[AVUser currentUser]];
-        AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
-        //      限制条数
-        query.limit=10;
-        //设置消息类型
-        query.inboxType=kAVStatusTypeTimeline;
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            //获得 AVStatus 数组
-            if (objects) {
-                [weakSelf.dataArray removeAllObjects];
-            }
-            [weakSelf dataArrayFromArray:objects];
-        }];
-//    }];
+    AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
+    //      限制条数
+    query.limit=10;
+    //设置消息类型
+    query.inboxType=kAVStatusTypeTimeline;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        //获得 AVStatus 数组
+        if (objects) {
+            [weakSelf.dataArray removeAllObjects];
+        }
+        [weakSelf dataArrayFromArray:objects];
+    }];
 }
 - (void)dataArrayFromArray:(NSArray *)array{
     NSMutableArray *mutArray = [NSMutableArray array];
@@ -124,16 +114,17 @@ static NSString *footerIdentifier = @"myFootView";
         [self.tableView.mj_footer endRefreshing];
     }
     [self.tableView reloadData];
+    [self getCommentesArrayFromId];
 }
 
 - (void)newMessage{//发布一条动态
     RPublishedVC *publeshedVC = [[RPublishedVC alloc] init];
     [self.navigationController pushViewController:publeshedVC animated:YES];
 }
-
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.tabBarController.tabBar.hidden = YES;
+    self.hidesBottomBarWhenPushed = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 0.6;
     self.view.backgroundColor = [UIColor blackColor];
@@ -141,12 +132,23 @@ static NSString *footerIdentifier = @"myFootView";
     [SVProgressHUD dismiss];
     [self.tableView reloadData];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)getCommentesArrayFromId{
+    for (int i = 0; i < self.dataArray.count; i ++) {
+        RDynamicModel *model = self.dataArray[i];
+        AVQuery *query = [AVQuery queryWithClassName:@"Comments"];
+        query.limit = 20;
+        [query whereKey:@"StatusId" equalTo:[AVObject objectWithClassName:@"_Status" objectId:model.objectid]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"error---->>%@",error);
+            }
+            NSArray* reversedArray = [[objects reverseObjectEnumerator] allObjects];
+            [_dataArray[i] setValue:reversedArray forKey:@"comments"];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:i];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
+    }
 }
-
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -160,8 +162,8 @@ static NSString *footerIdentifier = @"myFootView";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RDynamicModel *model = self.dataArray[indexPath.section];
     RMyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifire forIndexPath:indexPath];
-    cell.tempTVC = self;//把控制器传过去，确定响应者链连贯
     cell.model = model;
+    cell.tempTVC = self;//把控制器传过去，确定响应者链连贯
     [cell.contentView setBackgroundColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
@@ -189,19 +191,17 @@ static NSString *footerIdentifier = @"myFootView";
     footView.contentView.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     __weak RDynamicTableVC *weakSelf = self;
     footView.changedSelectedBtn = ^(NSInteger tag){
-        [weakSelf btnClick:tag];
+        [weakSelf btnClick:tag :section];
     };
     return footView;
 }
 
 
-
-- (void)btnClick:(NSInteger )tag{
+- (void)btnClick:(NSInteger )tag :(NSInteger)sectionNumber{
     if (tag == 1001) {
-//        sender.userInteractionEnabled = NO;
-//        [sender performSelector:@selector(setUserInteractionEnabled:) withObject:@YES afterDelay:5];
         [self showCommentText];
-        
+        _sectionNumber = sectionNumber;
+       // NSLog(@"-------> 第%ld组",sectionNumber);
     }else if (tag == 1002){
         NSLog(@"转发");
     }
@@ -232,61 +232,41 @@ static NSString *footerIdentifier = @"myFootView";
     [_commentText resignFirstResponder];
 }
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView{
-    NSLog(@"文本框内容--> %@",textView.text);
+    //NSLog(@"文本框内容--> %@",textView.text);
     return YES;//键盘收回时
 }
 //点击键盘return回收键盘
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text{
     if ([text isEqualToString:@"\n"]) {
+        //添加评论
+        [self createAComment:textView.text];
         [self hideKeyboard];
         return NO;
     }
     return YES;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)createAComment:(NSString *)text{//发布一条评论
+    AVObject *comment = [[AVObject alloc] initWithClassName:@"Comments"];// 构建 Comment 对象
+    [comment setObject:text forKey:@"contentText"];// 留言的内容
+    RDynamicModel *statuModel = self.dataArray[_sectionNumber];
+    NSString *statusId = statuModel.objectid;
+    [comment setObject:[AVObject objectWithClassName:@"_Status" objectId:statusId] forKey:@"StatusId"];
+    //评论字段中需要添加评论人，暂时设置为数组，数组中第一个元素为评论人的id，第二个为昵称
+    NSArray *array = @[[AVUser currentUser].objectId,[RUserModel sharedUserInfo].nickName];
+    [comment setObject:array forKey:@"commenter_idAndName"];
+//#warning 字段中 array为[userID,userNickName]   字段currentUser中为user对象包含userId，但无nickName
+    [comment setObject:[AVUser currentUser] forKey:@"currentUser"];//
+    [comment saveInBackground];
+    SVProgressHUD.minimumDismissTimeInterval = 2.0;
+    [SVProgressHUD showSuccessWithStatus:@"评论成功,刷新数据"];
+    [self.tableView.mj_header beginRefreshing];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
+
+
+
+
+

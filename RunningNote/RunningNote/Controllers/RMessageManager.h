@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong)AVIMClient *clint;
 @property (nonatomic, weak)id<MessageManagerDelegate> delegate;
-
+@property (nonatomic, strong)NSDictionary *messagePara;//会话的未读信息条数，会话对象，会话最后一条消息对象
 +(instancetype)sharemessageManager;
 
 

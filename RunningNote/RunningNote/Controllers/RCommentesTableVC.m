@@ -7,7 +7,8 @@
 //
 
 #import "RCommentesTableVC.h"
-
+#import "RCommentesCell.h"
+#import <AVStatus.h>
 @interface RCommentesTableVC ()
 
 @end
@@ -21,9 +22,10 @@
     self.tableView.rowHeight = 20.0;
     self.tableView.scrollEnabled = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithRed:81/255.0 green:81/255.0 blue:81/255.0 alpha:1];
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"RCommentesCell" bundle:nil] forCellReuseIdentifier:@"commentescell"];
     
 }
 
@@ -35,19 +37,19 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.commentesArray.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = self.commentesArray[indexPath.section];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
+    RCommentesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentescell" forIndexPath:indexPath];
+    AVObject *obj = self.commentesArray[indexPath.row];
+    cell.nickNameLabel.text = obj[@"localData"][@"commenter_idAndName"][1];
+    NSString *commenteStr = obj[@"localData"][@"contentText"];
+    cell.commentLabel.text = [NSString stringWithFormat:@": %@",commenteStr];
+    cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;

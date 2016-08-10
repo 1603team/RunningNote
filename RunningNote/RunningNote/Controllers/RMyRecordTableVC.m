@@ -43,8 +43,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     CGRect frame = _weatherImage.frame;
     _frame = frame;
-    
-    
+
     self.weatherView.image = [UIImage imageNamed:@"weather_rain"];
     
     
