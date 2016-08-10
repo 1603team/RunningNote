@@ -28,6 +28,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 1;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
     self.getSMSBtn.layer.cornerRadius = 4;
     self.getSMSBtn.layer.masksToBounds = YES;
     [self.telephone setText:[AVUser currentUser].mobilePhoneNumber];

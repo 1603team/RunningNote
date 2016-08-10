@@ -44,6 +44,10 @@ static NSString *identifier = @"userInfoCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 1;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
     [self.navigationController setNavigationBarHidden:NO];
     
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
