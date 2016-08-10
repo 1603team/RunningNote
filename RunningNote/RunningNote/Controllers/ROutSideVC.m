@@ -272,7 +272,7 @@
                         _kmNumber.text = [NSString stringWithFormat:@"%.02f",km];
                         
                         NSInteger i = (_milliSeconds - 300) / 100;//取出当前的秒数
-                        CGFloat speed = km / i;
+                        CGFloat speed = km / (i / 100);
                         _speedNumber.text = [NSString stringWithFormat:@"%.02f",speed * 3600];
                         NSInteger pace = 1 / speed;//秒每千米
                         if (pace >= 60) {
@@ -357,7 +357,6 @@
 #pragma mark - 保存记录
 
 -(void)saveRecord{
-#warning create and add a plistDictionary for this record
     //取当前时间作为记录的标题，其他内容为记录的数据
     NSDate *senddate = [NSDate date];
     NSDateFormatter  *dateformatter = [[NSDateFormatter alloc] init];
