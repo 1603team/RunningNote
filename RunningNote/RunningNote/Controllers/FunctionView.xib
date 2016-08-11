@@ -10,35 +10,30 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="131"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQV-Tc-1Od">
-                    <rect key="frame" x="85" y="14" width="30" height="30"/>
-                    <state key="normal" title="拍照"/>
-                    <connections>
-                        <action selector="buttonPress:" destination="GtQ-Nl-Rcq" eventType="touchUpInside" id="u6T-Y0-w1H"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIJ-Zy-WJR">
-                    <rect key="frame" x="154" y="14" width="30" height="30"/>
-                    <state key="normal" title="定位"/>
-                    <connections>
-                        <action selector="buttonPress:" destination="GtQ-Nl-Rcq" eventType="touchUpInside" id="JFO-2x-84q"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwl-1l-fdC">
-                    <rect key="frame" x="16" y="14" width="30" height="30"/>
-                    <state key="normal" title="相册"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwl-1l-fdC">
+                    <rect key="frame" x="70" y="36" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.89357002617801051" green="0.0" blue="0.064105740695392474" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="omg-ui-6gS"/>
+                        <constraint firstAttribute="height" constant="60" id="r0D-ZM-Od2"/>
+                    </constraints>
+                    <state key="normal" title="相册">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="buttonPress:" destination="GtQ-Nl-Rcq" eventType="touchUpInside" id="1iF-BE-re5"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kwl-1l-fdC" firstAttribute="centerX" secondItem="GtQ-Nl-Rcq" secondAttribute="centerX" id="15E-cH-6Ce"/>
+                <constraint firstItem="kwl-1l-fdC" firstAttribute="centerY" secondItem="GtQ-Nl-Rcq" secondAttribute="centerY" id="uL4-Ri-MB8"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="phoneImage" destination="lQV-Tc-1Od" id="y5P-gA-I0n"/>
                 <outlet property="selectImage" destination="kwl-1l-fdC" id="1iR-sk-Ktt"/>
-                <outlet property="shareLocation" destination="VIJ-Zy-WJR" id="ay5-0s-mwu"/>
             </connections>
             <point key="canvasLocation" x="233" y="-299.5"/>
         </view>

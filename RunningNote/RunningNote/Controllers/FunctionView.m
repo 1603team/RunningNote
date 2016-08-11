@@ -11,7 +11,10 @@
 
 @implementation FunctionView
 
-
+- (void)awakeFromNib{
+    _selectImage.layer.cornerRadius = 30;
+    _selectImage.clipsToBounds = YES;
+}
 - (IBAction)buttonPress:(UIButton *)sender {
     
     [self.delegate  selectAction:sender.tag];
