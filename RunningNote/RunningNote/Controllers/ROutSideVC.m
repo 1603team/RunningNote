@@ -174,8 +174,8 @@
 
 - (IBAction)startBtn:(UIButton *)sender {
     //移除选择模式按钮
-    if (_chooseModeBtn.hidden == NO) {
-        [_chooseModeBtn removeFromSuperview];
+    //if (_chooseModeBtn.hidden == NO) {
+      //  [_chooseModeBtn removeFromSuperview];
         //改变状态
         sender.selected = !sender.selected;
         if (_stopButton.enabled == NO) {
@@ -191,7 +191,7 @@
             _runTimer = nil;
         }
         [self showAllLabel];
-    }
+    //}
     if (_isStart) {
         [_locationService stopUserLocationService];
         
@@ -263,7 +263,7 @@
                     //判断上一次差值为正，本次差值为负则为最大值
                     if ((_difference >= 0) && (sqrtA - _lastNum <= 0)) {
                         _stepNum++;
-                        _heartRate.text = [NSString stringWithFormat:@"%ld",(long)_stepNum];
+                        _heartRate.text = [NSString stringWithFormat:@"%ld",(long)_stepNum / 2];
                         
                         CGFloat stepLength = [RUserModel sharedUserInfo].height * 0.4 / 100;//取出身高并计算步长，即一大步为身高的0.8
                         NSInteger kg = [RUserModel sharedUserInfo].weight;
@@ -272,7 +272,7 @@
                         _kmNumber.text = [NSString stringWithFormat:@"%.02f",km];
                         
                         NSInteger i = (_milliSeconds - 300) / 100;//取出当前的秒数
-                        CGFloat speed = km / i;
+                        CGFloat speed = km / (i / 100);
                         _speedNumber.text = [NSString stringWithFormat:@"%.02f",speed * 3600];
                         NSInteger pace = 1 / speed;//秒每千米
                         if (pace >= 60) {
@@ -357,7 +357,6 @@
 #pragma mark - 保存记录
 
 -(void)saveRecord{
-#warning create and add a plistDictionary for this record
     //取当前时间作为记录的标题，其他内容为记录的数据
     NSDate *senddate = [NSDate date];
     NSDateFormatter  *dateformatter = [[NSDateFormatter alloc] init];
