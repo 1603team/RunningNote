@@ -44,7 +44,13 @@ static NSString *identifier = @"userInfoCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 1;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
     [self.navigationController setNavigationBarHidden:NO];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUserInfo)];
     [rightItem setTintColor:[UIColor whiteColor]];
@@ -52,7 +58,7 @@ static NSString *identifier = @"userInfoCell";
     AVUser *currentUser = [AVUser currentUser];
     if ([currentUser objectForKey:kNickName]) {
         _iconImage.image = [UIImage imageWithData:[currentUser objectForKey:kIconImage]];
-        self.iconImage.layer.cornerRadius = 20;
+        self.iconImage.layer.cornerRadius = self.iconImage.frame.size.width * 0.5;
         self.iconImage.layer.masksToBounds = YES;
         //用模型给你个人信息赋值
         RUserModel *user = [RUserModel sharedUserInfo];
@@ -206,7 +212,7 @@ static NSString *identifier = @"userInfoCell";
         [self.tableView reloadData];
     }else if (sender.tag == 200) {
         self.iconImage.image = [_imageCroperView processedImage];
-        self.iconImage.layer.cornerRadius = 20;
+        self.iconImage.layer.cornerRadius = self.iconImage.frame.size.width * 0.5;
         self.iconImage.layer.masksToBounds = YES;
     }
     [sender.superview removeFromSuperview];
@@ -254,7 +260,7 @@ static NSString *identifier = @"userInfoCell";
 - (void)saveUserInfo {
     
     AVUser *user = [AVUser currentUser];
-    NSData *imageData = UIImageJPEGRepresentation(_iconImage.image, 0.5);
+    NSData *imageData = UIImageJPEGRepresentation(_iconImage.image, 0.1);
     [user setObject:imageData forKey:kIconImage];
     [user setObject:_nickName.text forKey:kNickName];
     [user setObject:_height.text forKey:kHeight];

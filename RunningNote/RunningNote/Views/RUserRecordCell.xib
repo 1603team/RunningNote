@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCellHome" rowHeight="111" id="KGk-i7-Jjw" customClass="RUserRecordCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIS-pS-hof">
+                        <rect key="frame" x="20" y="8" width="26" height="19"/>
+                        <attributedString key="attributedText">
+                            <fragment content="title">
+                                <attributes>
+                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-UI-lo1">
+                        <rect key="frame" x="217" y="43" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-hg-qO5">
+                        <rect key="frame" x="20" y="37" width="48" height="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4y-tb-hq8">
+                        <rect key="frame" x="87" y="72" width="30" height="36"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                        <state key="normal" title="KM">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeZ-z8-Teo">
+                        <rect key="frame" x="20" y="80" width="66" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JNS-LK-2aH">
+                        <rect key="frame" x="219" y="3.5" width="81" height="29"/>
+                        <segments>
+                            <segment title="室外"/>
+                            <segment title="室内"/>
+                        </segments>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </segmentedControl>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="SeZ-z8-Teo" firstAttribute="top" secondItem="U9W-hg-qO5" secondAttribute="bottom" constant="10" id="4r7-o4-DFL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WEA-UI-lo1" secondAttribute="trailing" constant="20" id="FEi-P0-R39"/>
+                    <constraint firstItem="BIS-pS-hof" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="GVl-hv-jgc"/>
+                    <constraint firstItem="WEA-UI-lo1" firstAttribute="centerY" secondItem="U9W-hg-qO5" secondAttribute="centerY" id="KK0-1J-Zti"/>
+                    <constraint firstItem="D4y-tb-hq8" firstAttribute="centerY" secondItem="SeZ-z8-Teo" secondAttribute="centerY" id="McF-7y-GhW"/>
+                    <constraint firstItem="U9W-hg-qO5" firstAttribute="top" secondItem="BIS-pS-hof" secondAttribute="bottom" constant="10" id="PiV-Hg-uYO"/>
+                    <constraint firstAttribute="trailing" secondItem="JNS-LK-2aH" secondAttribute="trailing" constant="20" id="UpT-RA-Reg"/>
+                    <constraint firstItem="D4y-tb-hq8" firstAttribute="leading" secondItem="SeZ-z8-Teo" secondAttribute="trailing" constant="1" id="VCi-Hn-KaV"/>
+                    <constraint firstItem="U9W-hg-qO5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="VWr-Ki-jjW"/>
+                    <constraint firstItem="BIS-pS-hof" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="YlK-3t-FUk"/>
+                    <constraint firstItem="SeZ-z8-Teo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jlT-4r-qUg"/>
+                    <constraint firstItem="JNS-LK-2aH" firstAttribute="centerY" secondItem="BIS-pS-hof" secondAttribute="centerY" id="o2p-D5-ktK"/>
+                    <constraint firstAttribute="bottom" secondItem="SeZ-z8-Teo" secondAttribute="bottom" constant="10" id="rYN-dt-gKf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="distance" destination="SeZ-z8-Teo" id="daV-cc-ejZ"/>
+                <outlet property="isHomeSegment" destination="JNS-LK-2aH" id="cb9-uP-X6U"/>
+                <outlet property="speed" destination="U9W-hg-qO5" id="Y8a-EA-234"/>
+                <outlet property="time" destination="WEA-UI-lo1" id="TwO-n9-Fws"/>
+                <outlet property="title" destination="BIS-pS-hof" id="xG1-1p-Sg3"/>
+            </connections>
+            <point key="canvasLocation" x="241" y="229.5"/>
+        </tableViewCell>
+    </objects>
+</document>

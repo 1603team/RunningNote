@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCellHomeOut" rowHeight="153" id="tHP-yj-HB8" customClass="RUserRecordCell">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tHP-yj-HB8" id="02k-Mm-Bp7">
+                <rect key="frame" x="0.0" y="0.0" width="337" height="152.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-I7-QC0">
+                        <rect key="frame" x="291" y="8" width="26" height="19"/>
+                        <attributedString key="attributedText">
+                            <fragment content="title">
+                                <attributes>
+                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqz-IE-Qkm">
+                        <rect key="frame" x="267" y="37" width="42" height="53.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-qE-wNf">
+                        <rect key="frame" x="20" y="53.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6f1-S1-8ac">
+                        <rect key="frame" x="0.0" y="4" width="81" height="29"/>
+                        <segments>
+                            <segment title="室外"/>
+                            <segment title="室内"/>
+                        </segments>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </segmentedControl>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="KM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwW-kZ-jIW">
+                        <rect key="frame" x="279" y="100.5" width="30" height="24"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biw-zb-yW0">
+                        <rect key="frame" x="235" y="101.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qwW-kZ-jIW" firstAttribute="trailing" secondItem="qqz-IE-Qkm" secondAttribute="trailing" id="48M-uA-Tfz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qqz-IE-Qkm" secondAttribute="trailing" constant="20" id="4Uh-qb-23I"/>
+                    <constraint firstItem="ct9-qE-wNf" firstAttribute="leading" secondItem="02k-Mm-Bp7" secondAttribute="leading" constant="20" id="6vU-Ff-9eK"/>
+                    <constraint firstItem="biw-zb-yW0" firstAttribute="centerY" secondItem="qwW-kZ-jIW" secondAttribute="centerY" id="7jd-68-Gb4"/>
+                    <constraint firstItem="qwW-kZ-jIW" firstAttribute="top" secondItem="qqz-IE-Qkm" secondAttribute="bottom" constant="10" id="JrB-2d-g5D"/>
+                    <constraint firstItem="qwW-kZ-jIW" firstAttribute="leading" secondItem="biw-zb-yW0" secondAttribute="trailing" constant="2" id="S96-3T-BIu"/>
+                    <constraint firstItem="H3m-I7-QC0" firstAttribute="top" secondItem="02k-Mm-Bp7" secondAttribute="top" constant="8" id="e9C-wo-3js"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qwW-kZ-jIW" secondAttribute="bottom" constant="20" id="fFw-YD-eYS"/>
+                    <constraint firstItem="ct9-qE-wNf" firstAttribute="centerY" secondItem="qqz-IE-Qkm" secondAttribute="centerY" id="iZh-ig-yvY"/>
+                    <constraint firstAttribute="trailing" secondItem="H3m-I7-QC0" secondAttribute="trailing" constant="20" id="maA-VB-ORI"/>
+                    <constraint firstItem="qqz-IE-Qkm" firstAttribute="top" secondItem="H3m-I7-QC0" secondAttribute="bottom" constant="10" id="nta-aD-ZCt"/>
+                    <constraint firstItem="6f1-S1-8ac" firstAttribute="centerY" secondItem="H3m-I7-QC0" secondAttribute="centerY" id="ueh-8g-GfU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="distance" destination="biw-zb-yW0" id="VzG-tj-9h6"/>
+                <outlet property="isHomeSegment" destination="6f1-S1-8ac" id="0W7-25-brN"/>
+                <outlet property="speed" destination="qqz-IE-Qkm" id="GEF-IW-V4s"/>
+                <outlet property="time" destination="ct9-qE-wNf" id="sIJ-Qn-dAy"/>
+                <outlet property="title" destination="H3m-I7-QC0" id="g43-f3-ZSm"/>
+            </connections>
+            <point key="canvasLocation" x="279.5" y="404.5"/>
+        </tableViewCell>
+    </objects>
+</document>

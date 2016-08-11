@@ -14,6 +14,10 @@
 #import <CoreMotion/CoreMotion.h>
 #import "AppDelegate.h"
 #import "RUserModel.h"
+#import "DataBaseFile.h"
+#import "QYDataBaseTool.h"
+#import "AVOSCloud.h"
+#import "SVProgressHUD.h"
 
 @interface ROutSideVC ()<BMKLocationServiceDelegate,BMKMapViewDelegate>
 {
@@ -108,13 +112,13 @@
     //设置位置管理器的代理
     //    self.manager.delegate = self;
     //向用户申请权限
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        [self.manager requestWhenInUseAuthorization];
-    }
-    //手机定位服务是否开启
-    if ([CLLocationManager locationServicesEnabled]) {
-        NSLog(@"在设置中打开GPS");
-    }
+//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+//        [self.manager requestWhenInUseAuthorization];
+//    }
+//    //手机定位服务是否开启
+//    if ([CLLocationManager locationServicesEnabled]) {
+//        NSLog(@"在设置中打开GPS");
+//    }
     //配置location的属性
     //精确度
     //    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -364,16 +368,31 @@
     NSString *locationString = [dateformatter stringFromDate:senddate];
     NSString *titleString = [NSString stringWithFormat:@"%@",locationString];
     
-    NSDictionary *plistDict = @{@"title" : titleString, @"time" : _timeNow.text, @"kilometre" : _kmNumber.text, @"speed" : _speedNumber.text};
+//    NSDictionary *plistDict = @{@"title" : titleString, @"time" : _timeNow.text, @"distance" : _kmNumber.text, @"speed" : _speedNumber.text,@"isHome" : @NO};
+    AVObject *runNote = [[AVObject alloc] initWithClassName:@"runNote"];
+    [runNote setObject:titleString forKey:@"title"];
+    [runNote setObject:_timeNow.text forKey:@"time"];
+    [runNote setObject:_kmNumber.text forKey:@"distance"];
+    [runNote setObject:_speedNumber.text forKey:@"speed"];
+    [runNote setObject:_paceText.text forKey:@"pace"];
+    [runNote setObject:_calorieNumber.text forKey:@"calorie"];
+    [runNote setObject:@NO forKey:@"isHome"];
+    [runNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
+        }
+    }];
     //获取Document目录(本地化的数据存储位置)
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docPath = [paths lastObject];
-    NSMutableArray *plistArray = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath]];
-    if (plistArray == nil) {
-        plistArray = [NSMutableArray array];
-    }
-    [plistArray insertObject:plistDict atIndex:0];
-    [plistArray writeToFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath] atomically:YES];
+//    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *docPath = [paths lastObject];
+//    NSMutableArray *plistArray = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath]];
+//    if (plistArray == nil) {
+//        plistArray = [NSMutableArray array];
+//    }
+//    [plistArray insertObject:plistDict atIndex:0];
+//    [plistArray writeToFile:[NSString stringWithFormat:@"%@/MyRun.plist",docPath] atomically:YES];
+//    [QYDataBaseTool updateStatementsSql:INSERT_MyRunNote_SQL withParsmeters:plistDict block:^(BOOL isOk, NSString *errorMsg) {
+//    }];
     [self replaceView];
 }
 
