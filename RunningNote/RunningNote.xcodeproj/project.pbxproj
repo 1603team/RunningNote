@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		166C0683B1A55D8F04C2D39A /* libPods-RunningNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */; };
 		168320E281EBC6A749F29032 /* libPods-RunningNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */; };
 		1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -50,6 +51,10 @@
 		CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED21D2BD39200CB547D /* RMyFriendsTableVC.m */; };
 		CC705ED71D2BDEEE00CB547D /* RMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */; };
 		CC705ED81D2BDEEE00CB547D /* RMyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */; };
+		CC72F9391D4A28C4006D71AC /* RUserRunRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */; };
+		CC72F93F1D4A316A006D71AC /* RMyDetailRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */; };
+		CC72F9431D4A37C0006D71AC /* RUserRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */; };
+		CC72F9441D4A37C0006D71AC /* RUserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */; };
 		CC92C7501D48B7BE00C49ED7 /* RSendSMSCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */; };
 		CCAADAFB1D37B55A004CDC80 /* xunzhang_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */; };
 		CCB3E8FD1D27C0840093C575 /* RDynamicTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3E8FC1D27C0840093C575 /* RDynamicTableVC.m */; };
@@ -76,6 +81,10 @@
 		CCEA9AEA1D40EC3F000B287E /* RFriendsInfor.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEA9AE81D40EC3F000B287E /* RFriendsInfor.m */; };
 		CCEA9AED1D40ECE1000B287E /* RFriends-Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */; };
 		CCEA9AEF1D40EE45000B287E /* bg_qiang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AEE1D40EE45000B287E /* bg_qiang.png */; };
+		CCEA9AF31D40F6E6000B287E /* bg_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEA9AF21D40F6E6000B287E /* bg_chat.png */; };
+		CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */; };
+		CCEB0D211D4AE9A70074B6CF /* bg_record_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */; };
+		CCEB0D231D4AEA7A0074B6CF /* bg_record_cellout.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */; };
 		CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */; };
 		CCEB5E1F1D507BA5008DBCE8 /* CharCellVoiceRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */; };
 		CCEBDB4F1D463139007FE53C /* ChartBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEBDB4E1D463139007FE53C /* ChartBar.xib */; };
@@ -131,6 +140,7 @@
 		CCF2808F1D4223D000AF657D /* ChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF2808E1D4223D000AF657D /* ChartCell.m */; };
 		CCF280971D423BA900AF657D /* chart_right.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF280951D423BA900AF657D /* chart_right.png */; };
 		CCF488AE1D40D1F80064CC03 /* NSMutableDictionary+setObj.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF488AD1D40D1F80064CC03 /* NSMutableDictionary+setObj.m */; };
+		D1A4BDF068C958DA947B992C /* libPods-RunningNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,9 +165,12 @@
 		0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		166A8D1783366D0CC901FE3D /* Pods-RunningNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.release.xcconfig"; sourceTree = "<group>"; };
 		59779D7800BA96DDC1255A76 /* Pods-RunningNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNote/Pods-RunningNote.debug.xcconfig"; sourceTree = "<group>"; };
+		76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteTests/Pods-RunningNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningNoteUITests/Pods-RunningNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC123F9A1D24F785000AC88C /* RJianYe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RJianYe.storyboard; sourceTree = "<group>"; };
 		CC123F9E1D250456000AC88C /* duoyun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duoyun.png; sourceTree = "<group>"; };
@@ -206,6 +219,13 @@
 		CC705ED41D2BDEEE00CB547D /* RMyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyTableViewCell.h; sourceTree = "<group>"; };
 		CC705ED51D2BDEEE00CB547D /* RMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyTableViewCell.m; sourceTree = "<group>"; };
 		CC705ED61D2BDEEE00CB547D /* RMyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMyTableViewCell.xib; sourceTree = "<group>"; };
+		CC72F9371D4A28C4006D71AC /* RUserRunRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserRunRecord.h; sourceTree = "<group>"; };
+		CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserRunRecord.m; sourceTree = "<group>"; };
+		CC72F93D1D4A316A006D71AC /* RMyDetailRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMyDetailRecordVC.h; sourceTree = "<group>"; };
+		CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMyDetailRecordVC.m; sourceTree = "<group>"; };
+		CC72F9401D4A37C0006D71AC /* RUserRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUserRecordCell.h; sourceTree = "<group>"; };
+		CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUserRecordCell.m; sourceTree = "<group>"; };
+		CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUserRecordCell.xib; sourceTree = "<group>"; };
 		CC92C74E1D48B7BE00C49ED7 /* RSendSMSCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSendSMSCodeVC.h; sourceTree = "<group>"; };
 		CC92C74F1D48B7BE00C49ED7 /* RSendSMSCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSendSMSCodeVC.m; sourceTree = "<group>"; };
 		CCAADAFA1D37B55A004CDC80 /* xunzhang_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xunzhang_btn.png; sourceTree = "<group>"; };
@@ -248,6 +268,10 @@
 		CCEA9AE81D40EC3F000B287E /* RFriendsInfor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFriendsInfor.m; sourceTree = "<group>"; };
 		CCEA9AEC1D40ECE1000B287E /* RFriends-Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "RFriends-Chat.storyboard"; sourceTree = "<group>"; };
 		CCEA9AEE1D40EE45000B287E /* bg_qiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_qiang.png; sourceTree = "<group>"; };
+		CCEA9AF21D40F6E6000B287E /* bg_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_chat.png; sourceTree = "<group>"; };
+		CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUserRecordCellOut.xib; sourceTree = "<group>"; };
+		CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cell.png; sourceTree = "<group>"; };
+		CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_record_cellout.png; sourceTree = "<group>"; };
 		CCEB5E1C1D507B37008DBCE8 /* CharCellVoiceLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceLeft.xib; sourceTree = "<group>"; };
 		CCEB5E1E1D507BA5008DBCE8 /* CharCellVoiceRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharCellVoiceRight.xib; sourceTree = "<group>"; };
 		CCEBDB4E1D463139007FE53C /* ChartBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartBar.xib; sourceTree = "<group>"; };
@@ -340,6 +364,7 @@
 				CC4AE2611D2A423A00D64C13 /* MapKit.framework in Frameworks */,
 				CC4AE25F1D2A05A300D64C13 /* CoreLocation.framework in Frameworks */,
 				2137B6AF3B060EE682FBD2A8 /* (null) in Frameworks */,
+				166C0683B1A55D8F04C2D39A /* libPods-RunningNote.a in Frameworks */,
 				7E7F8614F83A9BC8969B4892 /* libPods-RunningNote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFFD67139AB8B8D707BC217 /* (null) in Frameworks */,
+				D1A4BDF068C958DA947B992C /* libPods-RunningNoteUITests.a in Frameworks */,
 				6789B358DB78F668D023420A /* libPods-RunningNoteUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +398,7 @@
 				0AE6865D77D4438B9725C9CC /* Pods-RunningNoteTests.debug.xcconfig */,
 				9874743833345D78F728A916 /* Pods-RunningNoteTests.release.xcconfig */,
 				C51267550A0B913113F0EF75 /* Pods-RunningNoteUITests.debug.xcconfig */,
+				76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */,
 				FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */,
 			);
 			name = Pods;
@@ -435,6 +462,8 @@
 			children = (
 				CCEBDDCB1D23AF66000E535D /* RMyRecordTableVC.h */,
 				CCEBDDCC1D23AF66000E535D /* RMyRecordTableVC.m */,
+				CC72F93D1D4A316A006D71AC /* RMyDetailRecordVC.h */,
+				CC72F93E1D4A316A006D71AC /* RMyDetailRecordVC.m */,
 			);
 			name = RMyRecirdTableVC;
 			sourceTree = "<group>";
@@ -462,6 +491,8 @@
 				CCC7199D1D26A81D0033FCB2 /* RUserModel.m */,
 				CC474B151D35E55400CAED15 /* RDynamicModel.h */,
 				CC474B161D35E55400CAED15 /* RDynamicModel.m */,
+				CC72F9371D4A28C4006D71AC /* RUserRunRecord.h */,
+				CC72F9381D4A28C4006D71AC /* RUserRunRecord.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -572,8 +603,8 @@
 		CCEBDD941D23A6CC000E535D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CCEA57091D5B5CAD005C5139 /* char_cell_bg.png */,
-				CCEA57071D5B4A3F005C5139 /* charCell_bg.png */,
+				CCEB0D201D4AE9A70074B6CF /* bg_record_cell.png */,
+				CCEB0D221D4AEA7A0074B6CF /* bg_record_cellout.png */,
 				CC342AD71D4D86D800D3F919 /* circle.png */,
 				CC342AD51D4B08CB00D3F919 /* circle_bg.png */,
 				CC342AD31D4B063600D3F919 /* tabbar_bg_black.png */,
@@ -652,6 +683,10 @@
 				CCEF318E1D2D08A400A6F3BE /* RMyFootView.h */,
 				CCEF318F1D2D08A400A6F3BE /* RMyFootView.m */,
 				CC31D31D1D35163800FA9997 /* RPublishedVC.xib */,
+				CC72F9401D4A37C0006D71AC /* RUserRecordCell.h */,
+				CC72F9411D4A37C0006D71AC /* RUserRecordCell.m */,
+				CC72F9421D4A37C0006D71AC /* RUserRecordCell.xib */,
+				CCEB0D1E1D4AE7770074B6CF /* RUserRecordCellOut.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -744,6 +779,8 @@
 				CC4AE2601D2A423A00D64C13 /* MapKit.framework */,
 				CC4AE25E1D2A05A300D64C13 /* CoreLocation.framework */,
 				0BCA6D8A9FFD458494B7C4EC /* libPods-RunningNoteTests.a */,
+				C1B75EDBB8334A3F8915D6EE /* libPods-RunningNote.a */,
+				823B0B641BE9E7415FF1F363 /* libPods-RunningNoteUITests.a */,
 				6ABD3F81C8D589F82CE66C54 /* libPods-RunningNote.a */,
 				92D54EDECEC167216805D800 /* libPods-RunningNoteUITests.a */,
 			);
@@ -871,6 +908,8 @@
 				CCEA570A1D5B5CAD005C5139 /* char_cell_bg.png in Resources */,
 				CC342AD61D4B08CB00D3F919 /* circle_bg.png in Resources */,
 				CCEBDE011D23E7D1000E535D /* fxpy_image.png in Resources */,
+				CCEB0D231D4AEA7A0074B6CF /* bg_record_cellout.png in Resources */,
+				CCEB0D211D4AE9A70074B6CF /* bg_record_cell.png in Resources */,
 				CC31D31F1D35163800FA9997 /* RPublishedVC.xib in Resources */,
 				CCF06C7D1D49EEB000E57A59 /* ChartImageCellLeft.xib in Resources */,
 				CCEBDDF31D23C8F6000E535D /* icon_btn.png in Resources */,
@@ -901,7 +940,9 @@
 				CCF06C871D4A391200E57A59 /* RFriendTableViewCell.xib in Resources */,
 				CC38E34B1D33D1C1005E2779 /* weather_cloudy.png in Resources */,
 				CCF280971D423BA900AF657D /* chart_right.png in Resources */,
+				CC72F9441D4A37C0006D71AC /* RUserRecordCell.xib in Resources */,
 				CC123FA21D250E61000AC88C /* homeSport.png in Resources */,
+				CCEB0D1F1D4AE7770074B6CF /* RUserRecordCellOut.xib in Resources */,
 				CC342AD81D4D86D800D3F919 /* circle.png in Resources */,
 				CC474B241D3651CF00CAED15 /* commente_btn_n.png in Resources */,
 				CCEB5E1D1D507B37008DBCE8 /* CharCellVoiceLeft.xib in Resources */,
@@ -1083,6 +1124,7 @@
 				CCC719A41D26A8600033FCB2 /* RChangePassWorldVC.m in Sources */,
 				CCC719681D26932A0033FCB2 /* ChooseModeTableVC.m in Sources */,
 				CC705ED31D2BD39200CB547D /* RMyFriendsTableVC.m in Sources */,
+				CC72F93F1D4A316A006D71AC /* RMyDetailRecordVC.m in Sources */,
 				CC123FB01D2526F7000AC88C /* RRuningVC.m in Sources */,
 				CCEBDD991D23A6CC000E535D /* AppDelegate.mm in Sources */,
 				CCEF318D1D2CE18900A6F3BE /* RCommentesTableVC.m in Sources */,
@@ -1110,9 +1152,11 @@
 				CCEBDB631D463419007FE53C /* FaceModel.m in Sources */,
 				CCC7196D1D26933B0033FCB2 /* RHomeSportVC.m in Sources */,
 				CCEBDB611D463419007FE53C /* Facecell.m in Sources */,
+				CC72F9431D4A37C0006D71AC /* RUserRecordCell.m in Sources */,
 				CCEBDB6D1D463473007FE53C /* RMessageBarButton.m in Sources */,
 				CCF280801D41B2FB00AF657D /* ChartVC.m in Sources */,
 				CCDCACE61D2E8F47001A3112 /* QYDataBaseTool.m in Sources */,
+				CC72F9391D4A28C4006D71AC /* RUserRunRecord.m in Sources */,
 				CCEF77F81D39041C00BEDBE0 /* RAddAFriendVC.m in Sources */,
 				CCF2808F1D4223D000AF657D /* ChartCell.m in Sources */,
 				CCEA9AEA1D40EC3F000B287E /* RFriendsInfor.m in Sources */,
@@ -1326,6 +1370,7 @@
 		};
 		CCEBDDC61D23A6CC000E535D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D62C9071F16F4D8CA519B5 /* Pods-RunningNoteUITests.release.xcconfig */;
 			baseConfigurationReference = FBC8607893D787D397B42AF0 /* Pods-RunningNoteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RunningNoteUITests/Info.plist;

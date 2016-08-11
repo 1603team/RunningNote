@@ -43,7 +43,7 @@ static FMDatabaseQueue *queue;
     [[QYDataBaseTool getFMDataBase]inDatabase:^(FMDatabase *db) {
      //创建表 执行多条sql语句
         if ([db executeStatements:createTabel]) {
-          NSLog(@"====create oke")
+//          NSLog(@"====create oke")
             ;        } ;
     }];
 }

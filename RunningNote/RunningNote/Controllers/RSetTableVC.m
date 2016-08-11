@@ -11,6 +11,7 @@
 #import "RUserInfoTableVC.h"
 #import "AppDelegate.h"
 #import <AVUser.h>
+#import "RMessageManager.h"
 
 @interface RSetTableVC ()
 
@@ -71,6 +72,10 @@
         [AVUser currentUser].password = nil;
         AppDelegate *delegate = [UIApplication sharedApplication].delegate;
         [delegate showLoginVC];
+        RMessageManager *manager = [RMessageManager sharemessageManager];
+        manager = nil;
+        manager.clint = nil;
+        manager.delegate = nil;
     }
     
     
