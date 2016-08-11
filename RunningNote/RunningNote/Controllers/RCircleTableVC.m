@@ -19,16 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.hidesBottomBarWhenPushed = YES;
-
-
-
+//    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+//    self.hidesBottomBarWhenPushed = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.tabBarController.tabBar.hidden = NO;
+    
+    
+    self.tabBarController.tabBar.hidden = NO;//12345678965432
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     self.navigationController.navigationBar.alpha = 1;
     self.view.backgroundColor = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1];
@@ -36,13 +35,10 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (IBAction)myFriends:(UIBarButtonItem *)sender {
     //我的好友
     RMyFriendsTableVC *myFriendsVC = [RMyFriendsTableVC new];
+    [myFriendsVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:myFriendsVC animated:YES];
     
     
@@ -51,6 +47,7 @@
 - (IBAction)MyMessage:(UIBarButtonItem *)sender {
     //我的消息
     RChatsListTableVC *chatsList = [[RChatsListTableVC alloc] init];
+    [chatsList setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:chatsList animated:YES];
     
 }
@@ -65,6 +62,7 @@
             if (indexPath.row == 0) {
                 //跑友动态
                 RDynamicTableVC *dynamicTVC = [[RDynamicTableVC alloc] initWithStyle:UITableViewStyleGrouped];
+                [dynamicTVC setHidesBottomBarWhenPushed:YES];
                 [self.navigationController pushViewController:dynamicTVC animated:YES];
             }else if (indexPath.row == 1){
                 //我的跑团
@@ -99,62 +97,5 @@
             break;
     }
 }
-
-#pragma mark - Table view data source
-
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

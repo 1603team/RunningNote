@@ -18,9 +18,9 @@
 
 
 @interface FunctionView : UIView
-@property (weak, nonatomic) IBOutlet UIButton *phoneImage;
+//@property (weak, nonatomic) IBOutlet UIButton *phoneImage;
 @property (weak, nonatomic) IBOutlet UIButton *selectImage;
-@property (weak, nonatomic) IBOutlet UIButton *shareLocation;
+//@property (weak, nonatomic) IBOutlet UIButton *shareLocation;
 
 @property (nonatomic, weak)   id <FuncitonDelegate> delegate;
 

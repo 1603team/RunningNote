@@ -33,7 +33,7 @@
     _nickName.text = localData[@"nickName"];
     NSData *imageData = localData[@"iconImage"];
     [_iconBtn setBackgroundImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
-    _addressLabel.text = localData[@"address"];
+//    _addressLabel.text = localData[@"address"];
     _lvLabel.text = @"初级跑者";
     
     NSString *totalDistanceStr = [localData[@"totalDistance"] stringValue];

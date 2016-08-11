@@ -30,17 +30,17 @@
 
 
 - (void)setModel:(RDynamicModel *)model{
-    _nicknameLabel.text = model.userName;//base64转NSData ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-    NSString *baseStr = [model.iconData valueForKey:@"base64"];
+    _model = model;
+    _nicknameLabel.text = model.userName;
+    NSString *baseStr = [model.iconData valueForKey:@"base64"];//base64转NSData
     if (baseStr.length) {
         NSData *nsdataFromBase64String = [[NSData alloc] initWithBase64EncodedString:baseStr options:NSDataBase64DecodingIgnoreUnknownCharacters];
         UIImage *iconImage = [UIImage imageWithData:nsdataFromBase64String];
-//        _iconBtn.imageView.image = iconImage; //头像
         [_iconBtn setImage:iconImage forState:UIControlStateNormal];
     }
     _iconBtn.layer.cornerRadius = 22.0;
     _iconBtn.clipsToBounds = YES;
-    _model = model;
+    
     if (model.text) {                       //有无文字
         _contentLabel.text = model.text;
     }
@@ -53,12 +53,12 @@
     if (model.location) {
         _locationLabel.text = model.location;
     }
-    if (model.comments) {                   //有无评论
+    if (model.comments.count) {                   //有无评论
+        _commentesViewHeight.constant = 200;
         RCommentesTableVC *commentesTVC = [[RCommentesTableVC alloc] init];
         [_tempTVC addChildViewController:commentesTVC];
-        commentesTVC.commentesArray = @[@"嘿嘿嘿",@"嚯嚯嚯",@"滴滴滴",@"闷闷闷",@"biubiubiu",@"DuangDuangDuang",@"锵锵锵",@"咚咚咚",@"这是评论",@"这个也是",@"恩，评论"];//temp
+        commentesTVC.commentesArray = model.comments;
         _commentesViewHeight.constant = commentesTVC.commentesArray.count * 20;
-        
         [_commentesView addSubview:commentesTVC.tableView];
         [commentesTVC.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(@0);

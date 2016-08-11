@@ -23,6 +23,9 @@
 static NSString *identifier = @"friendmycell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+    
     //添加好友的按钮
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriend)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
@@ -43,6 +46,7 @@ static NSString *identifier = @"friendmycell";
     
     self.navigationItem.title = @"好友列表";
     self.tableView.backgroundColor = [UIColor blackColor];
+    
    // UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_blue"]];
   //  imageView.contentMode = UIViewContentModeScaleAspectFill;
   //  self.tableView.backgroundView = imageView;
@@ -79,6 +83,8 @@ static NSString *identifier = @"friendmycell";
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+//    self.tabBarController.tabBar.hidden = YES;
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 1;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];

@@ -40,7 +40,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chart_bgimage"]];
         _tableView.backgroundView = bgImageView;
-        _tableView.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+        //_tableView.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = NO;
@@ -178,28 +178,26 @@
     AVIMClient *clint = [RMessageManager sharemessageManager].clint;
     [RMessageManager sharemessageManager].delegate = self;
     NSString *name = [NSString stringWithFormat:@"%@&%@",_friendUser[@"localData"][@"nickName"],[RUserModel sharedUserInfo].nickName];
-    
+    __weak ChartVC *weakSelf = self;
     //会话的参与用户
-   NSArray *ids = @[[AVUser currentUser].username, _friendUser.username];
+    NSArray *ids = @[[AVUser currentUser].username, _friendUser.username];
     if (clint.status == AVIMClientStatusOpened) {
         [clint createConversationWithName:name clientIds:ids attributes:nil options:AVIMConversationOptionNone | AVIMConversationOptionUnique callback:^(AVIMConversation *conversation, NSError *error) {
             //创建会话成功
-            self.conversation = conversation;
+            weakSelf.conversation = conversation;
             NSLog(@"%@",error);
             //将当前会话,标记为已读
-            [self.conversation markAsReadInBackground];
-            [self getConversationMessage];//获取该会话内最近的20条数据
-
+            [weakSelf.conversation markAsReadInBackground];
+            [weakSelf getConversationMessage];//获取该会话内最近的20条数据
         }];
     }else{
         [clint openWithCallback:^(BOOL succeeded, NSError *error) {
             [clint createConversationWithName:name clientIds:ids attributes:nil options:AVIMConversationOptionNone | AVIMConversationOptionUnique callback:^(AVIMConversation *conversation, NSError *error) {
-                self.conversation = conversation;
+                weakSelf.conversation = conversation;
                 NSLog(@"%@",error);
-               // 将当前会话,标记为已读
-                [self.conversation markAsReadInBackground];
-                [self getConversationMessage];//获取该会话内最近的20条数据
-
+                // 将当前会话,标记为已读
+                [weakSelf.conversation markAsReadInBackground];
+                [weakSelf getConversationMessage];//获取该会话内最近的20条数据
             }];
         }];
     }

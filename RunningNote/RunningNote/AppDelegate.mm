@@ -40,6 +40,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AVOSCloud setApplicationId:@"ffEtbcq1pwP43pIvnzUtKvg8-gzGzoHsz" clientKey:@"ADrWXda5eEhDEYTuhoCPfkEk"];
+    //开启未读消息
+    [AVIMClient setUserOptions:@{
+        AVIMUserOptionUseUnread: @(YES)
+    }];
     
     UIViewController *rootVC;
     if ([AVUser currentUser] != nil) {
