@@ -4,9 +4,9 @@
 * 1 项目名称：跑步日记（RunningNote）
 * 2 项目成员：
 
-		组长：张小东
-		副组长：邵建业
-		数据策划：高红彬
+		组长：张小东[https://github.com/DeadAndLife]
+		副组长：邵建业[https://github.com/Sjianye]
+		数据策划：高红彬[https://github.com/Gao18236996670]
 * 3 面向对象：全年龄段
 * 4 产品需求分析：
 		
